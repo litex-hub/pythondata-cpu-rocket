@@ -2,7 +2,7 @@ This repository contains a [RocketChip][1] core generated specifically for the [
 
 * Rocket's internal bootrom has been modified to jump to 0x1000_0000;
 * Rocket's internal  address map was modified to route
-  - any addresses below between 0x1000_0000 and 0x8000_0000 through the cached *memory* AXI interface, and
+  - any addresses between 0x1000_0000 and 0x8000_0000 through the cached *memory* AXI interface, and
   - any addresses above 0x8000_0000 through the uncached *MMIO* AXI interface.
 
 See `./update.sh` for details.
