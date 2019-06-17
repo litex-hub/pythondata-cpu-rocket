@@ -40,7 +40,7 @@ git clone --recursive https://github.com/freechipsproject/rocket-chip
 sed -i '/DRAM_BASE/s/x8/x1/;/hang:/a\  j _start' rocket-chip/bootrom/bootrom.S
 make -C rocket-chip/bootrom
 
-# generate a LiteX-specific Rocket configuration:
+# generate LiteX-specific Rocket configuration variants:
 # NOTE: cached (RAM) access below, uncached (MMIO) access above 0x8000_0000
 cat >> rocket-chip/src/main/scala/subsystem/Configs.scala <<- "EOT"
 
@@ -63,15 +63,32 @@ cat >> rocket-chip/src/main/scala/subsystem/Configs.scala <<- "EOT"
 # NOTE: disable (unused) slave AXI port, ensure sufficient external IRQs
 cat >> rocket-chip/src/main/scala/system/Configs.scala <<- "EOT"
 
-	class LitexConfig extends Config(
+	class BaseLitexConfig extends Config(
 	  new WithLitexMemPort() ++
 	  new WithLitexMMIOPort() ++
 	  new WithNoSlavePort ++
 	  new WithNExtTopInterrupts(4) ++
-	  new DefaultFPGASmallConfig
+	  new BaseConfig
+	)
+
+	class LitexConfig extends Config(
+	  new WithNSmallCores(1) ++
+	  new BaseLitexConfig
+	)
+
+	class LitexLinuxConfig extends Config(
+	  new WithNMedCores(1) ++
+	  new BaseLitexConfig
+	)
+
+	class LitexFullConfig extends Config(
+	  new WithNBigCores(1) ++
+	  new BaseLitexConfig
 	)
 	EOT
-make RISCV=${HOME}/RISCV -C rocket-chip/vsim verilog CONFIG=LitexConfig
+for CFG in LitexConfig LitexLinuxConfig LitexFullConfig; do
+  make RISCV=${HOME}/RISCV -C rocket-chip/vsim verilog CONFIG=${CFG}
+done
 
 # install generated files for use by LiteX:
 VDIR=rocket-chip/src/main/resources/vsrc
