@@ -15,6 +15,7 @@
 			d-cache-sets = <64>;
 			d-cache-size = <4096>;
 			device_type = "cpu";
+			hardware-exec-breakpoint-count = <1>;
 			i-cache-block-size = <64>;
 			i-cache-sets = <64>;
 			i-cache-size = <4096>;

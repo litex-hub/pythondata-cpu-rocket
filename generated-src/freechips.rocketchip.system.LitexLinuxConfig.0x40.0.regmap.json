@@ -1,0 +1,16 @@
+{
+  "peripheral" : {
+    "displayName" : "deviceAt0x40",
+    "baseAddress" : "0x40",
+    "regfields" : [ {
+      "dmi_dmcontrol" : {
+        "byteOffset" : "0x0",
+        "bitOffset" : 0,
+        "bitWidth" : 32,
+        "name" : "dmi_dmcontrol",
+        "resetValue" : 0,
+        "accessType" : "RW"
+      }
+    } ]
+  }
+}

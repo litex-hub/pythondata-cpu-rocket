@@ -96,13 +96,13 @@
       {
         "axi4Id":{
           "start":0,
-          "end":16
+          "end":4
         },
         "tlId":{
           "start":0,
-          "end":16
+          "end":4
         },
-        "name":"TLBroadcast",
+        "name":"TLSourceShrinker",
         "isCache":false,
         "requestFifo":false
       }
@@ -186,6 +186,11 @@
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
     "target":"TestHarness.plusarg_reader_24",
+    "resourceId":"/vsrc/plusarg_reader.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.plusarg_reader_25",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
@@ -463,7 +468,7 @@
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_25",
+    "target":"TestHarness.plusarg_reader_26",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
@@ -812,12 +817,12 @@
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_26",
+    "target":"TestHarness.plusarg_reader_27",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_27",
+    "target":"TestHarness.plusarg_reader_28",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
@@ -1016,7 +1021,7 @@
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_28",
+    "target":"TestHarness.plusarg_reader_29",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
@@ -1236,12 +1241,12 @@
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_29",
+    "target":"TestHarness.plusarg_reader_30",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_30",
+    "target":"TestHarness.plusarg_reader_31",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
@@ -5914,12 +5919,12 @@
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_31",
+    "target":"TestHarness.plusarg_reader_32",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_32",
+    "target":"TestHarness.plusarg_reader_33",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
@@ -5936,25 +5941,23 @@
   },
   {
     "class":"freechips.rocketchip.util.SRAMAnnotation",
-    "target":"~TestHarness|DCache>tag_array",
+    "target":"TestHarness.DCache.tag_array",
     "address_width":6,
     "name":"tag_array",
     "data_width":22,
     "depth":64,
     "description":"DCache Tag Array",
-    "write_mask_granularity":22,
-    "uid":0
+    "write_mask_granularity":22
   },
   {
     "class":"freechips.rocketchip.util.SRAMAnnotation",
-    "target":"~TestHarness|DCacheDataArray>data_arrays_0",
+    "target":"TestHarness.DCacheDataArray.data_arrays_0",
     "address_width":9,
     "name":"data_arrays_0",
     "data_width":64,
     "depth":512,
     "description":"DCache Data Array",
-    "write_mask_granularity":8,
-    "uid":1
+    "write_mask_granularity":8
   },
   {
     "class":"firrtl.passes.InlineAnnotation",
@@ -5974,40 +5977,37 @@
   },
   {
     "class":"freechips.rocketchip.util.SRAMAnnotation",
-    "target":"~TestHarness|ICache>tag_array",
+    "target":"TestHarness.ICache.tag_array",
     "address_width":6,
     "name":"tag_array",
     "data_width":21,
     "depth":64,
     "description":"ICache Tag Array",
-    "write_mask_granularity":21,
-    "uid":2
+    "write_mask_granularity":21
   },
   {
     "class":"freechips.rocketchip.util.SRAMAnnotation",
-    "target":"~TestHarness|ICache>data_arrays_0",
+    "target":"TestHarness.ICache.data_arrays_0",
     "address_width":9,
     "name":"data_arrays_0",
     "data_width":32,
     "depth":512,
     "description":"ICache Data Array",
-    "write_mask_granularity":32,
-    "uid":3
+    "write_mask_granularity":32
   },
   {
     "class":"freechips.rocketchip.util.SRAMAnnotation",
-    "target":"~TestHarness|ICache>data_arrays_1",
+    "target":"TestHarness.ICache.data_arrays_1",
     "address_width":9,
     "name":"data_arrays_1",
     "data_width":32,
     "depth":512,
     "description":"ICache Data Array",
-    "write_mask_granularity":32,
-    "uid":4
+    "write_mask_granularity":32
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_33",
+    "target":"TestHarness.plusarg_reader_34",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
@@ -6084,7 +6084,7 @@
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_34",
+    "target":"TestHarness.plusarg_reader_35",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
@@ -6104,17 +6104,22 @@
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_35",
-    "resourceId":"/vsrc/plusarg_reader.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
     "target":"TestHarness.plusarg_reader_36",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
     "target":"TestHarness.plusarg_reader_37",
+    "resourceId":"/vsrc/plusarg_reader.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.plusarg_reader_38",
+    "resourceId":"/vsrc/plusarg_reader.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.plusarg_reader_39",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
@@ -6717,47 +6722,43 @@
   },
   {
     "class":"freechips.rocketchip.util.SRAMAnnotation",
-    "target":"~TestHarness|AXI4RAM>mem",
+    "target":"TestHarness.AXI4RAM.mem",
     "address_width":27,
     "name":"mem",
     "data_width":64,
     "depth":134217728,
     "description":"mem",
-    "write_mask_granularity":8,
-    "uid":5
+    "write_mask_granularity":8
   },
   {
     "class":"freechips.rocketchip.util.SRAMAnnotation",
-    "target":"~TestHarness|AXI4RAM_1>mem",
+    "target":"TestHarness.AXI4RAM_1.mem",
     "address_width":26,
     "name":"mem",
     "data_width":64,
     "depth":67108864,
     "description":"mem",
-    "write_mask_granularity":8,
-    "uid":6
+    "write_mask_granularity":8
   },
   {
     "class":"freechips.rocketchip.util.SRAMAnnotation",
-    "target":"~TestHarness|AXI4RAM_2>mem",
+    "target":"TestHarness.AXI4RAM_2.mem",
     "address_width":25,
     "name":"mem",
     "data_width":64,
     "depth":33554432,
     "description":"mem",
-    "write_mask_granularity":8,
-    "uid":7
+    "write_mask_granularity":8
   },
   {
     "class":"freechips.rocketchip.util.SRAMAnnotation",
-    "target":"~TestHarness|AXI4RAM_3>mem",
+    "target":"TestHarness.AXI4RAM_3.mem",
     "address_width":9,
     "name":"mem",
     "data_width":64,
     "depth":512,
     "description":"mem",
-    "write_mask_granularity":8,
-    "uid":8
+    "write_mask_granularity":8
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
