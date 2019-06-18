@@ -1,0 +1,785 @@
+{
+  "peripheral" : {
+    "displayName" : "deviceAt0x0",
+    "baseAddress" : "0x0",
+    "regfields" : [ {
+      "dmi_dmstatus" : {
+        "byteOffset" : "0x44",
+        "bitOffset" : 0,
+        "bitWidth" : 32,
+        "name" : "dmi_dmstatus",
+        "accessType" : "R"
+      }
+    }, {
+      "dmi_hartinfo" : {
+        "byteOffset" : "0x48",
+        "bitOffset" : 0,
+        "bitWidth" : 32,
+        "name" : "dmi_hartinfo",
+        "accessType" : "R"
+      }
+    }, {
+      "dmi_haltsum0" : {
+        "byteOffset" : "0x100",
+        "bitOffset" : 0,
+        "bitWidth" : 32,
+        "name" : "dmi_haltsum0",
+        "accessType" : "R"
+      }
+    }, {
+      "dmi_haltsum1" : {
+        "byteOffset" : "0x4c",
+        "bitOffset" : 0,
+        "bitWidth" : 32,
+        "name" : "dmi_haltsum1",
+        "accessType" : "R"
+      }
+    }, {
+      "dmi_abstractcs" : {
+        "byteOffset" : "0x58",
+        "bitOffset" : 0,
+        "bitWidth" : 32,
+        "name" : "dmi_abstractcs",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_abstractauto" : {
+        "byteOffset" : "0x60",
+        "bitOffset" : 0,
+        "bitWidth" : 32,
+        "name" : "dmi_abstractauto",
+        "resetValue" : 0,
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_command" : {
+        "byteOffset" : "0x5c",
+        "bitOffset" : 0,
+        "bitWidth" : 32,
+        "name" : "dmi_command",
+        "resetValue" : 0,
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_data_0" : {
+        "byteOffset" : "0x10",
+        "bitOffset" : 0,
+        "bitWidth" : 8,
+        "name" : "dmi_data_0",
+        "resetValue" : 0,
+        "group" : "dmi_data",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_data_1" : {
+        "byteOffset" : "0x10",
+        "bitOffset" : 8,
+        "bitWidth" : 8,
+        "name" : "dmi_data_1",
+        "resetValue" : 0,
+        "group" : "dmi_data",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_data_2" : {
+        "byteOffset" : "0x10",
+        "bitOffset" : 16,
+        "bitWidth" : 8,
+        "name" : "dmi_data_2",
+        "resetValue" : 0,
+        "group" : "dmi_data",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_data_3" : {
+        "byteOffset" : "0x10",
+        "bitOffset" : 24,
+        "bitWidth" : 8,
+        "name" : "dmi_data_3",
+        "resetValue" : 0,
+        "group" : "dmi_data",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_data_4" : {
+        "byteOffset" : "0x10",
+        "bitOffset" : 32,
+        "bitWidth" : 8,
+        "name" : "dmi_data_4",
+        "resetValue" : 0,
+        "group" : "dmi_data",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_data_5" : {
+        "byteOffset" : "0x10",
+        "bitOffset" : 40,
+        "bitWidth" : 8,
+        "name" : "dmi_data_5",
+        "resetValue" : 0,
+        "group" : "dmi_data",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_data_6" : {
+        "byteOffset" : "0x10",
+        "bitOffset" : 48,
+        "bitWidth" : 8,
+        "name" : "dmi_data_6",
+        "resetValue" : 0,
+        "group" : "dmi_data",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_data_7" : {
+        "byteOffset" : "0x10",
+        "bitOffset" : 56,
+        "bitWidth" : 8,
+        "name" : "dmi_data_7",
+        "resetValue" : 0,
+        "group" : "dmi_data",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_0" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 0,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_0",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_1" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 8,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_1",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_2" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 16,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_2",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_3" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 24,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_3",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_4" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 32,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_4",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_5" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 40,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_5",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_6" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 48,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_6",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_7" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 56,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_7",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_8" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 64,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_8",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_9" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 72,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_9",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_10" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 80,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_10",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_11" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 88,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_11",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_12" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 96,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_12",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_13" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 104,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_13",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_14" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 112,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_14",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_15" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 120,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_15",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_16" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 128,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_16",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_17" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 136,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_17",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_18" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 144,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_18",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_19" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 152,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_19",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_20" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 160,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_20",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_21" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 168,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_21",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_22" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 176,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_22",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_23" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 184,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_23",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_24" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 192,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_24",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_25" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 200,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_25",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_26" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 208,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_26",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_27" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 216,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_27",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_28" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 224,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_28",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_29" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 232,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_29",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_30" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 240,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_30",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_31" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 248,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_31",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_32" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 256,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_32",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_33" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 264,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_33",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_34" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 272,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_34",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_35" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 280,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_35",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_36" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 288,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_36",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_37" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 296,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_37",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_38" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 304,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_38",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_39" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 312,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_39",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_40" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 320,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_40",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_41" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 328,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_41",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_42" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 336,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_42",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_43" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 344,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_43",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_44" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 352,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_44",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_45" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 360,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_45",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_46" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 368,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_46",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_47" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 376,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_47",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_48" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 384,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_48",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_49" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 392,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_49",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_50" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 400,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_50",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_51" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 408,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_51",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_52" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 416,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_52",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_53" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 424,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_53",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_54" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 432,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_54",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_55" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 440,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_55",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_56" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 448,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_56",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_57" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 456,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_57",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_58" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 464,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_58",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_59" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 472,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_59",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_60" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 480,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_60",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_61" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 488,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_61",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_62" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 496,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_62",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "dmi_progbuf_63" : {
+        "byteOffset" : "0x80",
+        "bitOffset" : 504,
+        "bitWidth" : 8,
+        "name" : "dmi_progbuf_63",
+        "resetValue" : 0,
+        "group" : "dmi_progbuf",
+        "accessType" : "RW"
+      }
+    } ]
+  }
+}
