@@ -41,21 +41,21 @@ sed -i '/DRAM_BASE/s/x8/x1/;/hang:/a\  j _start' rocket-chip/bootrom/bootrom.S
 make -C rocket-chip/bootrom
 
 # generate LiteX-specific Rocket configuration variants:
-# NOTE: cached (RAM) access below, uncached (MMIO) access above 0x8000_0000
+# NOTE: uncached (MMIO) access below, cached (RAM) access above 0x8000_0000
 cat >> rocket-chip/src/main/scala/subsystem/Configs.scala <<- "EOT"
 
 	class WithLitexMemPort extends Config((site, here, up) => {
 	  case ExtMem => Some(MemoryPortParams(MasterPortParams(
-	                      base = x"1000_0000",
-	                      size = x"7000_0000",
+	                      base = x"8000_0000",
+	                      size = x"8000_0000",
 	                      beatBytes = site(MemoryBusKey).beatBytes,
 	                      idBits = 4), 1))
 	})
 
 	class WithLitexMMIOPort extends Config((site, here, up) => {
 	  case ExtBus => Some(MasterPortParams(
-	                      base = x"8000_0000",
-	                      size = x"8000_0000",
+	                      base = x"1000_0000",
+	                      size = x"7000_0000",
 	                      beatBytes = site(MemoryBusKey).beatBytes,
 	                      idBits = 4))
 	})
