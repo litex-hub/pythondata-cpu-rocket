@@ -20,6 +20,11 @@
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.plusarg_reader_4",
+    "resourceId":"/vsrc/plusarg_reader.v"
+  },
+  {
     "class":"freechips.rocketchip.util.TLToAXI4IdMapAnnotation",
     "target":"TestHarness.TLToAXI4",
     "mapping":[
@@ -66,11 +71,6 @@
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_4",
-    "resourceId":"/vsrc/plusarg_reader.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
     "target":"TestHarness.plusarg_reader_5",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
@@ -87,6 +87,11 @@
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
     "target":"TestHarness.plusarg_reader_8",
+    "resourceId":"/vsrc/plusarg_reader.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.plusarg_reader_9",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
@@ -107,11 +112,6 @@
         "requestFifo":false
       }
     ]
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_9",
-    "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
@@ -200,7 +200,8 @@
     "params":{
       "baseAddress":201326592,
       "maxPriorities":7,
-      "intStages":0
+      "intStages":0,
+      "maxHarts":15872
     }
   },
   {
@@ -986,43 +987,9 @@
     "resourceId":"/vsrc/AsyncResetReg.v"
   },
   {
-    "class":"freechips.rocketchip.util.RegFieldDescMappingAnnotation",
-    "target":"TestHarness.TLDebugModuleOuter",
-    "regMappingSer":{
-      "displayName":"TLDebugModuleOuter",
-      "deviceName":"TLDebugModuleOuter",
-      "baseAddress":64,
-      "regFields":[
-        {
-          "byteOffset":"0x0",
-          "bitOffset":0,
-          "bitWidth":32,
-          "name":"dmi_dmcontrol",
-          "resetValue":0,
-          "accessType":"RW",
-          "wrType":"None",
-          "rdAction":"None",
-          "desc":"",
-          "group":"None",
-          "groupDesc":"None",
-          "volatile":false,
-          "hasReset":true,
-          "enumerations":{
-            
-          }
-        }
-      ]
-    }
-  },
-  {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
     "target":"TestHarness.AsyncResetReg_32",
     "resourceId":"/vsrc/AsyncResetReg.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_29",
-    "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
@@ -1185,9 +1152,259 @@
     "resourceId":"/vsrc/AsyncResetReg.v"
   },
   {
+    "class":"freechips.rocketchip.util.RegFieldDescMappingAnnotation",
+    "target":"TestHarness.TLDebugModuleOuter",
+    "regMappingSer":{
+      "displayName":"TLDebugModuleOuter",
+      "deviceName":"TLDebugModuleOuter",
+      "baseAddress":64,
+      "regFields":[
+        {
+          "byteOffset":"0x0",
+          "bitOffset":0,
+          "bitWidth":1,
+          "name":"dmactive",
+          "resetValue":0,
+          "accessType":"RW",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"debug module active",
+          "group":"dmcontrol",
+          "groupDesc":"debug module control register",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x0",
+          "bitOffset":1,
+          "bitWidth":1,
+          "name":"ndmreset",
+          "resetValue":0,
+          "accessType":"RW",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"debug module reset output",
+          "group":"dmcontrol",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x0",
+          "bitOffset":2,
+          "bitWidth":1,
+          "name":"clrresethaltreq",
+          "resetValue":0,
+          "accessType":"W",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"clear reset halt request",
+          "group":"dmcontrol",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x0",
+          "bitOffset":3,
+          "bitWidth":1,
+          "name":"setresethaltreq",
+          "resetValue":0,
+          "accessType":"W",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"set reset halt request",
+          "group":"dmcontrol",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x0",
+          "bitOffset":4,
+          "bitWidth":12,
+          "name":"reserved",
+          "resetValue":0,
+          "accessType":"R",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"",
+          "group":"dmcontrol",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x0",
+          "bitOffset":16,
+          "bitWidth":1,
+          "name":"reserved",
+          "resetValue":0,
+          "accessType":"R",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"",
+          "group":"dmcontrol",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x0",
+          "bitOffset":17,
+          "bitWidth":9,
+          "name":"reserved",
+          "resetValue":0,
+          "accessType":"R",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"",
+          "group":"dmcontrol",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x0",
+          "bitOffset":26,
+          "bitWidth":1,
+          "name":"reserved",
+          "resetValue":0,
+          "accessType":"R",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"",
+          "group":"dmcontrol",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x0",
+          "bitOffset":27,
+          "bitWidth":1,
+          "name":"reserved",
+          "resetValue":0,
+          "accessType":"R",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"",
+          "group":"dmcontrol",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x0",
+          "bitOffset":28,
+          "bitWidth":1,
+          "name":"ackhavereset",
+          "resetValue":0,
+          "accessType":"W",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"acknowledge reset",
+          "group":"dmcontrol",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x0",
+          "bitOffset":29,
+          "bitWidth":1,
+          "name":"reserved",
+          "resetValue":0,
+          "accessType":"R",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"",
+          "group":"dmcontrol",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x0",
+          "bitOffset":30,
+          "bitWidth":1,
+          "name":"resumereq",
+          "resetValue":0,
+          "accessType":"W",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"resume request",
+          "group":"dmcontrol",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x0",
+          "bitOffset":31,
+          "bitWidth":1,
+          "name":"haltreq",
+          "resetValue":0,
+          "accessType":"RW",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"halt request",
+          "group":"dmcontrol",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        }
+      ]
+    }
+  },
+  {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
     "target":"TestHarness.AsyncResetReg_65",
     "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.plusarg_reader_29",
+    "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
@@ -1241,6 +1458,166 @@
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_76",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_77",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_78",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_79",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_80",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_81",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_82",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_83",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_84",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_85",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_86",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_87",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_88",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_89",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_90",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_91",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_92",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_93",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_94",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_95",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_96",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_97",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_98",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_99",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_100",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_101",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_102",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_103",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_104",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_105",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_106",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_107",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
     "target":"TestHarness.plusarg_reader_30",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
@@ -1259,10 +1636,12 @@
       "nProgramBufferWords":16,
       "supportQuickAccess":false,
       "supportHartArray":true,
+      "hasAuthentication":false,
       "nHaltGroups":1,
       "nExtTriggers":0,
       "nScratch":1,
       "hasImplicitEbreak":false,
+      "hasHartResets":false,
       "hasBusMaster":false,
       "maxSupportedSBAccess":64,
       "clockGate":true
@@ -1279,17 +1658,341 @@
         {
           "byteOffset":"0x44",
           "bitOffset":0,
-          "bitWidth":32,
-          "name":"dmi_dmstatus",
+          "bitWidth":4,
+          "name":"version",
+          "resetValue":2,
+          "accessType":"R",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"version",
+          "group":"dmi_dmstatus",
+          "groupDesc":"debug module status register",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x44",
+          "bitOffset":4,
+          "bitWidth":1,
+          "name":"confstrptrvalid",
+          "resetValue":0,
+          "accessType":"R",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"confstrptrvalid",
+          "group":"dmi_dmstatus",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x44",
+          "bitOffset":5,
+          "bitWidth":1,
+          "name":"hasresethaltreq",
+          "resetValue":1,
+          "accessType":"R",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"hasresethaltreq",
+          "group":"dmi_dmstatus",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x44",
+          "bitOffset":6,
+          "bitWidth":1,
+          "name":"authbusy",
+          "resetValue":0,
+          "accessType":"R",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"authbusy",
+          "group":"dmi_dmstatus",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x44",
+          "bitOffset":7,
+          "bitWidth":1,
+          "name":"authenticated",
+          "resetValue":1,
+          "accessType":"R",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"authenticated",
+          "group":"dmi_dmstatus",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x44",
+          "bitOffset":8,
+          "bitWidth":1,
+          "name":"anyhalted",
+          "resetValue":0,
+          "accessType":"R",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"anyhalted",
+          "group":"dmi_dmstatus",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x44",
+          "bitOffset":9,
+          "bitWidth":1,
+          "name":"allhalted",
+          "resetValue":0,
+          "accessType":"R",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"allhalted",
+          "group":"dmi_dmstatus",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x44",
+          "bitOffset":10,
+          "bitWidth":1,
+          "name":"anyrunning",
+          "resetValue":1,
+          "accessType":"R",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"anyrunning",
+          "group":"dmi_dmstatus",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x44",
+          "bitOffset":11,
+          "bitWidth":1,
+          "name":"allrunning",
+          "resetValue":1,
+          "accessType":"R",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"allrunning",
+          "group":"dmi_dmstatus",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x44",
+          "bitOffset":12,
+          "bitWidth":1,
+          "name":"anyunavail",
+          "resetValue":0,
+          "accessType":"R",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"anyunavail",
+          "group":"dmi_dmstatus",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x44",
+          "bitOffset":13,
+          "bitWidth":1,
+          "name":"allunavail",
+          "resetValue":0,
+          "accessType":"R",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"allunavail",
+          "group":"dmi_dmstatus",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x44",
+          "bitOffset":14,
+          "bitWidth":1,
+          "name":"anynonexistent",
+          "resetValue":0,
+          "accessType":"R",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"anynonexistent",
+          "group":"dmi_dmstatus",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x44",
+          "bitOffset":15,
+          "bitWidth":1,
+          "name":"allnonexistent",
+          "resetValue":0,
+          "accessType":"R",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"allnonexistent",
+          "group":"dmi_dmstatus",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x44",
+          "bitOffset":16,
+          "bitWidth":1,
+          "name":"anyresumeack",
+          "resetValue":0,
+          "accessType":"R",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"anyresumeack",
+          "group":"dmi_dmstatus",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x44",
+          "bitOffset":17,
+          "bitWidth":1,
+          "name":"allresumeack",
+          "resetValue":0,
+          "accessType":"R",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"allresumeack",
+          "group":"dmi_dmstatus",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x44",
+          "bitOffset":18,
+          "bitWidth":1,
+          "name":"anyhavereset",
+          "resetValue":0,
+          "accessType":"R",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"anyhavereset",
+          "group":"dmi_dmstatus",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x44",
+          "bitOffset":19,
+          "bitWidth":1,
+          "name":"allhavereset",
+          "resetValue":0,
+          "accessType":"R",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"allhavereset",
+          "group":"dmi_dmstatus",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x44",
+          "bitOffset":20,
+          "bitWidth":2,
+          "name":"reserved",
           "resetValue":0,
           "accessType":"R",
           "wrType":"None",
           "rdAction":"None",
           "desc":"",
-          "group":"None",
+          "group":"dmi_dmstatus",
           "groupDesc":"None",
           "volatile":false,
-          "hasReset":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x44",
+          "bitOffset":22,
+          "bitWidth":1,
+          "name":"impebreak",
+          "resetValue":0,
+          "accessType":"R",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"impebreak",
+          "group":"dmi_dmstatus",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":true,
           "enumerations":{
             
           }
@@ -1297,17 +2000,89 @@
         {
           "byteOffset":"0x48",
           "bitOffset":0,
-          "bitWidth":32,
-          "name":"dmi_hartinfo",
+          "bitWidth":12,
+          "name":"dataaddr",
+          "resetValue":896,
+          "accessType":"R",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"data address",
+          "group":"dmi_hartinfo",
+          "groupDesc":"hart information",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x48",
+          "bitOffset":12,
+          "bitWidth":4,
+          "name":"datasize",
+          "resetValue":2,
+          "accessType":"R",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"number of DATA registers",
+          "group":"dmi_hartinfo",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x48",
+          "bitOffset":16,
+          "bitWidth":1,
+          "name":"dataaccess",
+          "resetValue":1,
+          "accessType":"R",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"data access type",
+          "group":"dmi_hartinfo",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x48",
+          "bitOffset":17,
+          "bitWidth":3,
+          "name":"reserved",
           "resetValue":0,
           "accessType":"R",
           "wrType":"None",
           "rdAction":"None",
           "desc":"",
-          "group":"None",
+          "group":"dmi_hartinfo",
           "groupDesc":"None",
           "volatile":false,
-          "hasReset":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x48",
+          "bitOffset":20,
+          "bitWidth":4,
+          "name":"nscratch",
+          "resetValue":1,
+          "accessType":"R",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"number of scratch registers",
+          "group":"dmi_hartinfo",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":true,
           "enumerations":{
             
           }
@@ -1321,9 +2096,9 @@
           "accessType":"R",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
-          "group":"None",
-          "groupDesc":"None",
+          "desc":"halt summary 0",
+          "group":"dmi_haltsum0",
+          "groupDesc":"Halt Summary 0",
           "volatile":false,
           "hasReset":false,
           "enumerations":{
@@ -1339,9 +2114,9 @@
           "accessType":"R",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
-          "group":"None",
-          "groupDesc":"None",
+          "desc":"halt summary 1",
+          "group":"dmi_haltsum1",
+          "groupDesc":"Halt Summary 1",
           "volatile":false,
           "hasReset":false,
           "enumerations":{
@@ -1351,17 +2126,125 @@
         {
           "byteOffset":"0x58",
           "bitOffset":0,
-          "bitWidth":32,
-          "name":"dmi_abstractcs",
+          "bitWidth":4,
+          "name":"datacount",
+          "resetValue":2,
+          "accessType":"R",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"number of DATA regsiters",
+          "group":"dmi_abstractcs",
+          "groupDesc":"abstract command control/status",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x58",
+          "bitOffset":4,
+          "bitWidth":4,
+          "name":"reserved",
           "resetValue":0,
-          "accessType":"RW",
+          "accessType":"R",
           "wrType":"None",
           "rdAction":"None",
           "desc":"",
-          "group":"None",
+          "group":"dmi_abstractcs",
           "groupDesc":"None",
           "volatile":false,
-          "hasReset":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x58",
+          "bitOffset":8,
+          "bitWidth":3,
+          "name":"cmderr",
+          "resetValue":0,
+          "accessType":"RW",
+          "wrType":"Some(ONE_TO_CLEAR)",
+          "rdAction":"None",
+          "desc":"command error",
+          "group":"dmi_abstractcs",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x58",
+          "bitOffset":11,
+          "bitWidth":1,
+          "name":"reserved",
+          "resetValue":0,
+          "accessType":"R",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"",
+          "group":"dmi_abstractcs",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x58",
+          "bitOffset":12,
+          "bitWidth":1,
+          "name":"busy",
+          "resetValue":0,
+          "accessType":"R",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"busy",
+          "group":"dmi_abstractcs",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x58",
+          "bitOffset":13,
+          "bitWidth":11,
+          "name":"reserved",
+          "resetValue":0,
+          "accessType":"R",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"",
+          "group":"dmi_abstractcs",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x58",
+          "bitOffset":24,
+          "bitWidth":5,
+          "name":"progbufsize",
+          "resetValue":16,
+          "accessType":"R",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"number of PROGBUF regsiters",
+          "group":"dmi_abstractcs",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":true,
           "enumerations":{
             
           }
@@ -1369,14 +2252,50 @@
         {
           "byteOffset":"0x60",
           "bitOffset":0,
-          "bitWidth":32,
-          "name":"dmi_abstractauto",
+          "bitWidth":2,
+          "name":"autoexecdata",
           "resetValue":0,
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
+          "desc":"abstract command data autoexec",
+          "group":"dmi_abstractauto",
+          "groupDesc":"abstract command autoexec",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x60",
+          "bitOffset":2,
+          "bitWidth":14,
+          "name":"reserved",
+          "resetValue":0,
+          "accessType":"R",
+          "wrType":"None",
+          "rdAction":"None",
           "desc":"",
-          "group":"None",
+          "group":"dmi_abstractauto",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x60",
+          "bitOffset":16,
+          "bitWidth":16,
+          "name":"autoexecprogbuf",
+          "resetValue":0,
+          "accessType":"RW",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"abstract command progbuf autoexec",
+          "group":"dmi_abstractauto",
           "groupDesc":"None",
           "volatile":false,
           "hasReset":true,
@@ -1393,10 +2312,10 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
-          "group":"None",
-          "groupDesc":"None",
-          "volatile":false,
+          "desc":"abstract command register",
+          "group":"dmi_command",
+          "groupDesc":"Abstract Command Register",
+          "volatile":true,
           "hasReset":true,
           "enumerations":{
             
@@ -1411,10 +2330,10 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command data register 0",
           "group":"dmi_data",
           "groupDesc":"None",
-          "volatile":false,
+          "volatile":true,
           "hasReset":true,
           "enumerations":{
             
@@ -1429,10 +2348,10 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command data register 1",
           "group":"dmi_data",
           "groupDesc":"None",
-          "volatile":false,
+          "volatile":true,
           "hasReset":true,
           "enumerations":{
             
@@ -1447,10 +2366,10 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command data register 2",
           "group":"dmi_data",
           "groupDesc":"None",
-          "volatile":false,
+          "volatile":true,
           "hasReset":true,
           "enumerations":{
             
@@ -1465,10 +2384,10 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command data register 3",
           "group":"dmi_data",
           "groupDesc":"None",
-          "volatile":false,
+          "volatile":true,
           "hasReset":true,
           "enumerations":{
             
@@ -1483,10 +2402,10 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command data register 4",
           "group":"dmi_data",
           "groupDesc":"None",
-          "volatile":false,
+          "volatile":true,
           "hasReset":true,
           "enumerations":{
             
@@ -1501,10 +2420,10 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command data register 5",
           "group":"dmi_data",
           "groupDesc":"None",
-          "volatile":false,
+          "volatile":true,
           "hasReset":true,
           "enumerations":{
             
@@ -1519,10 +2438,10 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command data register 6",
           "group":"dmi_data",
           "groupDesc":"None",
-          "volatile":false,
+          "volatile":true,
           "hasReset":true,
           "enumerations":{
             
@@ -1537,10 +2456,10 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command data register 7",
           "group":"dmi_data",
           "groupDesc":"None",
-          "volatile":false,
+          "volatile":true,
           "hasReset":true,
           "enumerations":{
             
@@ -1555,7 +2474,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 0",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -1573,7 +2492,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 1",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -1591,7 +2510,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 2",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -1609,7 +2528,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 3",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -1627,7 +2546,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 4",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -1645,7 +2564,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 5",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -1663,7 +2582,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 6",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -1681,7 +2600,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 7",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -1699,7 +2618,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 8",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -1717,7 +2636,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 9",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -1735,7 +2654,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 10",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -1753,7 +2672,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 11",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -1771,7 +2690,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 12",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -1789,7 +2708,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 13",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -1807,7 +2726,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 14",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -1825,7 +2744,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 15",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -1843,7 +2762,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 16",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -1861,7 +2780,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 17",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -1879,7 +2798,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 18",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -1897,7 +2816,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 19",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -1915,7 +2834,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 20",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -1933,7 +2852,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 21",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -1951,7 +2870,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 22",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -1969,7 +2888,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 23",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -1987,7 +2906,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 24",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -2005,7 +2924,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 25",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -2023,7 +2942,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 26",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -2041,7 +2960,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 27",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -2059,7 +2978,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 28",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -2077,7 +2996,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 29",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -2095,7 +3014,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 30",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -2113,7 +3032,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 31",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -2131,7 +3050,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 32",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -2149,7 +3068,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 33",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -2167,7 +3086,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 34",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -2185,7 +3104,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 35",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -2203,7 +3122,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 36",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -2221,7 +3140,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 37",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -2239,7 +3158,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 38",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -2257,7 +3176,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 39",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -2275,7 +3194,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 40",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -2293,7 +3212,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 41",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -2311,7 +3230,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 42",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -2329,7 +3248,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 43",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -2347,7 +3266,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 44",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -2365,7 +3284,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 45",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -2383,7 +3302,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 46",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -2401,7 +3320,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 47",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -2419,7 +3338,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 48",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -2437,7 +3356,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 49",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -2455,7 +3374,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 50",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -2473,7 +3392,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 51",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -2491,7 +3410,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 52",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -2509,7 +3428,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 53",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -2527,7 +3446,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 54",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -2545,7 +3464,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 55",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -2563,7 +3482,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 56",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -2581,7 +3500,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 57",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -2599,7 +3518,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 58",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -2617,7 +3536,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 59",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -2635,7 +3554,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 60",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -2653,7 +3572,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 61",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -2671,7 +3590,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 62",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -2689,7 +3608,7 @@
           "accessType":"RW",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"",
+          "desc":"abstract command progbuf register 63",
           "group":"dmi_progbuf",
           "groupDesc":"None",
           "volatile":false,
@@ -5684,166 +6603,6 @@
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.AsyncResetReg_76",
-    "resourceId":"/vsrc/AsyncResetReg.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.AsyncResetReg_77",
-    "resourceId":"/vsrc/AsyncResetReg.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.AsyncResetReg_78",
-    "resourceId":"/vsrc/AsyncResetReg.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.AsyncResetReg_79",
-    "resourceId":"/vsrc/AsyncResetReg.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.AsyncResetReg_80",
-    "resourceId":"/vsrc/AsyncResetReg.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.AsyncResetReg_81",
-    "resourceId":"/vsrc/AsyncResetReg.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.AsyncResetReg_82",
-    "resourceId":"/vsrc/AsyncResetReg.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.AsyncResetReg_83",
-    "resourceId":"/vsrc/AsyncResetReg.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.AsyncResetReg_84",
-    "resourceId":"/vsrc/AsyncResetReg.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.AsyncResetReg_85",
-    "resourceId":"/vsrc/AsyncResetReg.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.AsyncResetReg_86",
-    "resourceId":"/vsrc/AsyncResetReg.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.AsyncResetReg_87",
-    "resourceId":"/vsrc/AsyncResetReg.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.AsyncResetReg_88",
-    "resourceId":"/vsrc/AsyncResetReg.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.AsyncResetReg_89",
-    "resourceId":"/vsrc/AsyncResetReg.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.AsyncResetReg_90",
-    "resourceId":"/vsrc/AsyncResetReg.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.AsyncResetReg_91",
-    "resourceId":"/vsrc/AsyncResetReg.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.AsyncResetReg_92",
-    "resourceId":"/vsrc/AsyncResetReg.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.AsyncResetReg_93",
-    "resourceId":"/vsrc/AsyncResetReg.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.AsyncResetReg_94",
-    "resourceId":"/vsrc/AsyncResetReg.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.AsyncResetReg_95",
-    "resourceId":"/vsrc/AsyncResetReg.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.AsyncResetReg_96",
-    "resourceId":"/vsrc/AsyncResetReg.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.AsyncResetReg_97",
-    "resourceId":"/vsrc/AsyncResetReg.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.AsyncResetReg_98",
-    "resourceId":"/vsrc/AsyncResetReg.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.AsyncResetReg_99",
-    "resourceId":"/vsrc/AsyncResetReg.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.AsyncResetReg_100",
-    "resourceId":"/vsrc/AsyncResetReg.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.AsyncResetReg_101",
-    "resourceId":"/vsrc/AsyncResetReg.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.AsyncResetReg_102",
-    "resourceId":"/vsrc/AsyncResetReg.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.AsyncResetReg_103",
-    "resourceId":"/vsrc/AsyncResetReg.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.AsyncResetReg_104",
-    "resourceId":"/vsrc/AsyncResetReg.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.AsyncResetReg_105",
-    "resourceId":"/vsrc/AsyncResetReg.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.AsyncResetReg_106",
-    "resourceId":"/vsrc/AsyncResetReg.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.AsyncResetReg_107",
-    "resourceId":"/vsrc/AsyncResetReg.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
     "target":"TestHarness.AsyncResetReg_108",
     "resourceId":"/vsrc/AsyncResetReg.v"
   },
@@ -5919,6 +6678,156 @@
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_123",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_124",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_125",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_126",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_127",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_128",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_129",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_130",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_131",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_132",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_133",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_134",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_135",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_136",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_137",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_138",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_139",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_140",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_141",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_142",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_143",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_144",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_145",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_146",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_147",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_148",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_149",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_150",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_151",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.AsyncResetReg_152",
+    "resourceId":"/vsrc/AsyncResetReg.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
     "target":"TestHarness.plusarg_reader_32",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
@@ -5937,7 +6846,7 @@
   },
   {
     "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.DCacheModuleanon2"
+    "target":"TestHarness.DCacheModuleDCacheModuleImplanon2"
   },
   {
     "class":"freechips.rocketchip.util.SRAMAnnotation",
@@ -5961,7 +6870,7 @@
   },
   {
     "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.DCacheModuleanon3"
+    "target":"TestHarness.DCacheModuleDCacheModuleImplanon3"
   },
   {
     "class":"firrtl.transforms.DontTouchAnnotation",
@@ -6038,6 +6947,7 @@
         "useAtomics":true,
         "useAtomicsOnlyForIO":false,
         "useCompressed":true,
+        "useRVE":false,
         "useSCIE":false,
         "nLocalInterrupts":0,
         "nBreakpoints":1,
@@ -6089,17 +6999,17 @@
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.AsyncResetReg_123",
+    "target":"TestHarness.AsyncResetReg_153",
     "resourceId":"/vsrc/AsyncResetReg.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.AsyncResetReg_124",
+    "target":"TestHarness.AsyncResetReg_154",
     "resourceId":"/vsrc/AsyncResetReg.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.AsyncResetReg_125",
+    "target":"TestHarness.AsyncResetReg_155",
     "resourceId":"/vsrc/AsyncResetReg.v"
   },
   {
@@ -6215,11 +7125,11 @@
           "r":true,
           "w":true,
           "x":true,
-          "c":true,
+          "c":false,
           "a":false
         },
         "names":[
-          "memory@10000000"
+          "mmio-port-axi4@10000000"
         ]
       },
       {
@@ -6231,11 +7141,11 @@
           "r":true,
           "w":true,
           "x":true,
-          "c":false,
+          "c":true,
           "a":false
         },
         "names":[
-          "mmio-port-axi4@80000000"
+          "memory@80000000"
         ]
       }
     ],
@@ -6334,11 +7244,11 @@
           "r":true,
           "w":true,
           "x":true,
-          "c":true,
+          "c":false,
           "a":false
         },
         "names":[
-          "memory@10000000"
+          "mmio-port-axi4@10000000"
         ]
       },
       {
@@ -6350,11 +7260,11 @@
           "r":true,
           "w":true,
           "x":true,
-          "c":false,
+          "c":true,
           "a":false
         },
         "names":[
-          "mmio-port-axi4@80000000"
+          "memory@80000000"
         ]
       }
     ],
@@ -6723,36 +7633,16 @@
   {
     "class":"freechips.rocketchip.util.SRAMAnnotation",
     "target":"TestHarness.AXI4RAM.mem",
-    "address_width":27,
+    "address_width":28,
     "name":"mem",
     "data_width":64,
-    "depth":134217728,
+    "depth":268435456,
     "description":"mem",
     "write_mask_granularity":8
   },
   {
     "class":"freechips.rocketchip.util.SRAMAnnotation",
     "target":"TestHarness.AXI4RAM_1.mem",
-    "address_width":26,
-    "name":"mem",
-    "data_width":64,
-    "depth":67108864,
-    "description":"mem",
-    "write_mask_granularity":8
-  },
-  {
-    "class":"freechips.rocketchip.util.SRAMAnnotation",
-    "target":"TestHarness.AXI4RAM_2.mem",
-    "address_width":25,
-    "name":"mem",
-    "data_width":64,
-    "depth":33554432,
-    "description":"mem",
-    "write_mask_granularity":8
-  },
-  {
-    "class":"freechips.rocketchip.util.SRAMAnnotation",
-    "target":"TestHarness.AXI4RAM_3.mem",
     "address_width":9,
     "name":"mem",
     "data_width":64,
