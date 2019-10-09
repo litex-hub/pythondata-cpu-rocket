@@ -32,9 +32,9 @@
 			};
 		};
 	};
-	L8: memory@10000000 {
+	L8: memory@80000000 {
 		device_type = "memory";
-		reg = <0x10000000 0x70000000>;
+		reg = <0x80000000 0x80000000>;
 	};
 	L12: soc {
 		#address-cells = <1>;
@@ -71,11 +71,11 @@
 			riscv,max-priority = <7>;
 			riscv,ndev = <4>;
 		};
-		L9: mmio-port-axi4@80000000 {
+		L9: mmio-port-axi4@10000000 {
 			#address-cells = <1>;
 			#size-cells = <1>;
 			compatible = "simple-bus";
-			ranges = <0x80000000 0x80000000 0x80000000>;
+			ranges = <0x10000000 0x10000000 0x70000000>;
 		};
 		L10: rom@10000 {
 			compatible = "sifive,rom0";
