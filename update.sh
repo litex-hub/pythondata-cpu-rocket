@@ -56,7 +56,7 @@ cat >> rocket-chip/src/main/scala/subsystem/Configs.scala <<- "EOT"
 	  case ExtBus => Some(MasterPortParams(
 	                      base = x"1000_0000",
 	                      size = x"7000_0000",
-	                      beatBytes = site(MemoryBusKey).beatBytes,
+	                      beatBytes = site(SystemBusKey).beatBytes,
 	                      idBits = 4))
 	})
 	EOT
@@ -73,21 +73,36 @@ cat >> rocket-chip/src/main/scala/system/Configs.scala <<- "EOT"
 
 	class LitexConfig extends Config(
 	  new WithNSmallCores(1) ++
+	  new WithEdgeDataBits(64) ++
 	  new BaseLitexConfig
 	)
 
 	class LitexLinuxConfig extends Config(
 	  new WithNMedCores(1) ++
+	  new WithEdgeDataBits(64) ++
+	  new BaseLitexConfig
+	)
+
+	class LitexLinuxDConfig extends Config(
+	  new WithNMedCores(1) ++
+	  new WithEdgeDataBits(128) ++
+	  new BaseLitexConfig
+	)
+
+	class LitexLinuxQConfig extends Config(
+	  new WithNMedCores(1) ++
+	  new WithEdgeDataBits(256) ++
 	  new BaseLitexConfig
 	)
 
 	class LitexFullConfig extends Config(
 	  new WithNBigCores(1) ++
+	  new WithEdgeDataBits(64) ++
 	  new BaseLitexConfig
 	)
 	EOT
-for CFG in LitexConfig LitexLinuxConfig LitexFullConfig; do
-  make RISCV=${HOME}/RISCV -C rocket-chip/vsim verilog CONFIG=${CFG}
+for CFG in '' Linux LinuxD LinuxQ Full; do
+  make RISCV=${HOME}/RISCV -C rocket-chip/vsim verilog CONFIG=Litex${CFG}Config
 done
 
 # install generated files for use by LiteX:
