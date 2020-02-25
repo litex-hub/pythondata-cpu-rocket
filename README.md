@@ -16,7 +16,7 @@ with open(os.path.join(litex.data.cpu.rocket.location, my_data_file)) as f:
     print(f.read())
 ```
 
-The data files come from https://github.com/enjoy-digital/rocket-litex-verilog
+The data files come from https://github.com/litex-hub/litex-verilog-rocket
 and are imported using `git subtrees` to the directory
 [litex/data/cpu/rocket/verilog](litex/data/cpu/rocket/verilog].
 
