@@ -1,5 +1,336 @@
 [
   {
+    "class":"freechips.rocketchip.stage.phases.RocketTestSuiteAnnotation",
+    "tests":[
+      {
+        "dir":"$(RISCV)/riscv64-unknown-elf/share/riscv-tests/benchmarks",
+        "names":[
+          "mm",
+          "spmv",
+          "mt-vvadd"
+        ]
+      },
+      {
+        "names":[
+          "ldst",
+          "move",
+          "fcmp",
+          "fcvt",
+          "fcvt_w",
+          "fclass",
+          "fadd",
+          "fdiv",
+          "fmin",
+          "fmadd"
+        ],
+        "envName":"p"
+      },
+      {
+        "names":[
+          "ldst",
+          "move",
+          "fcmp",
+          "fcvt",
+          "fcvt_w",
+          "fclass",
+          "fadd",
+          "fdiv",
+          "fmin",
+          "fmadd"
+        ],
+        "envName":"v"
+      },
+      {
+        "names":[
+          "ldst",
+          "move",
+          "fcmp",
+          "fcvt",
+          "fcvt_w",
+          "fclass",
+          "fadd",
+          "fdiv",
+          "fmin",
+          "fmadd",
+          "structural"
+        ],
+        "envName":"p"
+      },
+      {
+        "names":[
+          "ldst",
+          "move",
+          "fcmp",
+          "fcvt",
+          "fcvt_w",
+          "fclass",
+          "fadd",
+          "fdiv",
+          "fmin",
+          "fmadd",
+          "structural"
+        ],
+        "envName":"v"
+      },
+      {
+        "names":[
+          "amoadd_w",
+          "amoand_w",
+          "amoor_w",
+          "amoxor_w",
+          "amoswap_w",
+          "amomax_w",
+          "amomaxu_w",
+          "amomin_w",
+          "amominu_w",
+          "lrsc",
+          "amoadd_d",
+          "amoand_d",
+          "amoor_d",
+          "amoxor_d",
+          "amoswap_d",
+          "amomax_d",
+          "amomaxu_d",
+          "amomin_d",
+          "amominu_d"
+        ],
+        "envName":"p"
+      },
+      {
+        "names":[
+          "amoadd_w",
+          "amoand_w",
+          "amoor_w",
+          "amoxor_w",
+          "amoswap_w",
+          "amomax_w",
+          "amomaxu_w",
+          "amomin_w",
+          "amominu_w",
+          "lrsc",
+          "amoadd_d",
+          "amoand_d",
+          "amoor_d",
+          "amoxor_d",
+          "amoswap_d",
+          "amomax_d",
+          "amomaxu_d",
+          "amomin_d",
+          "amominu_d"
+        ],
+        "envName":"v"
+      },
+      {
+        "names":[
+          "rvc"
+        ],
+        "envName":"p"
+      },
+      {
+        "names":[
+          "rvc"
+        ],
+        "envName":"v"
+      },
+      {
+        "names":[
+          "simple",
+          "add",
+          "addi",
+          "and",
+          "andi",
+          "auipc",
+          "beq",
+          "bge",
+          "bgeu",
+          "blt",
+          "bltu",
+          "bne",
+          "fence_i",
+          "jal",
+          "jalr",
+          "lb",
+          "lbu",
+          "lh",
+          "lhu",
+          "lui",
+          "lw",
+          "or",
+          "ori",
+          "sb",
+          "sh",
+          "sw",
+          "sll",
+          "slli",
+          "slt",
+          "slti",
+          "sra",
+          "srai",
+          "srl",
+          "srli",
+          "sub",
+          "xor",
+          "xori",
+          "addw",
+          "addiw",
+          "ld",
+          "lwu",
+          "sd",
+          "slliw",
+          "sllw",
+          "sltiu",
+          "sltu",
+          "sraiw",
+          "sraw",
+          "srliw",
+          "srlw",
+          "subw"
+        ],
+        "envName":"p"
+      },
+      {
+        "names":[
+          "csr",
+          "ma_fetch",
+          "scall",
+          "sbreak",
+          "wfi",
+          "dirty"
+        ],
+        "envName":"p"
+      },
+      {
+        "names":[
+          "csr",
+          "mcsr",
+          "illegal",
+          "ma_addr",
+          "ma_fetch",
+          "sbreak",
+          "scall",
+          "breakpoint",
+          "access"
+        ],
+        "envName":"p"
+      },
+      {
+        "names":[
+          "simple",
+          "add",
+          "addi",
+          "and",
+          "andi",
+          "auipc",
+          "beq",
+          "bge",
+          "bgeu",
+          "blt",
+          "bltu",
+          "bne",
+          "fence_i",
+          "jal",
+          "jalr",
+          "lb",
+          "lbu",
+          "lh",
+          "lhu",
+          "lui",
+          "lw",
+          "or",
+          "ori",
+          "sb",
+          "sh",
+          "sw",
+          "sll",
+          "slli",
+          "slt",
+          "slti",
+          "sra",
+          "srai",
+          "srl",
+          "srli",
+          "sub",
+          "xor",
+          "xori",
+          "addw",
+          "addiw",
+          "ld",
+          "lwu",
+          "sd",
+          "slliw",
+          "sllw",
+          "sltiu",
+          "sltu",
+          "sraiw",
+          "sraw",
+          "srliw",
+          "srlw",
+          "subw"
+        ],
+        "envName":"v"
+      },
+      {
+        "names":[
+          "mul",
+          "mulh",
+          "mulhsu",
+          "mulhu",
+          "div",
+          "divu",
+          "rem",
+          "remu",
+          "divuw",
+          "divw",
+          "mulw",
+          "remuw",
+          "remw"
+        ],
+        "envName":"v"
+      },
+      {
+        "dir":"$(RISCV)/riscv64-unknown-elf/share/riscv-tests/benchmarks",
+        "names":[
+          "median",
+          "multiply",
+          "qsort",
+          "towers",
+          "vvadd",
+          "dhrystone",
+          "mt-matmul"
+        ]
+      },
+      {
+        "names":[
+          "rv64ud-v-fcvt",
+          "rv64ud-p-fdiv",
+          "rv64ud-v-fadd",
+          "rv64uf-v-fadd",
+          "rv64um-v-mul",
+          "rv64mi-p-breakpoint",
+          "rv64uc-v-rvc",
+          "rv64ud-v-structural",
+          "rv64si-p-wfi",
+          "rv64um-v-divw",
+          "rv64ua-v-lrsc",
+          "rv64ui-v-fence_i",
+          "rv64ud-v-fcvt_w",
+          "rv64uf-v-fmin",
+          "rv64ui-v-sb",
+          "rv64ua-v-amomax_d",
+          "rv64ud-v-move",
+          "rv64ud-v-fclass",
+          "rv64ua-v-amoand_d",
+          "rv64ua-v-amoxor_d",
+          "rv64si-p-sbreak",
+          "rv64ud-v-fmadd",
+          "rv64uf-v-ldst",
+          "rv64um-v-mulh",
+          "rv64si-p-dirty"
+        ]
+      }
+    ]
+  },
+  {
     "class":"firrtl.options.OutputAnnotationFileAnnotation",
     "file":"TestHarness"
   },
@@ -24572,7 +24903,7 @@
     "target":"TestHarness.DCache.tag_array",
     "address_width":6,
     "name":"tag_array",
-    "data_width":22,
+    "data_width":88,
     "depth":64,
     "description":"DCache Tag Array",
     "write_mask_granularity":22
@@ -24582,7 +24913,7 @@
     "target":"TestHarness.DCacheDataArray.data_arrays_0",
     "address_width":9,
     "name":"data_arrays_0",
-    "data_width":64,
+    "data_width":256,
     "depth":512,
     "description":"DCache Data Array",
     "write_mask_granularity":8
@@ -24608,7 +24939,7 @@
     "target":"TestHarness.ICache.tag_array",
     "address_width":6,
     "name":"tag_array",
-    "data_width":21,
+    "data_width":84,
     "depth":64,
     "description":"ICache Tag Array",
     "write_mask_granularity":21
@@ -24618,7 +24949,7 @@
     "target":"TestHarness.ICache.data_arrays_0",
     "address_width":9,
     "name":"data_arrays_0",
-    "data_width":32,
+    "data_width":128,
     "depth":512,
     "description":"ICache Data Array",
     "write_mask_granularity":32
@@ -24628,15 +24959,64 @@
     "target":"TestHarness.ICache.data_arrays_1",
     "address_width":9,
     "name":"data_arrays_1",
-    "data_width":32,
+    "data_width":128,
     "depth":512,
     "description":"ICache Data Array",
     "write_mask_granularity":32
   },
   {
+    "class":"freechips.rocketchip.util.ParamsAnnotation",
+    "target":"TestHarness.BTB",
+    "paramsClassName":"freechips.rocketchip.rocket.BTBParams",
+    "params":{
+      "nPages":6,
+      "nMatchBits":14,
+      "nEntries":28,
+      "bhtParams":{
+        "nEntries":512,
+        "counterLength":1,
+        "historyLength":8,
+        "historyBits":3
+      },
+      "nRAS":6,
+      "updatesOutOfOrder":false
+    }
+  },
+  {
+    "class":"freechips.rocketchip.util.ParamsAnnotation",
+    "target":"TestHarness.BTB",
+    "paramsClassName":"freechips.rocketchip.rocket.BHTParams",
+    "params":{
+      "nEntries":512,
+      "counterLength":1,
+      "historyLength":8,
+      "historyBits":3
+    }
+  },
+  {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
     "target":"TestHarness.plusarg_reader_32",
     "resourceId":"/vsrc/plusarg_reader.v"
+  },
+  {
+    "class":"freechips.rocketchip.util.RetimeModuleAnnotation",
+    "target":"TestHarness.FPUFMAPipe"
+  },
+  {
+    "class":"freechips.rocketchip.util.RetimeModuleAnnotation",
+    "target":"TestHarness.FPToInt"
+  },
+  {
+    "class":"freechips.rocketchip.util.RetimeModuleAnnotation",
+    "target":"TestHarness.IntToFP"
+  },
+  {
+    "class":"freechips.rocketchip.util.RetimeModuleAnnotation",
+    "target":"TestHarness.FPToFP"
+  },
+  {
+    "class":"freechips.rocketchip.util.RetimeModuleAnnotation",
+    "target":"TestHarness.FPUFMAPipe_1"
   },
   {
     "class":"freechips.rocketchip.util.ParamsAnnotation",
@@ -24645,12 +25025,25 @@
     "params":{
       "name":"tile",
       "dataScratchpadBytes":0,
+      "btb":{
+        "nEntries":28,
+        "nMatchBits":14,
+        "nPages":6,
+        "nRAS":6,
+        "bhtParams":{
+          "nEntries":512,
+          "counterLength":1,
+          "historyLength":8,
+          "historyBits":3
+        },
+        "updatesOutOfOrder":false
+      },
       "hartId":0,
       "icache":{
         "nSets":64,
-        "nWays":1,
+        "nWays":4,
         "rowBits":64,
-        "nTLBEntries":4,
+        "nTLBEntries":32,
         "cacheIdBits":0,
         "prefetch":false,
         "blockBytes":64,
@@ -24686,18 +25079,24 @@
         "mvendorid":0,
         "mimpid":538447876,
         "mulDiv":{
-          "mulUnroll":1,
+          "mulUnroll":8,
           "divUnroll":1,
-          "mulEarlyOut":false,
-          "divEarlyOut":false,
+          "mulEarlyOut":true,
+          "divEarlyOut":true,
           "divEarlyOutGranularity":1
+        },
+        "fpu":{
+          "fLen":64,
+          "divSqrt":true,
+          "sfmaLatency":3,
+          "dfmaLatency":4
         }
       },
       "dcache":{
         "nSets":64,
-        "nWays":1,
+        "nWays":4,
         "rowBits":64,
-        "nTLBEntries":4,
+        "nTLBEntries":32,
         "dataECCBytes":1,
         "nMSHRs":0,
         "nSDQ":17,
@@ -25367,5 +25766,9 @@
   {
     "class":"firrtl.stage.RunFirrtlTransformAnnotation",
     "transform":"firrtl.transforms.BlackBoxSourceHelper"
+  },
+  {
+    "class":"firrtl.options.TargetDirAnnotation",
+    "directory":"/home/somlo/LITEX/litex/litex/soc/cores/cpu/rocket/litex-data-cpu-rocket/litex/data/cpu/rocket/verilog/rocket-chip/vsim/generated-src"
   }
 ]

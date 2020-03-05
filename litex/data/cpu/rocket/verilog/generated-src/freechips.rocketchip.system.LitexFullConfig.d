@@ -55,64 +55,238 @@ run-bmark-tests-fst: $(addprefix $(output_dir)/, $(addsuffix .fst, $(rvd-bmark-t
 run-bmark-tests-fast: $(addprefix $(output_dir)/, $(addsuffix .run, $(rvd-bmark-tests) $(rvi-bmark-tests)))
 	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $^ /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
 
-rv64um-v-asm-tests = \
-	rv64um-v-mul \
-	rv64um-v-mulh \
-	rv64um-v-mulhsu \
-	rv64um-v-mulhu \
-	rv64um-v-div \
-	rv64um-v-divu \
-	rv64um-v-rem \
-	rv64um-v-remu \
-	rv64um-v-divuw \
-	rv64um-v-divw \
-	rv64um-v-mulw \
-	rv64um-v-remuw \
-	rv64um-v-remw
+rv64uf-p-asm-tests = \
+	rv64uf-p-ldst \
+	rv64uf-p-move \
+	rv64uf-p-fcmp \
+	rv64uf-p-fcvt \
+	rv64uf-p-fcvt_w \
+	rv64uf-p-fclass \
+	rv64uf-p-fadd \
+	rv64uf-p-fdiv \
+	rv64uf-p-fmin \
+	rv64uf-p-fmadd
 
-$(addprefix $(output_dir)/, $(addsuffix .hex, $(rv64um-v-asm-tests))): $(output_dir)/%.hex: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%.hex
+$(addprefix $(output_dir)/, $(addsuffix .hex, $(rv64uf-p-asm-tests))): $(output_dir)/%.hex: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%.hex
 	mkdir -p $(output_dir)
 	ln -fs $< $@
 
-$(addprefix $(output_dir)/, $(rv64um-v-asm-tests)): $(output_dir)/%: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%
+$(addprefix $(output_dir)/, $(rv64uf-p-asm-tests)): $(output_dir)/%: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%
 	mkdir -p $(output_dir)
 	ln -fs $< $@
 
-run-rv64um-v-asm-tests: $(addprefix $(output_dir)/, $(addsuffix .out, $(rv64um-v-asm-tests)))
+run-rv64uf-p-asm-tests: $(addprefix $(output_dir)/, $(addsuffix .out, $(rv64uf-p-asm-tests)))
 	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $^ /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
 
-run-rv64um-v-asm-tests-debug: $(addprefix $(output_dir)/, $(addsuffix .vpd, $(rv64um-v-asm-tests)))
+run-rv64uf-p-asm-tests-debug: $(addprefix $(output_dir)/, $(addsuffix .vpd, $(rv64uf-p-asm-tests)))
 	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.vpd,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
 
-run-rv64um-v-asm-tests-fst: $(addprefix $(output_dir)/, $(addsuffix .fst, $(rv64um-v-asm-tests)))
+run-rv64uf-p-asm-tests-fst: $(addprefix $(output_dir)/, $(addsuffix .fst, $(rv64uf-p-asm-tests)))
 	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.fst,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
 
-rv64mi-p-asm-tests = \
-	rv64mi-p-csr \
-	rv64mi-p-mcsr \
-	rv64mi-p-illegal \
-	rv64mi-p-ma_addr \
-	rv64mi-p-ma_fetch \
-	rv64mi-p-sbreak \
-	rv64mi-p-scall \
-	rv64mi-p-breakpoint \
-	rv64mi-p-access
+rv64uf-v-asm-tests = \
+	rv64uf-v-ldst \
+	rv64uf-v-move \
+	rv64uf-v-fcmp \
+	rv64uf-v-fcvt \
+	rv64uf-v-fcvt_w \
+	rv64uf-v-fclass \
+	rv64uf-v-fadd \
+	rv64uf-v-fdiv \
+	rv64uf-v-fmin \
+	rv64uf-v-fmadd
 
-$(addprefix $(output_dir)/, $(addsuffix .hex, $(rv64mi-p-asm-tests))): $(output_dir)/%.hex: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%.hex
+$(addprefix $(output_dir)/, $(addsuffix .hex, $(rv64uf-v-asm-tests))): $(output_dir)/%.hex: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%.hex
 	mkdir -p $(output_dir)
 	ln -fs $< $@
 
-$(addprefix $(output_dir)/, $(rv64mi-p-asm-tests)): $(output_dir)/%: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%
+$(addprefix $(output_dir)/, $(rv64uf-v-asm-tests)): $(output_dir)/%: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%
 	mkdir -p $(output_dir)
 	ln -fs $< $@
 
-run-rv64mi-p-asm-tests: $(addprefix $(output_dir)/, $(addsuffix .out, $(rv64mi-p-asm-tests)))
+run-rv64uf-v-asm-tests: $(addprefix $(output_dir)/, $(addsuffix .out, $(rv64uf-v-asm-tests)))
 	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $^ /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
 
-run-rv64mi-p-asm-tests-debug: $(addprefix $(output_dir)/, $(addsuffix .vpd, $(rv64mi-p-asm-tests)))
+run-rv64uf-v-asm-tests-debug: $(addprefix $(output_dir)/, $(addsuffix .vpd, $(rv64uf-v-asm-tests)))
 	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.vpd,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
 
-run-rv64mi-p-asm-tests-fst: $(addprefix $(output_dir)/, $(addsuffix .fst, $(rv64mi-p-asm-tests)))
+run-rv64uf-v-asm-tests-fst: $(addprefix $(output_dir)/, $(addsuffix .fst, $(rv64uf-v-asm-tests)))
+	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.fst,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
+
+rv64ud-p-asm-tests = \
+	rv64ud-p-ldst \
+	rv64ud-p-move \
+	rv64ud-p-fcmp \
+	rv64ud-p-fcvt \
+	rv64ud-p-fcvt_w \
+	rv64ud-p-fclass \
+	rv64ud-p-fadd \
+	rv64ud-p-fdiv \
+	rv64ud-p-fmin \
+	rv64ud-p-fmadd \
+	rv64ud-p-structural
+
+$(addprefix $(output_dir)/, $(addsuffix .hex, $(rv64ud-p-asm-tests))): $(output_dir)/%.hex: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%.hex
+	mkdir -p $(output_dir)
+	ln -fs $< $@
+
+$(addprefix $(output_dir)/, $(rv64ud-p-asm-tests)): $(output_dir)/%: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%
+	mkdir -p $(output_dir)
+	ln -fs $< $@
+
+run-rv64ud-p-asm-tests: $(addprefix $(output_dir)/, $(addsuffix .out, $(rv64ud-p-asm-tests)))
+	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $^ /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
+
+run-rv64ud-p-asm-tests-debug: $(addprefix $(output_dir)/, $(addsuffix .vpd, $(rv64ud-p-asm-tests)))
+	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.vpd,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
+
+run-rv64ud-p-asm-tests-fst: $(addprefix $(output_dir)/, $(addsuffix .fst, $(rv64ud-p-asm-tests)))
+	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.fst,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
+
+rv64ud-v-asm-tests = \
+	rv64ud-v-ldst \
+	rv64ud-v-move \
+	rv64ud-v-fcmp \
+	rv64ud-v-fcvt \
+	rv64ud-v-fcvt_w \
+	rv64ud-v-fclass \
+	rv64ud-v-fadd \
+	rv64ud-v-fdiv \
+	rv64ud-v-fmin \
+	rv64ud-v-fmadd \
+	rv64ud-v-structural
+
+$(addprefix $(output_dir)/, $(addsuffix .hex, $(rv64ud-v-asm-tests))): $(output_dir)/%.hex: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%.hex
+	mkdir -p $(output_dir)
+	ln -fs $< $@
+
+$(addprefix $(output_dir)/, $(rv64ud-v-asm-tests)): $(output_dir)/%: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%
+	mkdir -p $(output_dir)
+	ln -fs $< $@
+
+run-rv64ud-v-asm-tests: $(addprefix $(output_dir)/, $(addsuffix .out, $(rv64ud-v-asm-tests)))
+	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $^ /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
+
+run-rv64ud-v-asm-tests-debug: $(addprefix $(output_dir)/, $(addsuffix .vpd, $(rv64ud-v-asm-tests)))
+	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.vpd,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
+
+run-rv64ud-v-asm-tests-fst: $(addprefix $(output_dir)/, $(addsuffix .fst, $(rv64ud-v-asm-tests)))
+	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.fst,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
+
+rv64ua-p-asm-tests = \
+	rv64ua-p-amoadd_w \
+	rv64ua-p-amoand_w \
+	rv64ua-p-amoor_w \
+	rv64ua-p-amoxor_w \
+	rv64ua-p-amoswap_w \
+	rv64ua-p-amomax_w \
+	rv64ua-p-amomaxu_w \
+	rv64ua-p-amomin_w \
+	rv64ua-p-amominu_w \
+	rv64ua-p-lrsc \
+	rv64ua-p-amoadd_d \
+	rv64ua-p-amoand_d \
+	rv64ua-p-amoor_d \
+	rv64ua-p-amoxor_d \
+	rv64ua-p-amoswap_d \
+	rv64ua-p-amomax_d \
+	rv64ua-p-amomaxu_d \
+	rv64ua-p-amomin_d \
+	rv64ua-p-amominu_d
+
+$(addprefix $(output_dir)/, $(addsuffix .hex, $(rv64ua-p-asm-tests))): $(output_dir)/%.hex: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%.hex
+	mkdir -p $(output_dir)
+	ln -fs $< $@
+
+$(addprefix $(output_dir)/, $(rv64ua-p-asm-tests)): $(output_dir)/%: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%
+	mkdir -p $(output_dir)
+	ln -fs $< $@
+
+run-rv64ua-p-asm-tests: $(addprefix $(output_dir)/, $(addsuffix .out, $(rv64ua-p-asm-tests)))
+	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $^ /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
+
+run-rv64ua-p-asm-tests-debug: $(addprefix $(output_dir)/, $(addsuffix .vpd, $(rv64ua-p-asm-tests)))
+	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.vpd,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
+
+run-rv64ua-p-asm-tests-fst: $(addprefix $(output_dir)/, $(addsuffix .fst, $(rv64ua-p-asm-tests)))
+	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.fst,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
+
+rv64ua-v-asm-tests = \
+	rv64ua-v-amoadd_w \
+	rv64ua-v-amoand_w \
+	rv64ua-v-amoor_w \
+	rv64ua-v-amoxor_w \
+	rv64ua-v-amoswap_w \
+	rv64ua-v-amomax_w \
+	rv64ua-v-amomaxu_w \
+	rv64ua-v-amomin_w \
+	rv64ua-v-amominu_w \
+	rv64ua-v-lrsc \
+	rv64ua-v-amoadd_d \
+	rv64ua-v-amoand_d \
+	rv64ua-v-amoor_d \
+	rv64ua-v-amoxor_d \
+	rv64ua-v-amoswap_d \
+	rv64ua-v-amomax_d \
+	rv64ua-v-amomaxu_d \
+	rv64ua-v-amomin_d \
+	rv64ua-v-amominu_d
+
+$(addprefix $(output_dir)/, $(addsuffix .hex, $(rv64ua-v-asm-tests))): $(output_dir)/%.hex: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%.hex
+	mkdir -p $(output_dir)
+	ln -fs $< $@
+
+$(addprefix $(output_dir)/, $(rv64ua-v-asm-tests)): $(output_dir)/%: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%
+	mkdir -p $(output_dir)
+	ln -fs $< $@
+
+run-rv64ua-v-asm-tests: $(addprefix $(output_dir)/, $(addsuffix .out, $(rv64ua-v-asm-tests)))
+	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $^ /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
+
+run-rv64ua-v-asm-tests-debug: $(addprefix $(output_dir)/, $(addsuffix .vpd, $(rv64ua-v-asm-tests)))
+	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.vpd,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
+
+run-rv64ua-v-asm-tests-fst: $(addprefix $(output_dir)/, $(addsuffix .fst, $(rv64ua-v-asm-tests)))
+	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.fst,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
+
+rv64uc-p-asm-tests = \
+	rv64uc-p-rvc
+
+$(addprefix $(output_dir)/, $(addsuffix .hex, $(rv64uc-p-asm-tests))): $(output_dir)/%.hex: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%.hex
+	mkdir -p $(output_dir)
+	ln -fs $< $@
+
+$(addprefix $(output_dir)/, $(rv64uc-p-asm-tests)): $(output_dir)/%: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%
+	mkdir -p $(output_dir)
+	ln -fs $< $@
+
+run-rv64uc-p-asm-tests: $(addprefix $(output_dir)/, $(addsuffix .out, $(rv64uc-p-asm-tests)))
+	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $^ /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
+
+run-rv64uc-p-asm-tests-debug: $(addprefix $(output_dir)/, $(addsuffix .vpd, $(rv64uc-p-asm-tests)))
+	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.vpd,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
+
+run-rv64uc-p-asm-tests-fst: $(addprefix $(output_dir)/, $(addsuffix .fst, $(rv64uc-p-asm-tests)))
+	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.fst,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
+
+rv64uc-v-asm-tests = \
+	rv64uc-v-rvc
+
+$(addprefix $(output_dir)/, $(addsuffix .hex, $(rv64uc-v-asm-tests))): $(output_dir)/%.hex: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%.hex
+	mkdir -p $(output_dir)
+	ln -fs $< $@
+
+$(addprefix $(output_dir)/, $(rv64uc-v-asm-tests)): $(output_dir)/%: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%
+	mkdir -p $(output_dir)
+	ln -fs $< $@
+
+run-rv64uc-v-asm-tests: $(addprefix $(output_dir)/, $(addsuffix .out, $(rv64uc-v-asm-tests)))
+	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $^ /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
+
+run-rv64uc-v-asm-tests-debug: $(addprefix $(output_dir)/, $(addsuffix .vpd, $(rv64uc-v-asm-tests)))
+	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.vpd,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
+
+run-rv64uc-v-asm-tests-fst: $(addprefix $(output_dir)/, $(addsuffix .fst, $(rv64uc-v-asm-tests)))
 	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.fst,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
 
 rv64ui-p-asm-tests = \
@@ -185,240 +359,6 @@ run-rv64ui-p-asm-tests-debug: $(addprefix $(output_dir)/, $(addsuffix .vpd, $(rv
 run-rv64ui-p-asm-tests-fst: $(addprefix $(output_dir)/, $(addsuffix .fst, $(rv64ui-p-asm-tests)))
 	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.fst,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
 
-rv64uc-p-asm-tests = \
-	rv64uc-p-rvc
-
-$(addprefix $(output_dir)/, $(addsuffix .hex, $(rv64uc-p-asm-tests))): $(output_dir)/%.hex: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%.hex
-	mkdir -p $(output_dir)
-	ln -fs $< $@
-
-$(addprefix $(output_dir)/, $(rv64uc-p-asm-tests)): $(output_dir)/%: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%
-	mkdir -p $(output_dir)
-	ln -fs $< $@
-
-run-rv64uc-p-asm-tests: $(addprefix $(output_dir)/, $(addsuffix .out, $(rv64uc-p-asm-tests)))
-	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $^ /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
-
-run-rv64uc-p-asm-tests-debug: $(addprefix $(output_dir)/, $(addsuffix .vpd, $(rv64uc-p-asm-tests)))
-	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.vpd,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
-
-run-rv64uc-p-asm-tests-fst: $(addprefix $(output_dir)/, $(addsuffix .fst, $(rv64uc-p-asm-tests)))
-	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.fst,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
-
-rv64ua-p-asm-tests = \
-	rv64ua-p-amoadd_w \
-	rv64ua-p-amoand_w \
-	rv64ua-p-amoor_w \
-	rv64ua-p-amoxor_w \
-	rv64ua-p-amoswap_w \
-	rv64ua-p-amomax_w \
-	rv64ua-p-amomaxu_w \
-	rv64ua-p-amomin_w \
-	rv64ua-p-amominu_w \
-	rv64ua-p-lrsc \
-	rv64ua-p-amoadd_d \
-	rv64ua-p-amoand_d \
-	rv64ua-p-amoor_d \
-	rv64ua-p-amoxor_d \
-	rv64ua-p-amoswap_d \
-	rv64ua-p-amomax_d \
-	rv64ua-p-amomaxu_d \
-	rv64ua-p-amomin_d \
-	rv64ua-p-amominu_d
-
-$(addprefix $(output_dir)/, $(addsuffix .hex, $(rv64ua-p-asm-tests))): $(output_dir)/%.hex: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%.hex
-	mkdir -p $(output_dir)
-	ln -fs $< $@
-
-$(addprefix $(output_dir)/, $(rv64ua-p-asm-tests)): $(output_dir)/%: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%
-	mkdir -p $(output_dir)
-	ln -fs $< $@
-
-run-rv64ua-p-asm-tests: $(addprefix $(output_dir)/, $(addsuffix .out, $(rv64ua-p-asm-tests)))
-	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $^ /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
-
-run-rv64ua-p-asm-tests-debug: $(addprefix $(output_dir)/, $(addsuffix .vpd, $(rv64ua-p-asm-tests)))
-	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.vpd,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
-
-run-rv64ua-p-asm-tests-fst: $(addprefix $(output_dir)/, $(addsuffix .fst, $(rv64ua-p-asm-tests)))
-	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.fst,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
-
-rv64ud-p-asm-tests = \
-	rv64ud-p-ldst \
-	rv64ud-p-move \
-	rv64ud-p-fcmp \
-	rv64ud-p-fcvt \
-	rv64ud-p-fcvt_w \
-	rv64ud-p-fclass \
-	rv64ud-p-fadd \
-	rv64ud-p-fdiv \
-	rv64ud-p-fmin \
-	rv64ud-p-fmadd \
-	rv64ud-p-structural
-
-$(addprefix $(output_dir)/, $(addsuffix .hex, $(rv64ud-p-asm-tests))): $(output_dir)/%.hex: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%.hex
-	mkdir -p $(output_dir)
-	ln -fs $< $@
-
-$(addprefix $(output_dir)/, $(rv64ud-p-asm-tests)): $(output_dir)/%: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%
-	mkdir -p $(output_dir)
-	ln -fs $< $@
-
-run-rv64ud-p-asm-tests: $(addprefix $(output_dir)/, $(addsuffix .out, $(rv64ud-p-asm-tests)))
-	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $^ /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
-
-run-rv64ud-p-asm-tests-debug: $(addprefix $(output_dir)/, $(addsuffix .vpd, $(rv64ud-p-asm-tests)))
-	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.vpd,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
-
-run-rv64ud-p-asm-tests-fst: $(addprefix $(output_dir)/, $(addsuffix .fst, $(rv64ud-p-asm-tests)))
-	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.fst,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
-
-rv64uf-p-asm-tests = \
-	rv64uf-p-ldst \
-	rv64uf-p-move \
-	rv64uf-p-fcmp \
-	rv64uf-p-fcvt \
-	rv64uf-p-fcvt_w \
-	rv64uf-p-fclass \
-	rv64uf-p-fadd \
-	rv64uf-p-fdiv \
-	rv64uf-p-fmin \
-	rv64uf-p-fmadd
-
-$(addprefix $(output_dir)/, $(addsuffix .hex, $(rv64uf-p-asm-tests))): $(output_dir)/%.hex: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%.hex
-	mkdir -p $(output_dir)
-	ln -fs $< $@
-
-$(addprefix $(output_dir)/, $(rv64uf-p-asm-tests)): $(output_dir)/%: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%
-	mkdir -p $(output_dir)
-	ln -fs $< $@
-
-run-rv64uf-p-asm-tests: $(addprefix $(output_dir)/, $(addsuffix .out, $(rv64uf-p-asm-tests)))
-	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $^ /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
-
-run-rv64uf-p-asm-tests-debug: $(addprefix $(output_dir)/, $(addsuffix .vpd, $(rv64uf-p-asm-tests)))
-	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.vpd,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
-
-run-rv64uf-p-asm-tests-fst: $(addprefix $(output_dir)/, $(addsuffix .fst, $(rv64uf-p-asm-tests)))
-	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.fst,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
-
-rv64uf-v-asm-tests = \
-	rv64uf-v-ldst \
-	rv64uf-v-move \
-	rv64uf-v-fcmp \
-	rv64uf-v-fcvt \
-	rv64uf-v-fcvt_w \
-	rv64uf-v-fclass \
-	rv64uf-v-fadd \
-	rv64uf-v-fdiv \
-	rv64uf-v-fmin \
-	rv64uf-v-fmadd
-
-$(addprefix $(output_dir)/, $(addsuffix .hex, $(rv64uf-v-asm-tests))): $(output_dir)/%.hex: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%.hex
-	mkdir -p $(output_dir)
-	ln -fs $< $@
-
-$(addprefix $(output_dir)/, $(rv64uf-v-asm-tests)): $(output_dir)/%: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%
-	mkdir -p $(output_dir)
-	ln -fs $< $@
-
-run-rv64uf-v-asm-tests: $(addprefix $(output_dir)/, $(addsuffix .out, $(rv64uf-v-asm-tests)))
-	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $^ /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
-
-run-rv64uf-v-asm-tests-debug: $(addprefix $(output_dir)/, $(addsuffix .vpd, $(rv64uf-v-asm-tests)))
-	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.vpd,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
-
-run-rv64uf-v-asm-tests-fst: $(addprefix $(output_dir)/, $(addsuffix .fst, $(rv64uf-v-asm-tests)))
-	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.fst,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
-
-rv64ud-v-asm-tests = \
-	rv64ud-v-ldst \
-	rv64ud-v-move \
-	rv64ud-v-fcmp \
-	rv64ud-v-fcvt \
-	rv64ud-v-fcvt_w \
-	rv64ud-v-fclass \
-	rv64ud-v-fadd \
-	rv64ud-v-fdiv \
-	rv64ud-v-fmin \
-	rv64ud-v-fmadd \
-	rv64ud-v-structural
-
-$(addprefix $(output_dir)/, $(addsuffix .hex, $(rv64ud-v-asm-tests))): $(output_dir)/%.hex: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%.hex
-	mkdir -p $(output_dir)
-	ln -fs $< $@
-
-$(addprefix $(output_dir)/, $(rv64ud-v-asm-tests)): $(output_dir)/%: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%
-	mkdir -p $(output_dir)
-	ln -fs $< $@
-
-run-rv64ud-v-asm-tests: $(addprefix $(output_dir)/, $(addsuffix .out, $(rv64ud-v-asm-tests)))
-	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $^ /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
-
-run-rv64ud-v-asm-tests-debug: $(addprefix $(output_dir)/, $(addsuffix .vpd, $(rv64ud-v-asm-tests)))
-	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.vpd,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
-
-run-rv64ud-v-asm-tests-fst: $(addprefix $(output_dir)/, $(addsuffix .fst, $(rv64ud-v-asm-tests)))
-	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.fst,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
-
-rv64ua-v-asm-tests = \
-	rv64ua-v-amoadd_w \
-	rv64ua-v-amoand_w \
-	rv64ua-v-amoor_w \
-	rv64ua-v-amoxor_w \
-	rv64ua-v-amoswap_w \
-	rv64ua-v-amomax_w \
-	rv64ua-v-amomaxu_w \
-	rv64ua-v-amomin_w \
-	rv64ua-v-amominu_w \
-	rv64ua-v-lrsc \
-	rv64ua-v-amoadd_d \
-	rv64ua-v-amoand_d \
-	rv64ua-v-amoor_d \
-	rv64ua-v-amoxor_d \
-	rv64ua-v-amoswap_d \
-	rv64ua-v-amomax_d \
-	rv64ua-v-amomaxu_d \
-	rv64ua-v-amomin_d \
-	rv64ua-v-amominu_d
-
-$(addprefix $(output_dir)/, $(addsuffix .hex, $(rv64ua-v-asm-tests))): $(output_dir)/%.hex: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%.hex
-	mkdir -p $(output_dir)
-	ln -fs $< $@
-
-$(addprefix $(output_dir)/, $(rv64ua-v-asm-tests)): $(output_dir)/%: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%
-	mkdir -p $(output_dir)
-	ln -fs $< $@
-
-run-rv64ua-v-asm-tests: $(addprefix $(output_dir)/, $(addsuffix .out, $(rv64ua-v-asm-tests)))
-	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $^ /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
-
-run-rv64ua-v-asm-tests-debug: $(addprefix $(output_dir)/, $(addsuffix .vpd, $(rv64ua-v-asm-tests)))
-	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.vpd,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
-
-run-rv64ua-v-asm-tests-fst: $(addprefix $(output_dir)/, $(addsuffix .fst, $(rv64ua-v-asm-tests)))
-	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.fst,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
-
-rv64uc-v-asm-tests = \
-	rv64uc-v-rvc
-
-$(addprefix $(output_dir)/, $(addsuffix .hex, $(rv64uc-v-asm-tests))): $(output_dir)/%.hex: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%.hex
-	mkdir -p $(output_dir)
-	ln -fs $< $@
-
-$(addprefix $(output_dir)/, $(rv64uc-v-asm-tests)): $(output_dir)/%: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%
-	mkdir -p $(output_dir)
-	ln -fs $< $@
-
-run-rv64uc-v-asm-tests: $(addprefix $(output_dir)/, $(addsuffix .out, $(rv64uc-v-asm-tests)))
-	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $^ /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
-
-run-rv64uc-v-asm-tests-debug: $(addprefix $(output_dir)/, $(addsuffix .vpd, $(rv64uc-v-asm-tests)))
-	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.vpd,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
-
-run-rv64uc-v-asm-tests-fst: $(addprefix $(output_dir)/, $(addsuffix .fst, $(rv64uc-v-asm-tests)))
-	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.fst,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
-
 rv64si-p-asm-tests = \
 	rv64si-p-csr \
 	rv64si-p-ma_fetch \
@@ -442,6 +382,34 @@ run-rv64si-p-asm-tests-debug: $(addprefix $(output_dir)/, $(addsuffix .vpd, $(rv
 	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.vpd,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
 
 run-rv64si-p-asm-tests-fst: $(addprefix $(output_dir)/, $(addsuffix .fst, $(rv64si-p-asm-tests)))
+	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.fst,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
+
+rv64mi-p-asm-tests = \
+	rv64mi-p-csr \
+	rv64mi-p-mcsr \
+	rv64mi-p-illegal \
+	rv64mi-p-ma_addr \
+	rv64mi-p-ma_fetch \
+	rv64mi-p-sbreak \
+	rv64mi-p-scall \
+	rv64mi-p-breakpoint \
+	rv64mi-p-access
+
+$(addprefix $(output_dir)/, $(addsuffix .hex, $(rv64mi-p-asm-tests))): $(output_dir)/%.hex: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%.hex
+	mkdir -p $(output_dir)
+	ln -fs $< $@
+
+$(addprefix $(output_dir)/, $(rv64mi-p-asm-tests)): $(output_dir)/%: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%
+	mkdir -p $(output_dir)
+	ln -fs $< $@
+
+run-rv64mi-p-asm-tests: $(addprefix $(output_dir)/, $(addsuffix .out, $(rv64mi-p-asm-tests)))
+	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $^ /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
+
+run-rv64mi-p-asm-tests-debug: $(addprefix $(output_dir)/, $(addsuffix .vpd, $(rv64mi-p-asm-tests)))
+	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.vpd,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
+
+run-rv64mi-p-asm-tests-fst: $(addprefix $(output_dir)/, $(addsuffix .fst, $(rv64mi-p-asm-tests)))
 	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.fst,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
 
 rv64ui-v-asm-tests = \
@@ -514,32 +482,64 @@ run-rv64ui-v-asm-tests-debug: $(addprefix $(output_dir)/, $(addsuffix .vpd, $(rv
 run-rv64ui-v-asm-tests-fst: $(addprefix $(output_dir)/, $(addsuffix .fst, $(rv64ui-v-asm-tests)))
 	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.fst,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
 
-run-asm-v-tests: $(addprefix $(output_dir)/, $(addsuffix .out, $(rv64um-v-asm-tests) $(rv64uf-v-asm-tests) $(rv64ud-v-asm-tests) $(rv64ua-v-asm-tests) $(rv64uc-v-asm-tests) $(rv64ui-v-asm-tests)))
+rv64um-v-asm-tests = \
+	rv64um-v-mul \
+	rv64um-v-mulh \
+	rv64um-v-mulhsu \
+	rv64um-v-mulhu \
+	rv64um-v-div \
+	rv64um-v-divu \
+	rv64um-v-rem \
+	rv64um-v-remu \
+	rv64um-v-divuw \
+	rv64um-v-divw \
+	rv64um-v-mulw \
+	rv64um-v-remuw \
+	rv64um-v-remw
+
+$(addprefix $(output_dir)/, $(addsuffix .hex, $(rv64um-v-asm-tests))): $(output_dir)/%.hex: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%.hex
+	mkdir -p $(output_dir)
+	ln -fs $< $@
+
+$(addprefix $(output_dir)/, $(rv64um-v-asm-tests)): $(output_dir)/%: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%
+	mkdir -p $(output_dir)
+	ln -fs $< $@
+
+run-rv64um-v-asm-tests: $(addprefix $(output_dir)/, $(addsuffix .out, $(rv64um-v-asm-tests)))
 	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $^ /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
-run-asm-v-tests-debug: $(addprefix $(output_dir)/, $(addsuffix .vpd, $(rv64um-v-asm-tests) $(rv64uf-v-asm-tests) $(rv64ud-v-asm-tests) $(rv64ua-v-asm-tests) $(rv64uc-v-asm-tests) $(rv64ui-v-asm-tests)))
+
+run-rv64um-v-asm-tests-debug: $(addprefix $(output_dir)/, $(addsuffix .vpd, $(rv64um-v-asm-tests)))
 	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.vpd,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
-run-asm-v-tests-fst: $(addprefix $(output_dir)/, $(addsuffix .fst, $(rv64um-v-asm-tests) $(rv64uf-v-asm-tests) $(rv64ud-v-asm-tests) $(rv64ua-v-asm-tests) $(rv64uc-v-asm-tests) $(rv64ui-v-asm-tests)))
+
+run-rv64um-v-asm-tests-fst: $(addprefix $(output_dir)/, $(addsuffix .fst, $(rv64um-v-asm-tests)))
 	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.fst,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
-run-asm-v-tests-fast: $(addprefix $(output_dir)/, $(addsuffix .run, $(rv64um-v-asm-tests) $(rv64uf-v-asm-tests) $(rv64ud-v-asm-tests) $(rv64ua-v-asm-tests) $(rv64uc-v-asm-tests) $(rv64ui-v-asm-tests)))
+
+run-asm-v-tests: $(addprefix $(output_dir)/, $(addsuffix .out, $(rv64uf-v-asm-tests) $(rv64ud-v-asm-tests) $(rv64ua-v-asm-tests) $(rv64uc-v-asm-tests) $(rv64ui-v-asm-tests) $(rv64um-v-asm-tests)))
+	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $^ /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
+run-asm-v-tests-debug: $(addprefix $(output_dir)/, $(addsuffix .vpd, $(rv64uf-v-asm-tests) $(rv64ud-v-asm-tests) $(rv64ua-v-asm-tests) $(rv64uc-v-asm-tests) $(rv64ui-v-asm-tests) $(rv64um-v-asm-tests)))
+	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.vpd,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
+run-asm-v-tests-fst: $(addprefix $(output_dir)/, $(addsuffix .fst, $(rv64uf-v-asm-tests) $(rv64ud-v-asm-tests) $(rv64ua-v-asm-tests) $(rv64uc-v-asm-tests) $(rv64ui-v-asm-tests) $(rv64um-v-asm-tests)))
+	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.fst,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
+run-asm-v-tests-fast: $(addprefix $(output_dir)/, $(addsuffix .run, $(rv64uf-v-asm-tests) $(rv64ud-v-asm-tests) $(rv64ua-v-asm-tests) $(rv64uc-v-asm-tests) $(rv64ui-v-asm-tests) $(rv64um-v-asm-tests)))
 	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $^ /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
 
 
-run-asm-p-tests: $(addprefix $(output_dir)/, $(addsuffix .out, $(rv64mi-p-asm-tests) $(rv64ui-p-asm-tests) $(rv64uc-p-asm-tests) $(rv64ua-p-asm-tests) $(rv64ud-p-asm-tests) $(rv64uf-p-asm-tests) $(rv64si-p-asm-tests)))
+run-asm-p-tests: $(addprefix $(output_dir)/, $(addsuffix .out, $(rv64uf-p-asm-tests) $(rv64ud-p-asm-tests) $(rv64ua-p-asm-tests) $(rv64uc-p-asm-tests) $(rv64ui-p-asm-tests) $(rv64si-p-asm-tests) $(rv64mi-p-asm-tests)))
 	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $^ /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
-run-asm-p-tests-debug: $(addprefix $(output_dir)/, $(addsuffix .vpd, $(rv64mi-p-asm-tests) $(rv64ui-p-asm-tests) $(rv64uc-p-asm-tests) $(rv64ua-p-asm-tests) $(rv64ud-p-asm-tests) $(rv64uf-p-asm-tests) $(rv64si-p-asm-tests)))
+run-asm-p-tests-debug: $(addprefix $(output_dir)/, $(addsuffix .vpd, $(rv64uf-p-asm-tests) $(rv64ud-p-asm-tests) $(rv64ua-p-asm-tests) $(rv64uc-p-asm-tests) $(rv64ui-p-asm-tests) $(rv64si-p-asm-tests) $(rv64mi-p-asm-tests)))
 	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.vpd,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
-run-asm-p-tests-fst: $(addprefix $(output_dir)/, $(addsuffix .fst, $(rv64mi-p-asm-tests) $(rv64ui-p-asm-tests) $(rv64uc-p-asm-tests) $(rv64ua-p-asm-tests) $(rv64ud-p-asm-tests) $(rv64uf-p-asm-tests) $(rv64si-p-asm-tests)))
+run-asm-p-tests-fst: $(addprefix $(output_dir)/, $(addsuffix .fst, $(rv64uf-p-asm-tests) $(rv64ud-p-asm-tests) $(rv64ua-p-asm-tests) $(rv64uc-p-asm-tests) $(rv64ui-p-asm-tests) $(rv64si-p-asm-tests) $(rv64mi-p-asm-tests)))
 	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.fst,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
-run-asm-p-tests-fast: $(addprefix $(output_dir)/, $(addsuffix .run, $(rv64mi-p-asm-tests) $(rv64ui-p-asm-tests) $(rv64uc-p-asm-tests) $(rv64ua-p-asm-tests) $(rv64ud-p-asm-tests) $(rv64uf-p-asm-tests) $(rv64si-p-asm-tests)))
+run-asm-p-tests-fast: $(addprefix $(output_dir)/, $(addsuffix .run, $(rv64uf-p-asm-tests) $(rv64ud-p-asm-tests) $(rv64ua-p-asm-tests) $(rv64uc-p-asm-tests) $(rv64ui-p-asm-tests) $(rv64si-p-asm-tests) $(rv64mi-p-asm-tests)))
 	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $^ /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
 
-run-asm-tests: $(addprefix $(output_dir)/, $(addsuffix .out, $(rv64um-v-asm-tests) $(rv64mi-p-asm-tests) $(rv64ui-p-asm-tests) $(rv64uc-p-asm-tests) $(rv64ua-p-asm-tests) $(rv64ud-p-asm-tests) $(rv64uf-p-asm-tests) $(rv64uf-v-asm-tests) $(rv64ud-v-asm-tests) $(rv64ua-v-asm-tests) $(rv64uc-v-asm-tests) $(rv64si-p-asm-tests) $(rv64ui-v-asm-tests)))
+run-asm-tests: $(addprefix $(output_dir)/, $(addsuffix .out, $(rv64uf-p-asm-tests) $(rv64uf-v-asm-tests) $(rv64ud-p-asm-tests) $(rv64ud-v-asm-tests) $(rv64ua-p-asm-tests) $(rv64ua-v-asm-tests) $(rv64uc-p-asm-tests) $(rv64uc-v-asm-tests) $(rv64ui-p-asm-tests) $(rv64si-p-asm-tests) $(rv64mi-p-asm-tests) $(rv64ui-v-asm-tests) $(rv64um-v-asm-tests)))
 	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $^ /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
-run-asm-tests-debug: $(addprefix $(output_dir)/, $(addsuffix .vpd, $(rv64um-v-asm-tests) $(rv64mi-p-asm-tests) $(rv64ui-p-asm-tests) $(rv64uc-p-asm-tests) $(rv64ua-p-asm-tests) $(rv64ud-p-asm-tests) $(rv64uf-p-asm-tests) $(rv64uf-v-asm-tests) $(rv64ud-v-asm-tests) $(rv64ua-v-asm-tests) $(rv64uc-v-asm-tests) $(rv64si-p-asm-tests) $(rv64ui-v-asm-tests)))
+run-asm-tests-debug: $(addprefix $(output_dir)/, $(addsuffix .vpd, $(rv64uf-p-asm-tests) $(rv64uf-v-asm-tests) $(rv64ud-p-asm-tests) $(rv64ud-v-asm-tests) $(rv64ua-p-asm-tests) $(rv64ua-v-asm-tests) $(rv64uc-p-asm-tests) $(rv64uc-v-asm-tests) $(rv64ui-p-asm-tests) $(rv64si-p-asm-tests) $(rv64mi-p-asm-tests) $(rv64ui-v-asm-tests) $(rv64um-v-asm-tests)))
 	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.vpd,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
-run-asm-tests-fst: $(addprefix $(output_dir)/, $(addsuffix .fst, $(rv64um-v-asm-tests) $(rv64mi-p-asm-tests) $(rv64ui-p-asm-tests) $(rv64uc-p-asm-tests) $(rv64ua-p-asm-tests) $(rv64ud-p-asm-tests) $(rv64uf-p-asm-tests) $(rv64uf-v-asm-tests) $(rv64ud-v-asm-tests) $(rv64ua-v-asm-tests) $(rv64uc-v-asm-tests) $(rv64si-p-asm-tests) $(rv64ui-v-asm-tests)))
+run-asm-tests-fst: $(addprefix $(output_dir)/, $(addsuffix .fst, $(rv64uf-p-asm-tests) $(rv64uf-v-asm-tests) $(rv64ud-p-asm-tests) $(rv64ud-v-asm-tests) $(rv64ua-p-asm-tests) $(rv64ua-v-asm-tests) $(rv64uc-p-asm-tests) $(rv64uc-v-asm-tests) $(rv64ui-p-asm-tests) $(rv64si-p-asm-tests) $(rv64mi-p-asm-tests) $(rv64ui-v-asm-tests) $(rv64um-v-asm-tests)))
 	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $(patsubst %.fst,%.out,$^) /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
-run-asm-tests-fast: $(addprefix $(output_dir)/, $(addsuffix .run, $(rv64um-v-asm-tests) $(rv64mi-p-asm-tests) $(rv64ui-p-asm-tests) $(rv64uc-p-asm-tests) $(rv64ua-p-asm-tests) $(rv64ud-p-asm-tests) $(rv64uf-p-asm-tests) $(rv64uf-v-asm-tests) $(rv64ud-v-asm-tests) $(rv64ua-v-asm-tests) $(rv64uc-v-asm-tests) $(rv64si-p-asm-tests) $(rv64ui-v-asm-tests)))
+run-asm-tests-fast: $(addprefix $(output_dir)/, $(addsuffix .run, $(rv64uf-p-asm-tests) $(rv64uf-v-asm-tests) $(rv64ud-p-asm-tests) $(rv64ud-v-asm-tests) $(rv64ua-p-asm-tests) $(rv64ua-v-asm-tests) $(rv64uc-p-asm-tests) $(rv64uc-v-asm-tests) $(rv64ui-p-asm-tests) $(rv64si-p-asm-tests) $(rv64mi-p-asm-tests) $(rv64ui-v-asm-tests) $(rv64um-v-asm-tests)))
 	@echo; perl -ne 'print "  [$$1] $$ARGV \t$$2\n" if( /\*{3}(.{8})\*{3}(.*)/ || /ASSERTION (FAILED):(.*)/i )' $^ /dev/null | perl -pe 'BEGIN { $$failed = 0 } $$failed = 1 if(/FAILED/i); END { exit($$failed) }'
 
 regression-tests = \

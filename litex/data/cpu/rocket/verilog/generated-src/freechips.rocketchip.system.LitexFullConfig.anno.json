@@ -1,5 +1,9 @@
 [
   {
+    "class":"firrtl.options.OutputAnnotationFileAnnotation",
+    "file":"TestHarness"
+  },
+  {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
     "target":"TestHarness.plusarg_reader",
     "resourceId":"/vsrc/plusarg_reader.v"
@@ -1672,7 +1676,7 @@
           "accessType":"R",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"number of DATA regsiters",
+          "desc":"number of DATA registers",
           "group":"dmi_abstractcs",
           "groupDesc":"abstract command control/status",
           "volatile":false,
@@ -1780,7 +1784,7 @@
           "accessType":"R",
           "wrType":"None",
           "rdAction":"None",
-          "desc":"number of PROGBUF regsiters",
+          "desc":"number of PROGBUF registers",
           "group":"dmi_abstractcs",
           "groupDesc":"None",
           "volatile":false,
@@ -24560,6 +24564,10 @@
     "target":"TestHarness.DCacheModuleImpl_Anon"
   },
   {
+    "class":"firrtl.passes.InlineAnnotation",
+    "target":"TestHarness.DCacheModuleImpl_Anon_1"
+  },
+  {
     "class":"freechips.rocketchip.util.SRAMAnnotation",
     "target":"TestHarness.DCache.tag_array",
     "address_width":6,
@@ -24581,7 +24589,7 @@
   },
   {
     "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.DCacheModuleImpl_Anon_1"
+    "target":"TestHarness.DCacheModuleImpl_Anon_2"
   },
   {
     "class":"firrtl.transforms.DontTouchAnnotation",
@@ -25423,5 +25431,9 @@
     "class":"firrtl.transforms.BlackBoxResourceAnno",
     "target":"TestHarness.SimDTM",
     "resourceId":"/csrc/SimDTM.cc"
+  },
+  {
+    "class":"firrtl.stage.RunFirrtlTransformAnnotation",
+    "transform":"firrtl.transforms.BlackBoxSourceHelper"
   }
 ]

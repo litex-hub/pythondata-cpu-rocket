@@ -294,7 +294,7 @@
         "bitOffset" : 0,
         "bitWidth" : 4,
         "name" : "datacount",
-        "description" : "number of DATA regsiters",
+        "description" : "number of DATA registers",
         "resetValue" : 2,
         "group" : "dmi_abstractcs",
         "groupDesc" : "abstract command control/status",
@@ -359,7 +359,7 @@
         "bitOffset" : 24,
         "bitWidth" : 5,
         "name" : "progbufsize",
-        "description" : "number of PROGBUF regsiters",
+        "description" : "number of PROGBUF registers",
         "resetValue" : 16,
         "group" : "dmi_abstractcs",
         "accessType" : "R"
