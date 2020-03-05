@@ -102,7 +102,8 @@ cat >> rocket-chip/src/main/scala/system/Configs.scala <<- "EOT"
 	)
 	EOT
 for CFG in '' Linux LinuxD LinuxQ Full; do
-  make RISCV=${HOME}/RISCV -C rocket-chip/vsim verilog CONFIG=Litex${CFG}Config
+  make RISCV=${HOME}/RISCV -C rocket-chip/vsim verilog \
+       CONFIG=freechips.rocketchip.system.Litex${CFG}Config
 done
 
 # install generated files for use by LiteX:
