@@ -14,6 +14,7 @@ venv-clean:
 
 venv:
 	virtualenv --python=python3 venv
+	${ACTIVATE} pip install twine
 
 .PHONY: venv
 
@@ -22,12 +23,15 @@ build:
 
 .PHONY: build
 
-upload-test:
-	${ACTIVATE} twine upload --repository-url https://test.pypi.org/legacy/ dist/*
+# PYPI_TEST = --repository-url https://test.pypi.org/legacy/
+PYPI_TEST = --repository testpypi
+
+upload-test: build
+	${ACTIVATE} twine upload ${PYPI_TEST}  dist/*
 
 .PHONY: upload-test
 
-upload:
+upload: build
 	${ACTIVATE} twine upload
 
 .PHONY: upload
