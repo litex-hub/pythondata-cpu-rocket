@@ -1,11 +1,21 @@
+# Always clone the full depth so git-describe works.
+git:
+  depth: false
+
 language: python
 python:
-  - "3.4"
   - "3.5"
   - "3.6"
   - "3.7"
   - "3.8"
   - "nightly"  # nightly build
+  - "pypy3"
+
+install:
+  - python setup.py install
+
+script:
+  - python test.py
 
 deploy:
   provider: pypi
