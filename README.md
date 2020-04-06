@@ -19,7 +19,7 @@ with open(os.path.join(litex.data.cpu.rocket.location, my_data_file)) as f:
 
 
 The data files are generated from https://github.com/chipsalliance/rocket-chip.git and place in the directory
-[litex/data/cpu/rocket/verilog](litex/data/cpu/rocket/verilog].
+[litex/data/cpu/rocket/verilog](litex/data/cpu/rocket/verilog).
 
 
 ## Installing
