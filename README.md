@@ -7,7 +7,8 @@ This Useful for usage with tools like
 [LiteX](https://github.com/enjoy-digital/litex.git).
 
 The data files can be found under the Python module `pythondata_cpu_rocket`. The
-`pythondata_cpu_rocket.location` value can be used to find the files on the file system.
+`pythondata_cpu_rocket.data_location` value can be used to find the files on the file
+system.
 
 Example of getting the data file directly;
 ```python
