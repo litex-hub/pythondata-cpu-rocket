@@ -1,2 +1,2 @@
-graft litex/data/cpu/rocket/verilog/
+graft pythondata_cpu_rocket/verilog/
 global-exclude *.py[cod]
