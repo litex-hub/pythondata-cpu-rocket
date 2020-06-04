@@ -68,6 +68,7 @@ cat >> rocket-chip/src/main/scala/system/Configs.scala <<- "EOT"
 	  new WithLitexMMIOPort() ++
 	  new WithNoSlavePort ++
 	  new WithNExtTopInterrupts(4) ++
+	  new WithCoherentBusTopology ++
 	  new BaseConfig
 	)
 
