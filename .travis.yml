@@ -21,6 +21,5 @@ deploy:
   provider: pypi
   username: __token__
   distributions: sdist bdist_wheel
-  server: https://test.pypi.org/legacy/
   skip_existing: true
   edge: true # opt in to dpl v2
