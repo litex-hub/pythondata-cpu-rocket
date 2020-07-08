@@ -44,6 +44,10 @@ make -C rocket-chip/bootrom
 # NOTE: uncached (MMIO) access below, cached (RAM) access above 0x8000_0000
 cat >> rocket-chip/src/main/scala/subsystem/Configs.scala <<- "EOT"
 
+	class WithMemoryDataBits(dataBits: Int) extends Config((site, here, up) => {
+	  case MemoryBusKey => up(MemoryBusKey, site).copy(beatBytes = dataBits/8)
+	})
+
 	class WithLitexMemPort extends Config((site, here, up) => {
 	  case ExtMem => Some(MemoryPortParams(MasterPortParams(
 	                      base = x"8000_0000",
@@ -59,6 +63,13 @@ cat >> rocket-chip/src/main/scala/subsystem/Configs.scala <<- "EOT"
 	                      beatBytes = site(SystemBusKey).beatBytes,
 	                      idBits = 4))
 	})
+
+	class WithLitexSlavePort extends Config((site, here, up) => {
+	  case ExtIn  => Some(SlavePortParams(
+	                      beatBytes = site(SystemBusKey).beatBytes,
+	                      idBits = 8,
+	                      sourceBits = 4))
+	})
 	EOT
 # NOTE: disable (unused) slave AXI port, ensure sufficient external IRQs
 cat >> rocket-chip/src/main/scala/system/Configs.scala <<- "EOT"
@@ -66,7 +77,7 @@ cat >> rocket-chip/src/main/scala/system/Configs.scala <<- "EOT"
 	class BaseLitexConfig extends Config(
 	  new WithLitexMemPort() ++
 	  new WithLitexMMIOPort() ++
-	  new WithNoSlavePort ++
+	  new WithLitexSlavePort ++
 	  new WithNExtTopInterrupts(4) ++
 	  new WithCoherentBusTopology ++
 	  new BaseConfig
@@ -74,31 +85,31 @@ cat >> rocket-chip/src/main/scala/system/Configs.scala <<- "EOT"
 
 	class LitexConfig extends Config(
 	  new WithNSmallCores(1) ++
-	  new WithEdgeDataBits(64) ++
+	  new WithMemoryDataBits(64) ++
 	  new BaseLitexConfig
 	)
 
 	class LitexLinuxConfig extends Config(
 	  new WithNMedCores(1) ++
-	  new WithEdgeDataBits(64) ++
+	  new WithMemoryDataBits(64) ++
 	  new BaseLitexConfig
 	)
 
 	class LitexLinuxDConfig extends Config(
 	  new WithNMedCores(1) ++
-	  new WithEdgeDataBits(128) ++
+	  new WithMemoryDataBits(128) ++
 	  new BaseLitexConfig
 	)
 
 	class LitexLinuxQConfig extends Config(
 	  new WithNMedCores(1) ++
-	  new WithEdgeDataBits(256) ++
+	  new WithMemoryDataBits(256) ++
 	  new BaseLitexConfig
 	)
 
 	class LitexFullConfig extends Config(
 	  new WithNBigCores(1) ++
-	  new WithEdgeDataBits(64) ++
+	  new WithMemoryDataBits(64) ++
 	  new BaseLitexConfig
 	)
 	EOT
