@@ -8,7 +8,7 @@
 	L15: cpus {
 		#address-cells = <1>;
 		#size-cells = <0>;
-		L8: cpu@0 {
+		L4: cpu@0 {
 			clock-frequency = <0>;
 			compatible = "sifive,rocket0", "riscv";
 			d-cache-block-size = <64>;
@@ -25,7 +25,7 @@
 			riscv,pmpregions = <8>;
 			status = "okay";
 			timebase-frequency = <1000000>;
-			L6: interrupt-controller {
+			L2: interrupt-controller {
 				#interrupt-cells = <1>;
 				compatible = "riscv,cpu-intc";
 				interrupt-controller;
@@ -41,16 +41,16 @@
 		#size-cells = <1>;
 		compatible = "freechips,rocketchip-unknown-soc", "simple-bus";
 		ranges;
-		L3: clint@2000000 {
+		L6: clint@2000000 {
 			compatible = "riscv,clint0";
-			interrupts-extended = <&L6 3 &L6 7>;
+			interrupts-extended = <&L2 3 &L2 7>;
 			reg = <0x2000000 0x10000>;
 			reg-names = "control";
 		};
-		L4: debug-controller@0 {
+		L7: debug-controller@0 {
 			compatible = "sifive,debug-013", "riscv,debug-013";
 			debug-attach = "dmi";
-			interrupts-extended = <&L6 65535>;
+			interrupts-extended = <&L2 65535>;
 			reg = <0x0 0x1000>;
 			reg-names = "control";
 		};
@@ -59,14 +59,14 @@
 			reg = <0x3000 0x1000>;
 		};
 		L9: external-interrupts {
-			interrupt-parent = <&L2>;
+			interrupt-parent = <&L5>;
 			interrupts = <1 2 3 4>;
 		};
-		L2: interrupt-controller@c000000 {
+		L5: interrupt-controller@c000000 {
 			#interrupt-cells = <1>;
 			compatible = "riscv,plic0";
 			interrupt-controller;
-			interrupts-extended = <&L6 11>;
+			interrupts-extended = <&L2 11>;
 			reg = <0xc000000 0x4000000>;
 			reg-names = "control";
 			riscv,max-priority = <7>;
