@@ -27,6 +27,7 @@
 			next-level-cache = <&L10>;
 			reg = <0x0>;
 			riscv,isa = "rv64imac";
+			riscv,pmpgranularity = <4>;
 			riscv,pmpregions = <8>;
 			status = "okay";
 			timebase-frequency = <1000000>;

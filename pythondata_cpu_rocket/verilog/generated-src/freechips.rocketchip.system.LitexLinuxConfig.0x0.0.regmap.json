@@ -212,61 +212,6 @@
         "accessType" : "R"
       }
     }, {
-      "dataaddr" : {
-        "byteOffset" : "0x48",
-        "bitOffset" : 0,
-        "bitWidth" : 12,
-        "name" : "dataaddr",
-        "description" : "data address",
-        "resetValue" : 896,
-        "group" : "dmi_hartinfo",
-        "groupDesc" : "hart information",
-        "accessType" : "R"
-      }
-    }, {
-      "datasize" : {
-        "byteOffset" : "0x48",
-        "bitOffset" : 12,
-        "bitWidth" : 4,
-        "name" : "datasize",
-        "description" : "number of DATA registers",
-        "resetValue" : 2,
-        "group" : "dmi_hartinfo",
-        "accessType" : "R"
-      }
-    }, {
-      "dataaccess" : {
-        "byteOffset" : "0x48",
-        "bitOffset" : 16,
-        "bitWidth" : 1,
-        "name" : "dataaccess",
-        "description" : "data access type",
-        "resetValue" : 1,
-        "group" : "dmi_hartinfo",
-        "accessType" : "R"
-      }
-    }, {
-      "reserved" : {
-        "byteOffset" : "0x48",
-        "bitOffset" : 17,
-        "bitWidth" : 3,
-        "name" : "reserved",
-        "resetValue" : 0,
-        "group" : "dmi_hartinfo",
-        "accessType" : "R"
-      }
-    }, {
-      "nscratch" : {
-        "byteOffset" : "0x48",
-        "bitOffset" : 20,
-        "bitWidth" : 4,
-        "name" : "nscratch",
-        "description" : "number of scratch registers",
-        "resetValue" : 1,
-        "group" : "dmi_hartinfo",
-        "accessType" : "R"
-      }
-    }, {
       "dmi_haltsum0" : {
         "byteOffset" : "0x100",
         "bitOffset" : 0,

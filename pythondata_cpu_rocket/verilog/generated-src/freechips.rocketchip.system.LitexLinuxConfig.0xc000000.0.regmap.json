@@ -9,8 +9,8 @@
         "bitWidth" : 3,
         "name" : "priority_1",
         "description" : "Acting priority of interrupt source 1",
-        "group" : "priority",
-        "groupDesc" : "Acting priorities of each interrupt source.",
+        "group" : "priority_1",
+        "groupDesc" : "Acting priority of interrupt source 1",
         "accessType" : "RW"
       }
     }, {
@@ -20,8 +20,8 @@
         "bitWidth" : 3,
         "name" : "priority_2",
         "description" : "Acting priority of interrupt source 2",
-        "group" : "priority",
-        "groupDesc" : "Acting priorities of each interrupt source.",
+        "group" : "priority_2",
+        "groupDesc" : "Acting priority of interrupt source 2",
         "accessType" : "RW"
       }
     }, {
@@ -31,8 +31,8 @@
         "bitWidth" : 3,
         "name" : "priority_3",
         "description" : "Acting priority of interrupt source 3",
-        "group" : "priority",
-        "groupDesc" : "Acting priorities of each interrupt source.",
+        "group" : "priority_3",
+        "groupDesc" : "Acting priority of interrupt source 3",
         "accessType" : "RW"
       }
     }, {
@@ -42,8 +42,8 @@
         "bitWidth" : 3,
         "name" : "priority_4",
         "description" : "Acting priority of interrupt source 4",
-        "group" : "priority",
-        "groupDesc" : "Acting priorities of each interrupt source.",
+        "group" : "priority_4",
+        "groupDesc" : "Acting priority of interrupt source 4",
         "accessType" : "RW"
       }
     }, {
