@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-n-publish:
-    name: Build and publish Python 🐍 distributions 📦 to PyPI and TestPyPI
+    name: ${{ matrix.os }} - ${{ matrix.python-version}} - Build and publish Python 🐍 distributions 📦 to PyPI and TestPyPI
 
     strategy:
       matrix:
