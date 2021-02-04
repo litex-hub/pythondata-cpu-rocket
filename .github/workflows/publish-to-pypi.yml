@@ -52,16 +52,20 @@ jobs:
       run: |
         python setup.py sdist bdist_wheel
 
+    - name: Check distribution 📦
+      run: |
+        twine check dist/*
+
     - name: Publish to Test PyPI
       env:
         TWINE_USERNAME: __token__
         TWINE_PASSWORD: ${{ secrets.TEST_PYPI_API_TOKEN }}
       run: |
-        twine upload --repository testpypi dist/*
+        twine upload --skip-existing --repository testpypi dist/*
 
     - name: Publish to PyPI
       env:
         TWINE_USERNAME: __token__
         TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
       run: |
-        twine upload testpypi dist/*
+        twine upload --skip-existing dist/*
