@@ -1,4 +1,4 @@
-name: Python ${{ matrix.python-version }} - Build and publish 📦 to PyPI and TestPyPI
+name: PyPI
 
 on:
   push:
@@ -13,6 +13,8 @@ jobs:
         python-version: [ '2.x', '3.6', '3.7', '3.8', '3.9', 'pypy-2.7', 'pypy-3.6', 'pypy-3.7' ]
         os: [ubuntu-latest]
       fail-fast: false
+
+    name: ${{ matrix.python-version }}
     runs-on: ${{ matrix.os }}
 
     steps:
