@@ -20,6 +20,7 @@ venv:
 
 build:
 	${ACTIVATE} python setup.py sdist bdist_wheel
+	@rm -f dist/*.egg
 
 .PHONY: build
 
@@ -27,11 +28,13 @@ build:
 PYPI_TEST = --repository testpypi
 
 upload-test: build
+	@rm -f dist/*.egg
 	${ACTIVATE} twine upload ${PYPI_TEST}  dist/*
 
 .PHONY: upload-test
 
 upload: build
+	@rm -f dist/*.egg
 	${ACTIVATE} twine upload --verbose dist/*
 
 .PHONY: upload
