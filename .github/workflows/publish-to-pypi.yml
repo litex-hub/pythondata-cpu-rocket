@@ -6,16 +6,9 @@ on:
       - master
 
 jobs:
-  build-n-publish:
-
-    strategy:
-      matrix:
-        python-version: [ '2.x', '3.6', '3.7', '3.8', '3.9', 'pypy-2.7', 'pypy-3.6', 'pypy-3.7' ]
-        os: [ubuntu-latest]
-      fail-fast: false
-
-    name: ${{ matrix.python-version }}
-    runs-on: ${{ matrix.os }}
+  sdist:
+    name: sdist
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
@@ -24,17 +17,10 @@ jobs:
         fetch-depth: 0
         submodules: true
 
-    - name: Set up Python 🐍 ${{ matrix.python-version }}
+    - name: Set up Python 🐍 3
       uses: actions/setup-python@v2
       with:
-        python-version: ${{ matrix.python-version }}
-
-#    - name: Get full Python 🐍 version
-#      id: full-python-version
-#      run: echo ::set-output name=version::$(python -c "import sys; print('-'.join(str(v) for v in sys.version_info))")
-
-#    - name: Get repo version
-#      run: echo ::set-output name=repo-version::$(python -c "import setup; print(setup.version_str)")
+        python-version: 3.x
 
     - name: Install build dependencies
       run: |
@@ -51,7 +37,7 @@ jobs:
 
     - name: Build distribution 📦
       run: |
-        python setup.py sdist bdist_wheel
+        python setup.py sdist
         rm dist/*.egg
 
     - name: Check distribution 📦
@@ -72,3 +58,62 @@ jobs:
         TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
       run: |
         twine upload --skip-existing dist/*
+
+  wheels:
+    strategy:
+      matrix:
+        python-version: [ '2.x', '3.x' ]
+      fail-fast: false
+
+    name: ${{ matrix.python-version }}
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        # Always clone the full depth so git-describe works.
+        fetch-depth: 0
+        submodules: true
+
+    - name: Set up Python 🐍 ${{ matrix.python-version }}
+      uses: actions/setup-python@v2
+      with:
+        python-version: ${{ matrix.python-version }}
+
+    - name: Install build dependencies
+      run: |
+        pip install -U pip
+        pip install -U setuptools wheel twine
+
+    - name: Install package dependencies
+      run: |
+        python setup.py install
+
+    - name: Run smoke test
+      run: |
+        python test.py
+
+    - name: Build distribution 📦
+      run: |
+        python setup.py bdist_wheel
+        rm dist/*.egg
+
+    - name: Check distribution 📦
+      run: |
+        du -h dist/*
+        twine check dist/*
+
+    - name: Publish to Test PyPI
+      env:
+        TWINE_USERNAME: __token__
+        TWINE_PASSWORD: ${{ secrets.TEST_PYPI_API_TOKEN }}
+      run: |
+        twine upload --skip-existing --repository testpypi dist/*
+
+    - name: Publish to PyPI
+      env:
+        TWINE_USERNAME: __token__
+        TWINE_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
+      run: |
+        twine upload --skip-existing dist/*
+
