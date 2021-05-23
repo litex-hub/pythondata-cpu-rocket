@@ -549,7 +549,7 @@
   },
   {
     "class":"chisel3.experimental.EnumAnnotations$EnumVecAnnotation",
-    "target":"TestHarness.RocketTile.auto_data_4.group",
+    "target":"TestHarness.RocketTile.bundleOut_0_5.group",
     "typeName":"freechips.rocketchip.util.TraceItype",
     "fields":[
       [
@@ -25785,7 +25785,7 @@
   },
   {
     "class":"firrtl.transforms.DontTouchAnnotation",
-    "target":"~TestHarness|ExampleRocketSystem>resetctrl_resetctrl.hartIsInReset[0]"
+    "target":"~TestHarness|ExampleRocketSystem>resetctrl.hartIsInReset[0]"
   },
   {
     "class":"firrtl.transforms.DontTouchAnnotation",
