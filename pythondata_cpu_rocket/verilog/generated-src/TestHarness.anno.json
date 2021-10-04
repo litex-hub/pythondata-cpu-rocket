@@ -76,46 +76,6 @@
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_12",
-    "resourceId":"/vsrc/plusarg_reader.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_13",
-    "resourceId":"/vsrc/plusarg_reader.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_14",
-    "resourceId":"/vsrc/plusarg_reader.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_15",
-    "resourceId":"/vsrc/plusarg_reader.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_16",
-    "resourceId":"/vsrc/plusarg_reader.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_17",
-    "resourceId":"/vsrc/plusarg_reader.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_18",
-    "resourceId":"/vsrc/plusarg_reader.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_19",
-    "resourceId":"/vsrc/plusarg_reader.v"
-  },
-  {
     "class":"firrtl.passes.InlineAnnotation",
     "target":"TestHarness.TLWidthWidget"
   },
@@ -133,12 +93,12 @@
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_20",
+    "target":"TestHarness.plusarg_reader_12",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_21",
+    "target":"TestHarness.plusarg_reader_13",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
@@ -150,21 +110,13 @@
     "target":"TestHarness.TLInterconnectCoupler_4"
   },
   {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLInterconnectCoupler_5"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLInterconnectCoupler_6"
-  },
-  {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_22",
+    "target":"TestHarness.plusarg_reader_14",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_23",
+    "target":"TestHarness.plusarg_reader_15",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
@@ -209,6 +161,70 @@
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.plusarg_reader_16",
+    "resourceId":"/vsrc/plusarg_reader.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.plusarg_reader_17",
+    "resourceId":"/vsrc/plusarg_reader.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.plusarg_reader_18",
+    "resourceId":"/vsrc/plusarg_reader.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.plusarg_reader_19",
+    "resourceId":"/vsrc/plusarg_reader.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.plusarg_reader_20",
+    "resourceId":"/vsrc/plusarg_reader.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.plusarg_reader_21",
+    "resourceId":"/vsrc/plusarg_reader.v"
+  },
+  {
+    "class":"firrtl.passes.InlineAnnotation",
+    "target":"TestHarness.TLWidthWidget_4"
+  },
+  {
+    "class":"firrtl.passes.InlineAnnotation",
+    "target":"TestHarness.FrontBus"
+  },
+  {
+    "class":"firrtl.passes.InlineAnnotation",
+    "target":"TestHarness.ClockGroupAggregator_3"
+  },
+  {
+    "class":"firrtl.passes.InlineAnnotation",
+    "target":"TestHarness.ClockGroup_3"
+  },
+  {
+    "class":"firrtl.passes.InlineAnnotation",
+    "target":"TestHarness.BundleBridgeNexus_3"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.plusarg_reader_22",
+    "resourceId":"/vsrc/plusarg_reader.v"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
+    "target":"TestHarness.plusarg_reader_23",
+    "resourceId":"/vsrc/plusarg_reader.v"
+  },
+  {
+    "class":"firrtl.passes.InlineAnnotation",
+    "target":"TestHarness.TLXbar_4"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxResourceAnno",
     "target":"TestHarness.plusarg_reader_24",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
@@ -238,26 +254,6 @@
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLWidthWidget_4"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.FrontBus"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.ClockGroupAggregator_3"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.ClockGroup_3"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.BundleBridgeNexus_3"
-  },
-  {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
     "target":"TestHarness.plusarg_reader_30",
     "resourceId":"/vsrc/plusarg_reader.v"
@@ -268,10 +264,6 @@
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLXbar_4"
-  },
-  {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
     "target":"TestHarness.plusarg_reader_32",
     "resourceId":"/vsrc/plusarg_reader.v"
@@ -280,6 +272,18 @@
     "class":"firrtl.transforms.BlackBoxResourceAnno",
     "target":"TestHarness.plusarg_reader_33",
     "resourceId":"/vsrc/plusarg_reader.v"
+  },
+  {
+    "class":"firrtl.passes.InlineAnnotation",
+    "target":"TestHarness.TLBuffer_6"
+  },
+  {
+    "class":"firrtl.passes.InlineAnnotation",
+    "target":"TestHarness.TLWidthWidget_5"
+  },
+  {
+    "class":"firrtl.passes.InlineAnnotation",
+    "target":"TestHarness.TLInterconnectCoupler_7"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
@@ -312,64 +316,12 @@
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_40",
-    "resourceId":"/vsrc/plusarg_reader.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_41",
-    "resourceId":"/vsrc/plusarg_reader.v"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLBuffer_6"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLWidthWidget_5"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLInterconnectCoupler_9"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_42",
-    "resourceId":"/vsrc/plusarg_reader.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_43",
-    "resourceId":"/vsrc/plusarg_reader.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_44",
-    "resourceId":"/vsrc/plusarg_reader.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_45",
-    "resourceId":"/vsrc/plusarg_reader.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_46",
-    "resourceId":"/vsrc/plusarg_reader.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_47",
-    "resourceId":"/vsrc/plusarg_reader.v"
-  },
-  {
     "class":"firrtl.passes.InlineAnnotation",
     "target":"TestHarness.TLWidthWidget_6"
   },
   {
     "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLInterconnectCoupler_13"
+    "target":"TestHarness.TLInterconnectCoupler_11"
   },
   {
     "class":"firrtl.passes.InlineAnnotation",
@@ -377,32 +329,16 @@
   },
   {
     "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLInterconnectCoupler_14"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLWidthWidget_8"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLInterconnectCoupler_15"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLWidthWidget_9"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLInterconnectCoupler_16"
+    "target":"TestHarness.TLInterconnectCoupler_12"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_48",
+    "target":"TestHarness.plusarg_reader_40",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_49",
+    "target":"TestHarness.plusarg_reader_41",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
@@ -427,22 +363,22 @@
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_50",
+    "target":"TestHarness.plusarg_reader_42",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_51",
+    "target":"TestHarness.plusarg_reader_43",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_52",
+    "target":"TestHarness.plusarg_reader_44",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_53",
+    "target":"TestHarness.plusarg_reader_45",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
@@ -451,17 +387,17 @@
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_54",
+    "target":"TestHarness.plusarg_reader_46",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_55",
+    "target":"TestHarness.plusarg_reader_47",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
     "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLWidthWidget_10"
+    "target":"TestHarness.TLWidthWidget_8"
   },
   {
     "class":"firrtl.passes.InlineAnnotation",
@@ -481,12 +417,12 @@
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_56",
+    "target":"TestHarness.plusarg_reader_48",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_57",
+    "target":"TestHarness.plusarg_reader_49",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
@@ -495,40 +431,40 @@
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_58",
+    "target":"TestHarness.plusarg_reader_50",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_59",
+    "target":"TestHarness.plusarg_reader_51",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
     "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLWidthWidget_11"
+    "target":"TestHarness.TLWidthWidget_9"
   },
   {
     "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLInterconnectCoupler_19"
+    "target":"TestHarness.TLInterconnectCoupler_15"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_60",
+    "target":"TestHarness.plusarg_reader_52",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_61",
+    "target":"TestHarness.plusarg_reader_53",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_62",
+    "target":"TestHarness.plusarg_reader_54",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_63",
+    "target":"TestHarness.plusarg_reader_55",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
@@ -580,7 +516,7 @@
     "target":"TestHarness.DCache.tag_array",
     "address_width":6,
     "name":"tag_array",
-    "data_width":88,
+    "data_width":22,
     "depth":64,
     "description":"DCache Tag Array",
     "write_mask_granularity":22
@@ -590,7 +526,7 @@
     "target":"TestHarness.DCacheDataArray.data_arrays_0",
     "address_width":9,
     "name":"data_arrays_0",
-    "data_width":256,
+    "data_width":64,
     "depth":512,
     "description":"DCache Data Array",
     "write_mask_granularity":8
@@ -616,7 +552,7 @@
     "target":"TestHarness.ICache.tag_array",
     "address_width":6,
     "name":"tag_array",
-    "data_width":84,
+    "data_width":21,
     "depth":64,
     "description":"ICache Tag Array",
     "write_mask_granularity":21
@@ -626,7 +562,7 @@
     "target":"TestHarness.ICache.data_arrays_0",
     "address_width":9,
     "name":"data_arrays_0",
-    "data_width":128,
+    "data_width":32,
     "depth":512,
     "description":"ICache Data Array",
     "write_mask_granularity":32
@@ -636,43 +572,14 @@
     "target":"TestHarness.ICache.data_arrays_1",
     "address_width":9,
     "name":"data_arrays_1",
-    "data_width":128,
+    "data_width":32,
     "depth":512,
     "description":"ICache Data Array",
     "write_mask_granularity":32
   },
   {
-    "class":"freechips.rocketchip.util.ParamsAnnotation",
-    "target":"TestHarness.BTB",
-    "paramsClassName":"freechips.rocketchip.rocket.BTBParams",
-    "params":{
-      "nPages":6,
-      "nMatchBits":14,
-      "nEntries":28,
-      "bhtParams":{
-        "nEntries":512,
-        "counterLength":1,
-        "historyLength":8,
-        "historyBits":3
-      },
-      "nRAS":6,
-      "updatesOutOfOrder":false
-    }
-  },
-  {
-    "class":"freechips.rocketchip.util.ParamsAnnotation",
-    "target":"TestHarness.BTB",
-    "paramsClassName":"freechips.rocketchip.rocket.BHTParams",
-    "params":{
-      "nEntries":512,
-      "counterLength":1,
-      "historyLength":8,
-      "historyBits":3
-    }
-  },
-  {
     "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLWidthWidget_12"
+    "target":"TestHarness.TLWidthWidget_10"
   },
   {
     "class":"chisel3.experimental.EnumAnnotations$EnumVecAnnotation",
@@ -717,52 +624,19 @@
     ]
   },
   {
-    "class":"freechips.rocketchip.util.RetimeModuleAnnotation",
-    "target":"TestHarness.FPUFMAPipe"
-  },
-  {
-    "class":"freechips.rocketchip.util.RetimeModuleAnnotation",
-    "target":"TestHarness.FPToInt"
-  },
-  {
-    "class":"freechips.rocketchip.util.RetimeModuleAnnotation",
-    "target":"TestHarness.IntToFP"
-  },
-  {
-    "class":"freechips.rocketchip.util.RetimeModuleAnnotation",
-    "target":"TestHarness.FPToFP"
-  },
-  {
-    "class":"freechips.rocketchip.util.RetimeModuleAnnotation",
-    "target":"TestHarness.FPUFMAPipe_1"
-  },
-  {
     "class":"freechips.rocketchip.util.ParamsAnnotation",
     "target":"TestHarness.RocketTile",
     "paramsClassName":"freechips.rocketchip.tile.RocketTileParams",
     "params":{
       "name":"tile",
       "dataScratchpadBytes":0,
-      "btb":{
-        "nEntries":28,
-        "nMatchBits":14,
-        "nPages":6,
-        "nRAS":6,
-        "bhtParams":{
-          "nEntries":512,
-          "counterLength":1,
-          "historyLength":8,
-          "historyBits":3
-        },
-        "updatesOutOfOrder":false
-      },
       "hartId":0,
       "icache":{
         "nSets":64,
-        "nWays":4,
+        "nWays":1,
         "rowBits":64,
         "nTLBSets":1,
-        "nTLBWays":32,
+        "nTLBWays":4,
         "nTLBBasePageSectors":4,
         "nTLBSuperpages":4,
         "cacheIdBits":0,
@@ -805,27 +679,20 @@
         "mvendorid":0,
         "mimpid":538447876,
         "mulDiv":{
-          "mulUnroll":8,
+          "mulUnroll":1,
           "divUnroll":1,
-          "mulEarlyOut":true,
-          "divEarlyOut":true,
+          "mulEarlyOut":false,
+          "divEarlyOut":false,
           "divEarlyOutGranularity":1
-        },
-        "fpu":{
-          "minFLen":32,
-          "fLen":64,
-          "divSqrt":true,
-          "sfmaLatency":3,
-          "dfmaLatency":4
         }
       },
       "dcache":{
         "nSets":64,
-        "nWays":4,
+        "nWays":1,
         "rowBits":64,
         "replacementPolicy":"random",
         "nTLBSets":1,
-        "nTLBWays":32,
+        "nTLBWays":4,
         "nTLBBasePageSectors":4,
         "nTLBSuperpages":4,
         "dataECCBytes":1,
@@ -849,7 +716,7 @@
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_64",
+    "target":"TestHarness.plusarg_reader_56",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
@@ -876,12 +743,12 @@
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_65",
+    "target":"TestHarness.plusarg_reader_57",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_66",
+    "target":"TestHarness.plusarg_reader_58",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
@@ -918,22 +785,22 @@
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_67",
+    "target":"TestHarness.plusarg_reader_59",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_68",
+    "target":"TestHarness.plusarg_reader_60",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_69",
+    "target":"TestHarness.plusarg_reader_61",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_70",
+    "target":"TestHarness.plusarg_reader_62",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
@@ -985,7 +852,7 @@
     "target":"TestHarness.DCache_1.tag_array",
     "address_width":6,
     "name":"tag_array",
-    "data_width":88,
+    "data_width":22,
     "depth":64,
     "description":"DCache Tag Array",
     "write_mask_granularity":22
@@ -995,7 +862,7 @@
     "target":"TestHarness.DCacheDataArray_1.data_arrays_0",
     "address_width":9,
     "name":"data_arrays_0",
-    "data_width":256,
+    "data_width":64,
     "depth":512,
     "description":"DCache Data Array",
     "write_mask_granularity":8
@@ -1021,7 +888,7 @@
     "target":"TestHarness.ICache_1.tag_array",
     "address_width":6,
     "name":"tag_array",
-    "data_width":84,
+    "data_width":21,
     "depth":64,
     "description":"ICache Tag Array",
     "write_mask_granularity":21
@@ -1031,7 +898,7 @@
     "target":"TestHarness.ICache_1.data_arrays_0",
     "address_width":9,
     "name":"data_arrays_0",
-    "data_width":128,
+    "data_width":32,
     "depth":512,
     "description":"ICache Data Array",
     "write_mask_granularity":32
@@ -1041,43 +908,14 @@
     "target":"TestHarness.ICache_1.data_arrays_1",
     "address_width":9,
     "name":"data_arrays_1",
-    "data_width":128,
+    "data_width":32,
     "depth":512,
     "description":"ICache Data Array",
     "write_mask_granularity":32
   },
   {
-    "class":"freechips.rocketchip.util.ParamsAnnotation",
-    "target":"TestHarness.BTB_1",
-    "paramsClassName":"freechips.rocketchip.rocket.BTBParams",
-    "params":{
-      "nPages":6,
-      "nMatchBits":14,
-      "nEntries":28,
-      "bhtParams":{
-        "nEntries":512,
-        "counterLength":1,
-        "historyLength":8,
-        "historyBits":3
-      },
-      "nRAS":6,
-      "updatesOutOfOrder":false
-    }
-  },
-  {
-    "class":"freechips.rocketchip.util.ParamsAnnotation",
-    "target":"TestHarness.BTB_1",
-    "paramsClassName":"freechips.rocketchip.rocket.BHTParams",
-    "params":{
-      "nEntries":512,
-      "counterLength":1,
-      "historyLength":8,
-      "historyBits":3
-    }
-  },
-  {
     "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLWidthWidget_13"
+    "target":"TestHarness.TLWidthWidget_11"
   },
   {
     "class":"chisel3.experimental.EnumAnnotations$EnumVecAnnotation",
@@ -1100,52 +938,19 @@
     ]
   },
   {
-    "class":"freechips.rocketchip.util.RetimeModuleAnnotation",
-    "target":"TestHarness.FPUFMAPipe_2"
-  },
-  {
-    "class":"freechips.rocketchip.util.RetimeModuleAnnotation",
-    "target":"TestHarness.FPToInt_1"
-  },
-  {
-    "class":"freechips.rocketchip.util.RetimeModuleAnnotation",
-    "target":"TestHarness.IntToFP_1"
-  },
-  {
-    "class":"freechips.rocketchip.util.RetimeModuleAnnotation",
-    "target":"TestHarness.FPToFP_1"
-  },
-  {
-    "class":"freechips.rocketchip.util.RetimeModuleAnnotation",
-    "target":"TestHarness.FPUFMAPipe_3"
-  },
-  {
     "class":"freechips.rocketchip.util.ParamsAnnotation",
     "target":"TestHarness.RocketTile_1",
     "paramsClassName":"freechips.rocketchip.tile.RocketTileParams",
     "params":{
       "name":"tile",
       "dataScratchpadBytes":0,
-      "btb":{
-        "nEntries":28,
-        "nMatchBits":14,
-        "nPages":6,
-        "nRAS":6,
-        "bhtParams":{
-          "nEntries":512,
-          "counterLength":1,
-          "historyLength":8,
-          "historyBits":3
-        },
-        "updatesOutOfOrder":false
-      },
       "hartId":1,
       "icache":{
         "nSets":64,
-        "nWays":4,
+        "nWays":1,
         "rowBits":64,
         "nTLBSets":1,
-        "nTLBWays":32,
+        "nTLBWays":4,
         "nTLBBasePageSectors":4,
         "nTLBSuperpages":4,
         "cacheIdBits":0,
@@ -1188,27 +993,20 @@
         "mvendorid":0,
         "mimpid":538447876,
         "mulDiv":{
-          "mulUnroll":8,
+          "mulUnroll":1,
           "divUnroll":1,
-          "mulEarlyOut":true,
-          "divEarlyOut":true,
+          "mulEarlyOut":false,
+          "divEarlyOut":false,
           "divEarlyOutGranularity":1
-        },
-        "fpu":{
-          "minFLen":32,
-          "fLen":64,
-          "divSqrt":true,
-          "sfmaLatency":3,
-          "dfmaLatency":4
         }
       },
       "dcache":{
         "nSets":64,
-        "nWays":4,
+        "nWays":1,
         "rowBits":64,
         "replacementPolicy":"random",
         "nTLBSets":1,
-        "nTLBWays":32,
+        "nTLBWays":4,
         "nTLBBasePageSectors":4,
         "nTLBSuperpages":4,
         "dataECCBytes":1,
@@ -1232,7 +1030,7 @@
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_71",
+    "target":"TestHarness.plusarg_reader_63",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
@@ -1259,12 +1057,12 @@
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_72",
+    "target":"TestHarness.plusarg_reader_64",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_73",
+    "target":"TestHarness.plusarg_reader_65",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
@@ -1301,778 +1099,12 @@
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_74",
+    "target":"TestHarness.plusarg_reader_66",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_75",
-    "resourceId":"/vsrc/plusarg_reader.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_76",
-    "resourceId":"/vsrc/plusarg_reader.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_77",
-    "resourceId":"/vsrc/plusarg_reader.v"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.BundleBridgeNexus_24"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.BundleBridgeNexus_25"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.BundleBridgeNexus_26"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.BundleBridgeNexus_27"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.BundleBridgeNexus_28"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.BundleBridgeNexus_29"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.BundleBridgeNexus_30"
-  },
-  {
-    "class":"firrtl.transforms.DontTouchAnnotation",
-    "target":"~TestHarness|DCache_2>io.cpu.resp"
-  },
-  {
-    "class":"firrtl.transforms.DontTouchAnnotation",
-    "target":"~TestHarness|DCache_2>io.cpu.s1_data"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.DCacheModuleImpl_Anon_6"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.DCacheModuleImpl_Anon_7"
-  },
-  {
-    "class":"freechips.rocketchip.util.SRAMAnnotation",
-    "target":"TestHarness.DCache_2.tag_array",
-    "address_width":6,
-    "name":"tag_array",
-    "data_width":88,
-    "depth":64,
-    "description":"DCache Tag Array",
-    "write_mask_granularity":22
-  },
-  {
-    "class":"freechips.rocketchip.util.SRAMAnnotation",
-    "target":"TestHarness.DCacheDataArray_2.data_arrays_0",
-    "address_width":9,
-    "name":"data_arrays_0",
-    "data_width":256,
-    "depth":512,
-    "description":"DCache Data Array",
-    "write_mask_granularity":8
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.DCacheModuleImpl_Anon_8"
-  },
-  {
-    "class":"firrtl.transforms.DontTouchAnnotation",
-    "target":"~TestHarness|DCache_2>s2_valid_cached_miss"
-  },
-  {
-    "class":"firrtl.transforms.DontTouchAnnotation",
-    "target":"~TestHarness|DCache_2>s2_victim_dirty"
-  },
-  {
-    "class":"firrtl.transforms.DontTouchAnnotation",
-    "target":"~TestHarness|ICache_2>s1_hit"
-  },
-  {
-    "class":"freechips.rocketchip.util.SRAMAnnotation",
-    "target":"TestHarness.ICache_2.tag_array",
-    "address_width":6,
-    "name":"tag_array",
-    "data_width":84,
-    "depth":64,
-    "description":"ICache Tag Array",
-    "write_mask_granularity":21
-  },
-  {
-    "class":"freechips.rocketchip.util.SRAMAnnotation",
-    "target":"TestHarness.ICache_2.data_arrays_0",
-    "address_width":9,
-    "name":"data_arrays_0",
-    "data_width":128,
-    "depth":512,
-    "description":"ICache Data Array",
-    "write_mask_granularity":32
-  },
-  {
-    "class":"freechips.rocketchip.util.SRAMAnnotation",
-    "target":"TestHarness.ICache_2.data_arrays_1",
-    "address_width":9,
-    "name":"data_arrays_1",
-    "data_width":128,
-    "depth":512,
-    "description":"ICache Data Array",
-    "write_mask_granularity":32
-  },
-  {
-    "class":"freechips.rocketchip.util.ParamsAnnotation",
-    "target":"TestHarness.BTB_2",
-    "paramsClassName":"freechips.rocketchip.rocket.BTBParams",
-    "params":{
-      "nPages":6,
-      "nMatchBits":14,
-      "nEntries":28,
-      "bhtParams":{
-        "nEntries":512,
-        "counterLength":1,
-        "historyLength":8,
-        "historyBits":3
-      },
-      "nRAS":6,
-      "updatesOutOfOrder":false
-    }
-  },
-  {
-    "class":"freechips.rocketchip.util.ParamsAnnotation",
-    "target":"TestHarness.BTB_2",
-    "paramsClassName":"freechips.rocketchip.rocket.BHTParams",
-    "params":{
-      "nEntries":512,
-      "counterLength":1,
-      "historyLength":8,
-      "historyBits":3
-    }
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLWidthWidget_14"
-  },
-  {
-    "class":"chisel3.experimental.EnumAnnotations$EnumVecAnnotation",
-    "target":"TestHarness.RocketTile_2.bundleOut_0_5.group",
-    "typeName":"freechips.rocketchip.util.TraceItype",
-    "fields":[
-      [
-        "itype"
-      ]
-    ]
-  },
-  {
-    "class":"chisel3.experimental.EnumAnnotations$EnumVecAnnotation",
-    "target":"TestHarness.RocketTile_2.auto.trace_core_source_out.group",
-    "typeName":"freechips.rocketchip.util.TraceItype",
-    "fields":[
-      [
-        "itype"
-      ]
-    ]
-  },
-  {
-    "class":"freechips.rocketchip.util.RetimeModuleAnnotation",
-    "target":"TestHarness.FPUFMAPipe_4"
-  },
-  {
-    "class":"freechips.rocketchip.util.RetimeModuleAnnotation",
-    "target":"TestHarness.FPToInt_2"
-  },
-  {
-    "class":"freechips.rocketchip.util.RetimeModuleAnnotation",
-    "target":"TestHarness.IntToFP_2"
-  },
-  {
-    "class":"freechips.rocketchip.util.RetimeModuleAnnotation",
-    "target":"TestHarness.FPToFP_2"
-  },
-  {
-    "class":"freechips.rocketchip.util.RetimeModuleAnnotation",
-    "target":"TestHarness.FPUFMAPipe_5"
-  },
-  {
-    "class":"freechips.rocketchip.util.ParamsAnnotation",
-    "target":"TestHarness.RocketTile_2",
-    "paramsClassName":"freechips.rocketchip.tile.RocketTileParams",
-    "params":{
-      "name":"tile",
-      "dataScratchpadBytes":0,
-      "btb":{
-        "nEntries":28,
-        "nMatchBits":14,
-        "nPages":6,
-        "nRAS":6,
-        "bhtParams":{
-          "nEntries":512,
-          "counterLength":1,
-          "historyLength":8,
-          "historyBits":3
-        },
-        "updatesOutOfOrder":false
-      },
-      "hartId":2,
-      "icache":{
-        "nSets":64,
-        "nWays":4,
-        "rowBits":64,
-        "nTLBSets":1,
-        "nTLBWays":32,
-        "nTLBBasePageSectors":4,
-        "nTLBSuperpages":4,
-        "cacheIdBits":0,
-        "prefetch":false,
-        "blockBytes":64,
-        "latency":2,
-        "fetchBytes":4
-      },
-      "boundaryBuffers":false,
-      "core":{
-        "bootFreqHz":0,
-        "useVM":true,
-        "useUser":false,
-        "useSupervisor":false,
-        "useDebug":true,
-        "useAtomics":true,
-        "useAtomicsOnlyForIO":false,
-        "useCompressed":true,
-        "useRVE":false,
-        "useSCIE":false,
-        "nLocalInterrupts":0,
-        "useNMI":false,
-        "nBreakpoints":1,
-        "useBPWatch":false,
-        "mcontextWidth":0,
-        "scontextWidth":0,
-        "nPMPs":8,
-        "nPerfCounters":0,
-        "haveBasicCounters":true,
-        "haveCFlush":false,
-        "misaWritable":true,
-        "nL2TLBEntries":0,
-        "nL2TLBWays":1,
-        "mtvecInit":0,
-        "mtvecWritable":true,
-        "fastLoadWord":true,
-        "fastLoadByte":false,
-        "branchPredictionModeCSR":false,
-        "clockGate":false,
-        "mvendorid":0,
-        "mimpid":538447876,
-        "mulDiv":{
-          "mulUnroll":8,
-          "divUnroll":1,
-          "mulEarlyOut":true,
-          "divEarlyOut":true,
-          "divEarlyOutGranularity":1
-        },
-        "fpu":{
-          "minFLen":32,
-          "fLen":64,
-          "divSqrt":true,
-          "sfmaLatency":3,
-          "dfmaLatency":4
-        }
-      },
-      "dcache":{
-        "nSets":64,
-        "nWays":4,
-        "rowBits":64,
-        "replacementPolicy":"random",
-        "nTLBSets":1,
-        "nTLBWays":32,
-        "nTLBBasePageSectors":4,
-        "nTLBSuperpages":4,
-        "dataECCBytes":1,
-        "nMSHRs":0,
-        "nSDQ":17,
-        "nRPQ":16,
-        "nMMIOs":1,
-        "blockBytes":64,
-        "separateUncachedResp":false,
-        "acquireBeforeRelease":false,
-        "pipelineWayMux":false,
-        "clockGate":false
-      },
-      "clockSinkParams":{
-        "phaseDeg":0.0,
-        "phaseErrorDeg":5.0,
-        "freqErrorPPM":10000.0,
-        "jitterPS":200.0
-      }
-    }
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_78",
-    "resourceId":"/vsrc/plusarg_reader.v"
-  },
-  {
-    "class":"chisel3.experimental.EnumAnnotations$EnumVecAnnotation",
-    "target":"TestHarness.TileResetDomain_2.auto.tile_trace_core_source_out.group",
-    "typeName":"freechips.rocketchip.util.TraceItype",
-    "fields":[
-      [
-        "itype"
-      ]
-    ]
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TileResetDomain_2"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.FixedClockBroadcast_8"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLBuffer_16"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_79",
-    "resourceId":"/vsrc/plusarg_reader.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_80",
-    "resourceId":"/vsrc/plusarg_reader.v"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLBuffer_18"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.BundleBridgeNexus_31"
-  },
-  {
-    "class":"chisel3.experimental.EnumAnnotations$EnumVecAnnotation",
-    "target":"TestHarness.BundleBridgeNexus_32.inputs_0.group",
-    "typeName":"freechips.rocketchip.util.TraceItype",
-    "fields":[
-      [
-        "itype"
-      ]
-    ]
-  },
-  {
-    "class":"chisel3.experimental.EnumAnnotations$EnumVecAnnotation",
-    "target":"TestHarness.BundleBridgeNexus_32.auto.in.group",
-    "typeName":"freechips.rocketchip.util.TraceItype",
-    "fields":[
-      [
-        "itype"
-      ]
-    ]
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.BundleBridgeNexus_32"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_81",
-    "resourceId":"/vsrc/plusarg_reader.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_82",
-    "resourceId":"/vsrc/plusarg_reader.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_83",
-    "resourceId":"/vsrc/plusarg_reader.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_84",
-    "resourceId":"/vsrc/plusarg_reader.v"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.BundleBridgeNexus_33"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.BundleBridgeNexus_34"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.BundleBridgeNexus_35"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.BundleBridgeNexus_36"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.BundleBridgeNexus_37"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.BundleBridgeNexus_38"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.BundleBridgeNexus_39"
-  },
-  {
-    "class":"firrtl.transforms.DontTouchAnnotation",
-    "target":"~TestHarness|DCache_3>io.cpu.resp"
-  },
-  {
-    "class":"firrtl.transforms.DontTouchAnnotation",
-    "target":"~TestHarness|DCache_3>io.cpu.s1_data"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.DCacheModuleImpl_Anon_9"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.DCacheModuleImpl_Anon_10"
-  },
-  {
-    "class":"freechips.rocketchip.util.SRAMAnnotation",
-    "target":"TestHarness.DCache_3.tag_array",
-    "address_width":6,
-    "name":"tag_array",
-    "data_width":88,
-    "depth":64,
-    "description":"DCache Tag Array",
-    "write_mask_granularity":22
-  },
-  {
-    "class":"freechips.rocketchip.util.SRAMAnnotation",
-    "target":"TestHarness.DCacheDataArray_3.data_arrays_0",
-    "address_width":9,
-    "name":"data_arrays_0",
-    "data_width":256,
-    "depth":512,
-    "description":"DCache Data Array",
-    "write_mask_granularity":8
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.DCacheModuleImpl_Anon_11"
-  },
-  {
-    "class":"firrtl.transforms.DontTouchAnnotation",
-    "target":"~TestHarness|DCache_3>s2_valid_cached_miss"
-  },
-  {
-    "class":"firrtl.transforms.DontTouchAnnotation",
-    "target":"~TestHarness|DCache_3>s2_victim_dirty"
-  },
-  {
-    "class":"firrtl.transforms.DontTouchAnnotation",
-    "target":"~TestHarness|ICache_3>s1_hit"
-  },
-  {
-    "class":"freechips.rocketchip.util.SRAMAnnotation",
-    "target":"TestHarness.ICache_3.tag_array",
-    "address_width":6,
-    "name":"tag_array",
-    "data_width":84,
-    "depth":64,
-    "description":"ICache Tag Array",
-    "write_mask_granularity":21
-  },
-  {
-    "class":"freechips.rocketchip.util.SRAMAnnotation",
-    "target":"TestHarness.ICache_3.data_arrays_0",
-    "address_width":9,
-    "name":"data_arrays_0",
-    "data_width":128,
-    "depth":512,
-    "description":"ICache Data Array",
-    "write_mask_granularity":32
-  },
-  {
-    "class":"freechips.rocketchip.util.SRAMAnnotation",
-    "target":"TestHarness.ICache_3.data_arrays_1",
-    "address_width":9,
-    "name":"data_arrays_1",
-    "data_width":128,
-    "depth":512,
-    "description":"ICache Data Array",
-    "write_mask_granularity":32
-  },
-  {
-    "class":"freechips.rocketchip.util.ParamsAnnotation",
-    "target":"TestHarness.BTB_3",
-    "paramsClassName":"freechips.rocketchip.rocket.BTBParams",
-    "params":{
-      "nPages":6,
-      "nMatchBits":14,
-      "nEntries":28,
-      "bhtParams":{
-        "nEntries":512,
-        "counterLength":1,
-        "historyLength":8,
-        "historyBits":3
-      },
-      "nRAS":6,
-      "updatesOutOfOrder":false
-    }
-  },
-  {
-    "class":"freechips.rocketchip.util.ParamsAnnotation",
-    "target":"TestHarness.BTB_3",
-    "paramsClassName":"freechips.rocketchip.rocket.BHTParams",
-    "params":{
-      "nEntries":512,
-      "counterLength":1,
-      "historyLength":8,
-      "historyBits":3
-    }
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLWidthWidget_15"
-  },
-  {
-    "class":"chisel3.experimental.EnumAnnotations$EnumVecAnnotation",
-    "target":"TestHarness.RocketTile_3.bundleOut_0_5.group",
-    "typeName":"freechips.rocketchip.util.TraceItype",
-    "fields":[
-      [
-        "itype"
-      ]
-    ]
-  },
-  {
-    "class":"chisel3.experimental.EnumAnnotations$EnumVecAnnotation",
-    "target":"TestHarness.RocketTile_3.auto.trace_core_source_out.group",
-    "typeName":"freechips.rocketchip.util.TraceItype",
-    "fields":[
-      [
-        "itype"
-      ]
-    ]
-  },
-  {
-    "class":"freechips.rocketchip.util.RetimeModuleAnnotation",
-    "target":"TestHarness.FPUFMAPipe_6"
-  },
-  {
-    "class":"freechips.rocketchip.util.RetimeModuleAnnotation",
-    "target":"TestHarness.FPToInt_3"
-  },
-  {
-    "class":"freechips.rocketchip.util.RetimeModuleAnnotation",
-    "target":"TestHarness.IntToFP_3"
-  },
-  {
-    "class":"freechips.rocketchip.util.RetimeModuleAnnotation",
-    "target":"TestHarness.FPToFP_3"
-  },
-  {
-    "class":"freechips.rocketchip.util.RetimeModuleAnnotation",
-    "target":"TestHarness.FPUFMAPipe_7"
-  },
-  {
-    "class":"freechips.rocketchip.util.ParamsAnnotation",
-    "target":"TestHarness.RocketTile_3",
-    "paramsClassName":"freechips.rocketchip.tile.RocketTileParams",
-    "params":{
-      "name":"tile",
-      "dataScratchpadBytes":0,
-      "btb":{
-        "nEntries":28,
-        "nMatchBits":14,
-        "nPages":6,
-        "nRAS":6,
-        "bhtParams":{
-          "nEntries":512,
-          "counterLength":1,
-          "historyLength":8,
-          "historyBits":3
-        },
-        "updatesOutOfOrder":false
-      },
-      "hartId":3,
-      "icache":{
-        "nSets":64,
-        "nWays":4,
-        "rowBits":64,
-        "nTLBSets":1,
-        "nTLBWays":32,
-        "nTLBBasePageSectors":4,
-        "nTLBSuperpages":4,
-        "cacheIdBits":0,
-        "prefetch":false,
-        "blockBytes":64,
-        "latency":2,
-        "fetchBytes":4
-      },
-      "boundaryBuffers":false,
-      "core":{
-        "bootFreqHz":0,
-        "useVM":true,
-        "useUser":false,
-        "useSupervisor":false,
-        "useDebug":true,
-        "useAtomics":true,
-        "useAtomicsOnlyForIO":false,
-        "useCompressed":true,
-        "useRVE":false,
-        "useSCIE":false,
-        "nLocalInterrupts":0,
-        "useNMI":false,
-        "nBreakpoints":1,
-        "useBPWatch":false,
-        "mcontextWidth":0,
-        "scontextWidth":0,
-        "nPMPs":8,
-        "nPerfCounters":0,
-        "haveBasicCounters":true,
-        "haveCFlush":false,
-        "misaWritable":true,
-        "nL2TLBEntries":0,
-        "nL2TLBWays":1,
-        "mtvecInit":0,
-        "mtvecWritable":true,
-        "fastLoadWord":true,
-        "fastLoadByte":false,
-        "branchPredictionModeCSR":false,
-        "clockGate":false,
-        "mvendorid":0,
-        "mimpid":538447876,
-        "mulDiv":{
-          "mulUnroll":8,
-          "divUnroll":1,
-          "mulEarlyOut":true,
-          "divEarlyOut":true,
-          "divEarlyOutGranularity":1
-        },
-        "fpu":{
-          "minFLen":32,
-          "fLen":64,
-          "divSqrt":true,
-          "sfmaLatency":3,
-          "dfmaLatency":4
-        }
-      },
-      "dcache":{
-        "nSets":64,
-        "nWays":4,
-        "rowBits":64,
-        "replacementPolicy":"random",
-        "nTLBSets":1,
-        "nTLBWays":32,
-        "nTLBBasePageSectors":4,
-        "nTLBSuperpages":4,
-        "dataECCBytes":1,
-        "nMSHRs":0,
-        "nSDQ":17,
-        "nRPQ":16,
-        "nMMIOs":1,
-        "blockBytes":64,
-        "separateUncachedResp":false,
-        "acquireBeforeRelease":false,
-        "pipelineWayMux":false,
-        "clockGate":false
-      },
-      "clockSinkParams":{
-        "phaseDeg":0.0,
-        "phaseErrorDeg":5.0,
-        "freqErrorPPM":10000.0,
-        "jitterPS":200.0
-      }
-    }
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_85",
-    "resourceId":"/vsrc/plusarg_reader.v"
-  },
-  {
-    "class":"chisel3.experimental.EnumAnnotations$EnumVecAnnotation",
-    "target":"TestHarness.TileResetDomain_3.auto.tile_trace_core_source_out.group",
-    "typeName":"freechips.rocketchip.util.TraceItype",
-    "fields":[
-      [
-        "itype"
-      ]
-    ]
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TileResetDomain_3"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.FixedClockBroadcast_9"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLBuffer_20"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_86",
-    "resourceId":"/vsrc/plusarg_reader.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_87",
-    "resourceId":"/vsrc/plusarg_reader.v"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLBuffer_22"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.BundleBridgeNexus_40"
-  },
-  {
-    "class":"chisel3.experimental.EnumAnnotations$EnumVecAnnotation",
-    "target":"TestHarness.BundleBridgeNexus_41.inputs_0.group",
-    "typeName":"freechips.rocketchip.util.TraceItype",
-    "fields":[
-      [
-        "itype"
-      ]
-    ]
-  },
-  {
-    "class":"chisel3.experimental.EnumAnnotations$EnumVecAnnotation",
-    "target":"TestHarness.BundleBridgeNexus_41.auto.in.group",
-    "typeName":"freechips.rocketchip.util.TraceItype",
-    "fields":[
-      [
-        "itype"
-      ]
-    ]
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.BundleBridgeNexus_41"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_88",
-    "resourceId":"/vsrc/plusarg_reader.v"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_89",
+    "target":"TestHarness.plusarg_reader_67",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
@@ -2401,150 +1433,6 @@
           }
         },
         {
-          "byteOffset":"0x2200",
-          "bitOffset":0,
-          "bitWidth":1,
-          "name":"reserved",
-          "resetValue":0,
-          "accessType":"R",
-          "wrType":"None",
-          "rdAction":"None",
-          "desc":"",
-          "group":"None",
-          "groupDesc":"None",
-          "volatile":false,
-          "hasReset":true,
-          "enumerations":{
-            
-          }
-        },
-        {
-          "byteOffset":"0x2200",
-          "bitOffset":1,
-          "bitWidth":4,
-          "name":"enables_0",
-          "resetValue":0,
-          "accessType":"RW",
-          "wrType":"None",
-          "rdAction":"None",
-          "desc":"Targets 1-4. Set bits to 1 if interrupt should be enabled.",
-          "group":"enables_4",
-          "groupDesc":"Enable bits for each interrupt source for target 4. 1 bit for each interrupt source.",
-          "volatile":false,
-          "hasReset":false,
-          "enumerations":{
-            
-          }
-        },
-        {
-          "byteOffset":"0x2280",
-          "bitOffset":0,
-          "bitWidth":1,
-          "name":"reserved",
-          "resetValue":0,
-          "accessType":"R",
-          "wrType":"None",
-          "rdAction":"None",
-          "desc":"",
-          "group":"None",
-          "groupDesc":"None",
-          "volatile":false,
-          "hasReset":true,
-          "enumerations":{
-            
-          }
-        },
-        {
-          "byteOffset":"0x2280",
-          "bitOffset":1,
-          "bitWidth":4,
-          "name":"enables_0",
-          "resetValue":0,
-          "accessType":"RW",
-          "wrType":"None",
-          "rdAction":"None",
-          "desc":"Targets 1-4. Set bits to 1 if interrupt should be enabled.",
-          "group":"enables_5",
-          "groupDesc":"Enable bits for each interrupt source for target 5. 1 bit for each interrupt source.",
-          "volatile":false,
-          "hasReset":false,
-          "enumerations":{
-            
-          }
-        },
-        {
-          "byteOffset":"0x2300",
-          "bitOffset":0,
-          "bitWidth":1,
-          "name":"reserved",
-          "resetValue":0,
-          "accessType":"R",
-          "wrType":"None",
-          "rdAction":"None",
-          "desc":"",
-          "group":"None",
-          "groupDesc":"None",
-          "volatile":false,
-          "hasReset":true,
-          "enumerations":{
-            
-          }
-        },
-        {
-          "byteOffset":"0x2300",
-          "bitOffset":1,
-          "bitWidth":4,
-          "name":"enables_0",
-          "resetValue":0,
-          "accessType":"RW",
-          "wrType":"None",
-          "rdAction":"None",
-          "desc":"Targets 1-4. Set bits to 1 if interrupt should be enabled.",
-          "group":"enables_6",
-          "groupDesc":"Enable bits for each interrupt source for target 6. 1 bit for each interrupt source.",
-          "volatile":false,
-          "hasReset":false,
-          "enumerations":{
-            
-          }
-        },
-        {
-          "byteOffset":"0x2380",
-          "bitOffset":0,
-          "bitWidth":1,
-          "name":"reserved",
-          "resetValue":0,
-          "accessType":"R",
-          "wrType":"None",
-          "rdAction":"None",
-          "desc":"",
-          "group":"None",
-          "groupDesc":"None",
-          "volatile":false,
-          "hasReset":true,
-          "enumerations":{
-            
-          }
-        },
-        {
-          "byteOffset":"0x2380",
-          "bitOffset":1,
-          "bitWidth":4,
-          "name":"enables_0",
-          "resetValue":0,
-          "accessType":"RW",
-          "wrType":"None",
-          "rdAction":"None",
-          "desc":"Targets 1-4. Set bits to 1 if interrupt should be enabled.",
-          "group":"enables_7",
-          "groupDesc":"Enable bits for each interrupt source for target 7. 1 bit for each interrupt source.",
-          "volatile":false,
-          "hasReset":false,
-          "enumerations":{
-            
-          }
-        },
-        {
           "byteOffset":"0x200000",
           "bitOffset":0,
           "bitWidth":3,
@@ -2759,234 +1647,18 @@
           "enumerations":{
             
           }
-        },
-        {
-          "byteOffset":"0x204000",
-          "bitOffset":0,
-          "bitWidth":3,
-          "name":"threshold_4",
-          "resetValue":0,
-          "accessType":"RW",
-          "wrType":"None",
-          "rdAction":"None",
-          "desc":"Interrupt & claim threshold for target 4. Maximum value is 7.",
-          "group":"None",
-          "groupDesc":"None",
-          "volatile":false,
-          "hasReset":false,
-          "enumerations":{
-            
-          }
-        },
-        {
-          "byteOffset":"0x204000",
-          "bitOffset":3,
-          "bitWidth":29,
-          "name":"reserved",
-          "resetValue":0,
-          "accessType":"R",
-          "wrType":"None",
-          "rdAction":"None",
-          "desc":"",
-          "group":"None",
-          "groupDesc":"None",
-          "volatile":false,
-          "hasReset":true,
-          "enumerations":{
-            
-          }
-        },
-        {
-          "byteOffset":"0x204000",
-          "bitOffset":32,
-          "bitWidth":32,
-          "name":"claim_complete_4",
-          "resetValue":0,
-          "accessType":"RW",
-          "wrType":"Some(MODIFY)",
-          "rdAction":"Some(MODIFY)",
-          "desc":"Claim/Complete register for Target 4. Reading this register returns the claimed interrupt number and makes it no longer pending.Writing the interrupt number back completes the interrupt.",
-          "group":"None",
-          "groupDesc":"None",
-          "volatile":true,
-          "hasReset":false,
-          "enumerations":{
-            
-          }
-        },
-        {
-          "byteOffset":"0x205000",
-          "bitOffset":0,
-          "bitWidth":3,
-          "name":"threshold_5",
-          "resetValue":0,
-          "accessType":"RW",
-          "wrType":"None",
-          "rdAction":"None",
-          "desc":"Interrupt & claim threshold for target 5. Maximum value is 7.",
-          "group":"None",
-          "groupDesc":"None",
-          "volatile":false,
-          "hasReset":false,
-          "enumerations":{
-            
-          }
-        },
-        {
-          "byteOffset":"0x205000",
-          "bitOffset":3,
-          "bitWidth":29,
-          "name":"reserved",
-          "resetValue":0,
-          "accessType":"R",
-          "wrType":"None",
-          "rdAction":"None",
-          "desc":"",
-          "group":"None",
-          "groupDesc":"None",
-          "volatile":false,
-          "hasReset":true,
-          "enumerations":{
-            
-          }
-        },
-        {
-          "byteOffset":"0x205000",
-          "bitOffset":32,
-          "bitWidth":32,
-          "name":"claim_complete_5",
-          "resetValue":0,
-          "accessType":"RW",
-          "wrType":"Some(MODIFY)",
-          "rdAction":"Some(MODIFY)",
-          "desc":"Claim/Complete register for Target 5. Reading this register returns the claimed interrupt number and makes it no longer pending.Writing the interrupt number back completes the interrupt.",
-          "group":"None",
-          "groupDesc":"None",
-          "volatile":true,
-          "hasReset":false,
-          "enumerations":{
-            
-          }
-        },
-        {
-          "byteOffset":"0x206000",
-          "bitOffset":0,
-          "bitWidth":3,
-          "name":"threshold_6",
-          "resetValue":0,
-          "accessType":"RW",
-          "wrType":"None",
-          "rdAction":"None",
-          "desc":"Interrupt & claim threshold for target 6. Maximum value is 7.",
-          "group":"None",
-          "groupDesc":"None",
-          "volatile":false,
-          "hasReset":false,
-          "enumerations":{
-            
-          }
-        },
-        {
-          "byteOffset":"0x206000",
-          "bitOffset":3,
-          "bitWidth":29,
-          "name":"reserved",
-          "resetValue":0,
-          "accessType":"R",
-          "wrType":"None",
-          "rdAction":"None",
-          "desc":"",
-          "group":"None",
-          "groupDesc":"None",
-          "volatile":false,
-          "hasReset":true,
-          "enumerations":{
-            
-          }
-        },
-        {
-          "byteOffset":"0x206000",
-          "bitOffset":32,
-          "bitWidth":32,
-          "name":"claim_complete_6",
-          "resetValue":0,
-          "accessType":"RW",
-          "wrType":"Some(MODIFY)",
-          "rdAction":"Some(MODIFY)",
-          "desc":"Claim/Complete register for Target 6. Reading this register returns the claimed interrupt number and makes it no longer pending.Writing the interrupt number back completes the interrupt.",
-          "group":"None",
-          "groupDesc":"None",
-          "volatile":true,
-          "hasReset":false,
-          "enumerations":{
-            
-          }
-        },
-        {
-          "byteOffset":"0x207000",
-          "bitOffset":0,
-          "bitWidth":3,
-          "name":"threshold_7",
-          "resetValue":0,
-          "accessType":"RW",
-          "wrType":"None",
-          "rdAction":"None",
-          "desc":"Interrupt & claim threshold for target 7. Maximum value is 7.",
-          "group":"None",
-          "groupDesc":"None",
-          "volatile":false,
-          "hasReset":false,
-          "enumerations":{
-            
-          }
-        },
-        {
-          "byteOffset":"0x207000",
-          "bitOffset":3,
-          "bitWidth":29,
-          "name":"reserved",
-          "resetValue":0,
-          "accessType":"R",
-          "wrType":"None",
-          "rdAction":"None",
-          "desc":"",
-          "group":"None",
-          "groupDesc":"None",
-          "volatile":false,
-          "hasReset":true,
-          "enumerations":{
-            
-          }
-        },
-        {
-          "byteOffset":"0x207000",
-          "bitOffset":32,
-          "bitWidth":32,
-          "name":"claim_complete_7",
-          "resetValue":0,
-          "accessType":"RW",
-          "wrType":"Some(MODIFY)",
-          "rdAction":"Some(MODIFY)",
-          "desc":"Claim/Complete register for Target 7. Reading this register returns the claimed interrupt number and makes it no longer pending.Writing the interrupt number back completes the interrupt.",
-          "group":"None",
-          "groupDesc":"None",
-          "volatile":true,
-          "hasReset":false,
-          "enumerations":{
-            
-          }
         }
       ]
     }
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_90",
+    "target":"TestHarness.plusarg_reader_68",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_91",
+    "target":"TestHarness.plusarg_reader_69",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
@@ -3063,78 +1735,6 @@
         {
           "byteOffset":"0x0",
           "bitOffset":33,
-          "bitWidth":31,
-          "name":"reserved",
-          "resetValue":0,
-          "accessType":"R",
-          "wrType":"None",
-          "rdAction":"None",
-          "desc":"",
-          "group":"msip",
-          "groupDesc":"None",
-          "volatile":false,
-          "hasReset":true,
-          "enumerations":{
-            
-          }
-        },
-        {
-          "byteOffset":"0x0",
-          "bitOffset":64,
-          "bitWidth":1,
-          "name":"msip_2",
-          "resetValue":0,
-          "accessType":"RW",
-          "wrType":"None",
-          "rdAction":"None",
-          "desc":"MSIP bit for Hart 2",
-          "group":"msip",
-          "groupDesc":"None",
-          "volatile":false,
-          "hasReset":true,
-          "enumerations":{
-            
-          }
-        },
-        {
-          "byteOffset":"0x0",
-          "bitOffset":65,
-          "bitWidth":31,
-          "name":"reserved",
-          "resetValue":0,
-          "accessType":"R",
-          "wrType":"None",
-          "rdAction":"None",
-          "desc":"",
-          "group":"msip",
-          "groupDesc":"None",
-          "volatile":false,
-          "hasReset":true,
-          "enumerations":{
-            
-          }
-        },
-        {
-          "byteOffset":"0x0",
-          "bitOffset":96,
-          "bitWidth":1,
-          "name":"msip_3",
-          "resetValue":0,
-          "accessType":"RW",
-          "wrType":"None",
-          "rdAction":"None",
-          "desc":"MSIP bit for Hart 3",
-          "group":"msip",
-          "groupDesc":"None",
-          "volatile":false,
-          "hasReset":true,
-          "enumerations":{
-            
-          }
-        },
-        {
-          "byteOffset":"0x0",
-          "bitOffset":97,
           "bitWidth":31,
           "name":"reserved",
           "resetValue":0,
@@ -3439,294 +2039,6 @@
           }
         },
         {
-          "byteOffset":"0x4000",
-          "bitOffset":128,
-          "bitWidth":8,
-          "name":"mtimecmp_2_0",
-          "resetValue":0,
-          "accessType":"RW",
-          "wrType":"None",
-          "rdAction":"None",
-          "desc":"",
-          "group":"mtimecmp_2",
-          "groupDesc":"MTIMECMP for hart 2",
-          "volatile":false,
-          "hasReset":false,
-          "enumerations":{
-            
-          }
-        },
-        {
-          "byteOffset":"0x4000",
-          "bitOffset":136,
-          "bitWidth":8,
-          "name":"mtimecmp_2_1",
-          "resetValue":0,
-          "accessType":"RW",
-          "wrType":"None",
-          "rdAction":"None",
-          "desc":"",
-          "group":"mtimecmp_2",
-          "groupDesc":"None",
-          "volatile":false,
-          "hasReset":false,
-          "enumerations":{
-            
-          }
-        },
-        {
-          "byteOffset":"0x4000",
-          "bitOffset":144,
-          "bitWidth":8,
-          "name":"mtimecmp_2_2",
-          "resetValue":0,
-          "accessType":"RW",
-          "wrType":"None",
-          "rdAction":"None",
-          "desc":"",
-          "group":"mtimecmp_2",
-          "groupDesc":"None",
-          "volatile":false,
-          "hasReset":false,
-          "enumerations":{
-            
-          }
-        },
-        {
-          "byteOffset":"0x4000",
-          "bitOffset":152,
-          "bitWidth":8,
-          "name":"mtimecmp_2_3",
-          "resetValue":0,
-          "accessType":"RW",
-          "wrType":"None",
-          "rdAction":"None",
-          "desc":"",
-          "group":"mtimecmp_2",
-          "groupDesc":"None",
-          "volatile":false,
-          "hasReset":false,
-          "enumerations":{
-            
-          }
-        },
-        {
-          "byteOffset":"0x4000",
-          "bitOffset":160,
-          "bitWidth":8,
-          "name":"mtimecmp_2_4",
-          "resetValue":0,
-          "accessType":"RW",
-          "wrType":"None",
-          "rdAction":"None",
-          "desc":"",
-          "group":"mtimecmp_2",
-          "groupDesc":"None",
-          "volatile":false,
-          "hasReset":false,
-          "enumerations":{
-            
-          }
-        },
-        {
-          "byteOffset":"0x4000",
-          "bitOffset":168,
-          "bitWidth":8,
-          "name":"mtimecmp_2_5",
-          "resetValue":0,
-          "accessType":"RW",
-          "wrType":"None",
-          "rdAction":"None",
-          "desc":"",
-          "group":"mtimecmp_2",
-          "groupDesc":"None",
-          "volatile":false,
-          "hasReset":false,
-          "enumerations":{
-            
-          }
-        },
-        {
-          "byteOffset":"0x4000",
-          "bitOffset":176,
-          "bitWidth":8,
-          "name":"mtimecmp_2_6",
-          "resetValue":0,
-          "accessType":"RW",
-          "wrType":"None",
-          "rdAction":"None",
-          "desc":"",
-          "group":"mtimecmp_2",
-          "groupDesc":"None",
-          "volatile":false,
-          "hasReset":false,
-          "enumerations":{
-            
-          }
-        },
-        {
-          "byteOffset":"0x4000",
-          "bitOffset":184,
-          "bitWidth":8,
-          "name":"mtimecmp_2_7",
-          "resetValue":0,
-          "accessType":"RW",
-          "wrType":"None",
-          "rdAction":"None",
-          "desc":"",
-          "group":"mtimecmp_2",
-          "groupDesc":"None",
-          "volatile":false,
-          "hasReset":false,
-          "enumerations":{
-            
-          }
-        },
-        {
-          "byteOffset":"0x4000",
-          "bitOffset":192,
-          "bitWidth":8,
-          "name":"mtimecmp_3_0",
-          "resetValue":0,
-          "accessType":"RW",
-          "wrType":"None",
-          "rdAction":"None",
-          "desc":"",
-          "group":"mtimecmp_3",
-          "groupDesc":"MTIMECMP for hart 3",
-          "volatile":false,
-          "hasReset":false,
-          "enumerations":{
-            
-          }
-        },
-        {
-          "byteOffset":"0x4000",
-          "bitOffset":200,
-          "bitWidth":8,
-          "name":"mtimecmp_3_1",
-          "resetValue":0,
-          "accessType":"RW",
-          "wrType":"None",
-          "rdAction":"None",
-          "desc":"",
-          "group":"mtimecmp_3",
-          "groupDesc":"None",
-          "volatile":false,
-          "hasReset":false,
-          "enumerations":{
-            
-          }
-        },
-        {
-          "byteOffset":"0x4000",
-          "bitOffset":208,
-          "bitWidth":8,
-          "name":"mtimecmp_3_2",
-          "resetValue":0,
-          "accessType":"RW",
-          "wrType":"None",
-          "rdAction":"None",
-          "desc":"",
-          "group":"mtimecmp_3",
-          "groupDesc":"None",
-          "volatile":false,
-          "hasReset":false,
-          "enumerations":{
-            
-          }
-        },
-        {
-          "byteOffset":"0x4000",
-          "bitOffset":216,
-          "bitWidth":8,
-          "name":"mtimecmp_3_3",
-          "resetValue":0,
-          "accessType":"RW",
-          "wrType":"None",
-          "rdAction":"None",
-          "desc":"",
-          "group":"mtimecmp_3",
-          "groupDesc":"None",
-          "volatile":false,
-          "hasReset":false,
-          "enumerations":{
-            
-          }
-        },
-        {
-          "byteOffset":"0x4000",
-          "bitOffset":224,
-          "bitWidth":8,
-          "name":"mtimecmp_3_4",
-          "resetValue":0,
-          "accessType":"RW",
-          "wrType":"None",
-          "rdAction":"None",
-          "desc":"",
-          "group":"mtimecmp_3",
-          "groupDesc":"None",
-          "volatile":false,
-          "hasReset":false,
-          "enumerations":{
-            
-          }
-        },
-        {
-          "byteOffset":"0x4000",
-          "bitOffset":232,
-          "bitWidth":8,
-          "name":"mtimecmp_3_5",
-          "resetValue":0,
-          "accessType":"RW",
-          "wrType":"None",
-          "rdAction":"None",
-          "desc":"",
-          "group":"mtimecmp_3",
-          "groupDesc":"None",
-          "volatile":false,
-          "hasReset":false,
-          "enumerations":{
-            
-          }
-        },
-        {
-          "byteOffset":"0x4000",
-          "bitOffset":240,
-          "bitWidth":8,
-          "name":"mtimecmp_3_6",
-          "resetValue":0,
-          "accessType":"RW",
-          "wrType":"None",
-          "rdAction":"None",
-          "desc":"",
-          "group":"mtimecmp_3",
-          "groupDesc":"None",
-          "volatile":false,
-          "hasReset":false,
-          "enumerations":{
-            
-          }
-        },
-        {
-          "byteOffset":"0x4000",
-          "bitOffset":248,
-          "bitWidth":8,
-          "name":"mtimecmp_3_7",
-          "resetValue":0,
-          "accessType":"RW",
-          "wrType":"None",
-          "rdAction":"None",
-          "desc":"",
-          "group":"mtimecmp_3",
-          "groupDesc":"None",
-          "volatile":false,
-          "hasReset":false,
-          "enumerations":{
-            
-          }
-        },
-        {
           "byteOffset":"0xbff8",
           "bitOffset":0,
           "bitWidth":8,
@@ -3875,22 +2187,22 @@
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_92",
+    "target":"TestHarness.plusarg_reader_70",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_93",
+    "target":"TestHarness.plusarg_reader_71",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_94",
+    "target":"TestHarness.plusarg_reader_72",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_95",
+    "target":"TestHarness.plusarg_reader_73",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
@@ -3994,7 +2306,7 @@
         {
           "byteOffset":"0x0",
           "bitOffset":16,
-          "bitWidth":2,
+          "bitWidth":1,
           "name":"hartsello",
           "resetValue":0,
           "accessType":"RW",
@@ -4011,8 +2323,8 @@
         },
         {
           "byteOffset":"0x0",
-          "bitOffset":18,
-          "bitWidth":8,
+          "bitOffset":17,
+          "bitWidth":9,
           "name":"reserved",
           "resetValue":0,
           "accessType":"R",
@@ -4228,7 +2540,7 @@
         {
           "byteOffset":"0x14",
           "bitOffset":0,
-          "bitWidth":4,
+          "bitWidth":2,
           "name":"hawindow",
           "resetValue":0,
           "accessType":"RW",
@@ -4248,52 +2560,52 @@
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_96",
+    "target":"TestHarness.plusarg_reader_74",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_97",
+    "target":"TestHarness.plusarg_reader_75",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_98",
+    "target":"TestHarness.plusarg_reader_76",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_99",
+    "target":"TestHarness.plusarg_reader_77",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_100",
+    "target":"TestHarness.plusarg_reader_78",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_101",
+    "target":"TestHarness.plusarg_reader_79",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_102",
+    "target":"TestHarness.plusarg_reader_80",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_103",
+    "target":"TestHarness.plusarg_reader_81",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_104",
+    "target":"TestHarness.plusarg_reader_82",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_105",
+    "target":"TestHarness.plusarg_reader_83",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
@@ -7741,42 +6053,6 @@
           }
         },
         {
-          "byteOffset":"0x400",
-          "bitOffset":16,
-          "bitWidth":8,
-          "name":"debug_flags_2",
-          "resetValue":0,
-          "accessType":"R",
-          "wrType":"None",
-          "rdAction":"None",
-          "desc":"",
-          "group":"debug_flags",
-          "groupDesc":"None",
-          "volatile":true,
-          "hasReset":false,
-          "enumerations":{
-            
-          }
-        },
-        {
-          "byteOffset":"0x400",
-          "bitOffset":24,
-          "bitWidth":8,
-          "name":"debug_flags_3",
-          "resetValue":0,
-          "accessType":"R",
-          "wrType":"None",
-          "rdAction":"None",
-          "desc":"",
-          "group":"debug_flags",
-          "groupDesc":"None",
-          "volatile":true,
-          "hasReset":false,
-          "enumerations":{
-            
-          }
-        },
-        {
           "byteOffset":"0x800",
           "bitOffset":0,
           "bitWidth":8,
@@ -9293,32 +7569,24 @@
   },
   {
     "class":"firrtl.transforms.DontTouchAnnotation",
-    "target":"~TestHarness|BundleBridgeNexus_42>outputs_0"
+    "target":"~TestHarness|BundleBridgeNexus_24>outputs_0"
   },
   {
     "class":"firrtl.transforms.DontTouchAnnotation",
-    "target":"~TestHarness|BundleBridgeNexus_42>outputs_1"
-  },
-  {
-    "class":"firrtl.transforms.DontTouchAnnotation",
-    "target":"~TestHarness|BundleBridgeNexus_42>outputs_2"
-  },
-  {
-    "class":"firrtl.transforms.DontTouchAnnotation",
-    "target":"~TestHarness|BundleBridgeNexus_42>outputs_3"
+    "target":"~TestHarness|BundleBridgeNexus_24>outputs_1"
   },
   {
     "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.BundleBridgeNexus_43"
+    "target":"TestHarness.BundleBridgeNexus_25"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_106",
+    "target":"TestHarness.plusarg_reader_84",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
     "class":"firrtl.transforms.BlackBoxResourceAnno",
-    "target":"TestHarness.plusarg_reader_107",
+    "target":"TestHarness.plusarg_reader_85",
     "resourceId":"/vsrc/plusarg_reader.v"
   },
   {
@@ -10018,14 +8286,6 @@
   {
     "class":"firrtl.transforms.DontTouchAnnotation",
     "target":"~TestHarness|ExampleRocketSystem>resetctrl.hartIsInReset[1]"
-  },
-  {
-    "class":"firrtl.transforms.DontTouchAnnotation",
-    "target":"~TestHarness|ExampleRocketSystem>resetctrl.hartIsInReset[2]"
-  },
-  {
-    "class":"firrtl.transforms.DontTouchAnnotation",
-    "target":"~TestHarness|ExampleRocketSystem>resetctrl.hartIsInReset[3]"
   },
   {
     "class":"firrtl.transforms.DontTouchAnnotation",
