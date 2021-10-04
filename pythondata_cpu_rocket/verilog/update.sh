@@ -107,8 +107,20 @@ cat >> rocket-chip/src/main/scala/system/Configs.scala <<- "EOT"
 	  new BaseLitexConfig
 	)
 
+	class LitexLinux2DConfig extends Config(
+	  new WithNMedCores(2) ++
+	  new WithMemoryDataBits(128) ++
+	  new BaseLitexConfig
+	)
+
 	class LitexLinuxQConfig extends Config(
 	  new WithNMedCores(1) ++
+	  new WithMemoryDataBits(256) ++
+	  new BaseLitexConfig
+	)
+
+	class LitexLinux2QConfig extends Config(
+	  new WithNMedCores(2) ++
 	  new WithMemoryDataBits(256) ++
 	  new BaseLitexConfig
 	)
@@ -131,7 +143,7 @@ cat >> rocket-chip/src/main/scala/system/Configs.scala <<- "EOT"
 	  new BaseLitexConfig
 	)
 	EOT
-for CFG in '' Linux Linux4 LinuxD LinuxQ Full Full4D Full4Q; do
+for CFG in '' Linux Linux4 LinuxD Linux2D LinuxQ Linux2Q Full Full4D Full4Q; do
   make RISCV=${HOME}/RISCV -C rocket-chip/vsim verilog \
        CONFIG=freechips.rocketchip.system.Litex${CFG}Config
 done
