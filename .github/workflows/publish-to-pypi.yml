@@ -62,7 +62,7 @@ jobs:
   wheels:
     strategy:
       matrix:
-        python-version: [ '2.x', '3.x' ]
+        python-version: [ '3.x' ]
       fail-fast: false
 
     name: ${{ matrix.python-version }}
