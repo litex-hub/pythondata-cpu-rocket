@@ -4,11 +4,11 @@ data_location = os.path.join(__dir__, "verilog")
 src = "https://github.com/chipsalliance/rocket-chip.git"
 
 # Module version
-version_str = "0.0.post7124"
-version_tuple = (0, 0, 7124)
+version_str = "0.0.post7125"
+version_tuple = (0, 0, 7125)
 try:
     from packaging.version import Version as V
-    pversion = V("0.0.post7124")
+    pversion = V("0.0.post7125")
 except ImportError:
     pass
 
@@ -27,11 +27,11 @@ data_git_msg = """\
 """
 
 # Tool version info
-tool_version_str = "0.0.post120"
-tool_version_tuple = (0, 0, 120)
+tool_version_str = "0.0.post121"
+tool_version_tuple = (0, 0, 121)
 try:
     from packaging.version import Version as V
-    ptool_version = V("0.0.post120")
+    ptool_version = V("0.0.post121")
 except ImportError:
     pass
 

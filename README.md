@@ -36,9 +36,11 @@ The data files are generated from https://github.com/chipsalliance/rocket-chip.g
 [pythondata_cpu_rocket/verilog](pythondata_cpu_rocket/verilog).
 
 
-## Installing from git repository
+# Installing
 
-## Manually
+## Directly from git repository
+
+### Manually
 
 You can install the package manually, however this is **not** recommended.
 
@@ -48,7 +50,7 @@ cd pythondata-cpu-rocket
 sudo python setup.py install
 ```
 
-## Using [pip](https://pip.pypa.io/) with git repository
+### Using [pip](https://pip.pypa.io/) with git repository
 
 You can use [pip](https://pip.pypa.io/) to install the data package directly
 from github using;
@@ -83,10 +85,17 @@ To use a specific revision of the repository, use the following;
 -e https://github.com/litex-hub/pythondata-cpu-rocket.git@<hash>
 ```
 
-## Installing from [PyPi](https://pypi.org/project/pythondata-cpu-rocket/)
+## Via [PyPi](https://pypi.org/project/pythondata-cpu-rocket/)
 
-## Using [pip](https://pip.pypa.io/)
+### Using [pip](https://pip.pypa.io/)
 
 ```
 pip install --user pythondata-cpu-rocket
+```
+
+### With `requirements.txt` file
+
+Add to your Python `requirements.txt` file using;
+```
+pythondata-cpu-rocket
 ```
