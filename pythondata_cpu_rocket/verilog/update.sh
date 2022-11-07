@@ -129,34 +129,39 @@ cat >> rocket-chip/src/main/scala/system/Configs.scala <<- "EOT"
 	  new BaseLitexConfig
 	)
 
+	class FullLitexConfig extends Config(
+	  new WithHypervisor ++
+	  new BaseLitexConfig
+	)
+
 	class LitexFullConfig extends Config(
 	  new WithNBigCores(1) ++
 	  new WithMemoryDataBits(64) ++
-	  new BaseLitexConfig
+	  new FullLitexConfig
 	)
 
 	class LitexFullDConfig extends Config(
 	  new WithNBigCores(1) ++
 	  new WithMemoryDataBits(128) ++
-	  new BaseLitexConfig
+	  new FullLitexConfig
 	)
 
 	class LitexFullQConfig extends Config(
 	  new WithNBigCores(1) ++
 	  new WithMemoryDataBits(256) ++
-	  new BaseLitexConfig
+	  new FullLitexConfig
 	)
 
 	class LitexFull4DConfig extends Config(
 	  new WithNBigCores(4) ++
 	  new WithMemoryDataBits(128) ++
-	  new BaseLitexConfig
+	  new FullLitexConfig
 	)
 
 	class LitexFull4QConfig extends Config(
 	  new WithNBigCores(4) ++
 	  new WithMemoryDataBits(256) ++
-	  new BaseLitexConfig
+	  new FullLitexConfig
 	)
 	EOT
 for CFG in '' \
