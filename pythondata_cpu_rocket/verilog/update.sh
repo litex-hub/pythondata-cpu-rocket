@@ -38,7 +38,7 @@ git clone --recursive https://github.com/chipsalliance/rocket-chip
 
 # make Rocket's internal bootrom jump to 0x1000_0000, as expected by LiteX:
 sed -i '/DRAM_BASE/s/x8/x1/;/hang:/a\  j _start' rocket-chip/bootrom/bootrom.S
-make -C rocket-chip/bootrom
+make -C rocket-chip/bootrom || exit 1
 
 # generate LiteX-specific Rocket configuration variants:
 # NOTE: uncached (MMIO) access below, cached (RAM) access above 0x8000_0000
