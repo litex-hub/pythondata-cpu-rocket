@@ -38,6 +38,8 @@ git clone --recursive https://github.com/chipsalliance/rocket-chip
 
 # make Rocket's internal bootrom jump to 0x1000_0000, as expected by LiteX:
 sed -i '/DRAM_BASE/s/x8/x1/;/hang:/a\  j _start' rocket-chip/bootrom/bootrom.S
+# Drop unused internal DTB in BootROM to strip it down
+sed -i 's/ ++ subsystem\.dtb\.contents//' rocket-chip/src/main/scala/devices/tilelink/BootROM.scala
 make -C rocket-chip/bootrom || exit 1
 
 # generate LiteX-specific Rocket configuration variants:
