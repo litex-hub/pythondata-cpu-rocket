@@ -156,10 +156,25 @@ cat >> rocket-chip/src/main/scala/system/Configs.scala <<- "EOT"
 	  new WithMemoryDataBits(256) ++
 	  new BaseLitexConfig
 	)
+
+	class LitexHypervisorConfig extends Config(
+	  new WithNBigCores(1) ++
+	  new WithMemoryDataBits(64) ++
+	  new WithHypervisor ++
+	  new BaseLitexConfig
+	)
+
+	class LitexHypervisor4QConfig extends Config(
+	  new WithNBigCores(4) ++
+	  new WithMemoryDataBits(256) ++
+	  new WithHypervisor ++
+	  new BaseLitexConfig
+	)
 	EOT
 for CFG in '' \
     Linux Linux4 LinuxD Linux2D LinuxQ Linux2Q \
-    Full FullD FullQ Full4D Full4Q; do
+    Full FullD FullQ Full4D Full4Q \
+    Hypervisor Hypervisor4Q; do
   make RISCV=${HOME}/RISCV -C rocket-chip/vsim verilog \
        CONFIG=freechips.rocketchip.system.Litex${CFG}Config
 done
