@@ -623,18 +623,18 @@
       "ITBrTaken":5,
       "ITReserved7":7,
       "ITExcReturn":3,
+      "ITCoSwap":12,
+      "ITInJump":15,
+      "ITUnJump":14,
+      "ITUnTail":10,
       "ITInterrupt":2,
       "ITException":1,
-      "ITCoSwap":12,
       "ITUnCall":8,
       "ITReserved6":6,
       "ITNothing":0,
       "ITReturn":13,
       "ITInTail":11,
-      "ITInCall":9,
-      "ITInJump":15,
-      "ITUnJump":14,
-      "ITUnTail":10
+      "ITInCall":9
     }
   },
   {
@@ -2201,17 +2201,17 @@
       "nProgramBufferWords":16,
       "supportQuickAccess":false,
       "supportHartArray":true,
+      "maxSupportedSBAccess":64,
+      "clockGate":true,
+      "nExtTriggers":0,
       "hasAuthentication":false,
       "nHaltGroups":1,
-      "nExtTriggers":0,
       "nScratch":1,
       "baseAddress":0,
       "hasImplicitEbreak":false,
       "hasHartResets":false,
       "hasBusMaster":false,
-      "crossingHasSafeReset":true,
-      "maxSupportedSBAccess":64,
-      "clockGate":true
+      "crossingHasSafeReset":true
     }
   },
   {
