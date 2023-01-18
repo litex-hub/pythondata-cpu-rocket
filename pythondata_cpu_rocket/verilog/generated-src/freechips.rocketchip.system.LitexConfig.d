@@ -135,7 +135,14 @@ rv64mi-p-asm-tests = \
 	rv64mi-p-sbreak \
 	rv64mi-p-scall \
 	rv64mi-p-breakpoint \
-	rv64mi-p-access
+	rv64mi-p-lh-misaligned \
+	rv64mi-p-lw-misaligned \
+	rv64mi-p-shamt \
+	rv64mi-p-sh-misaligned \
+	rv64mi-p-sw-misaligned \
+	rv64mi-p-zicntr \
+	rv64mi-p-access \
+	rv64mi-p-icache-alias
 
 $(addprefix $(output_dir)/, $(addsuffix .hex, $(rv64mi-p-asm-tests))): $(output_dir)/%.hex: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%.hex
 	mkdir -p $(output_dir)
@@ -176,10 +183,14 @@ rvi-bmark-tests = \
 	median.riscv \
 	multiply.riscv \
 	qsort.riscv \
+	rsort.riscv \
+	pmp.riscv \
 	towers.riscv \
 	vvadd.riscv \
 	dhrystone.riscv \
-	mt-matmul.riscv
+	memcpy.riscv \
+	mt-matmul.riscv \
+	mt-memcpy.riscv
 
 $(addprefix $(output_dir)/, $(addsuffix .hex, $(rvi-bmark-tests))): $(output_dir)/%.hex: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/benchmarks/%.hex
 	mkdir -p $(output_dir)

@@ -8,7 +8,8 @@ rv64uf-p-asm-tests = \
 	rv64uf-p-fadd \
 	rv64uf-p-fdiv \
 	rv64uf-p-fmin \
-	rv64uf-p-fmadd
+	rv64uf-p-fmadd \
+	rv64uf-p-recoding
 
 $(addprefix $(output_dir)/, $(addsuffix .hex, $(rv64uf-p-asm-tests))): $(output_dir)/%.hex: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%.hex
 	mkdir -p $(output_dir)
@@ -37,7 +38,8 @@ rv64uf-v-asm-tests = \
 	rv64uf-v-fadd \
 	rv64uf-v-fdiv \
 	rv64uf-v-fmin \
-	rv64uf-v-fmadd
+	rv64uf-v-fmadd \
+	rv64uf-v-recoding
 
 $(addprefix $(output_dir)/, $(addsuffix .hex, $(rv64uf-v-asm-tests))): $(output_dir)/%.hex: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%.hex
 	mkdir -p $(output_dir)
@@ -67,6 +69,7 @@ rv64ud-p-asm-tests = \
 	rv64ud-p-fdiv \
 	rv64ud-p-fmin \
 	rv64ud-p-fmadd \
+	rv64ud-p-recoding \
 	rv64ud-p-structural
 
 $(addprefix $(output_dir)/, $(addsuffix .hex, $(rv64ud-p-asm-tests))): $(output_dir)/%.hex: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%.hex
@@ -97,6 +100,7 @@ rv64ud-v-asm-tests = \
 	rv64ud-v-fdiv \
 	rv64ud-v-fmin \
 	rv64ud-v-fmadd \
+	rv64ud-v-recoding \
 	rv64ud-v-structural
 
 $(addprefix $(output_dir)/, $(addsuffix .hex, $(rv64ud-v-asm-tests))): $(output_dir)/%.hex: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%.hex
@@ -336,7 +340,14 @@ rv64mi-p-asm-tests = \
 	rv64mi-p-sbreak \
 	rv64mi-p-scall \
 	rv64mi-p-breakpoint \
-	rv64mi-p-access
+	rv64mi-p-lh-misaligned \
+	rv64mi-p-lw-misaligned \
+	rv64mi-p-shamt \
+	rv64mi-p-sh-misaligned \
+	rv64mi-p-sw-misaligned \
+	rv64mi-p-zicntr \
+	rv64mi-p-access \
+	rv64mi-p-icache-alias
 
 $(addprefix $(output_dir)/, $(addsuffix .hex, $(rv64mi-p-asm-tests))): $(output_dir)/%.hex: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/isa/%.hex
 	mkdir -p $(output_dir)
@@ -511,10 +522,14 @@ rvi-bmark-tests = \
 	median.riscv \
 	multiply.riscv \
 	qsort.riscv \
+	rsort.riscv \
+	pmp.riscv \
 	towers.riscv \
 	vvadd.riscv \
 	dhrystone.riscv \
-	mt-matmul.riscv
+	memcpy.riscv \
+	mt-matmul.riscv \
+	mt-memcpy.riscv
 
 $(addprefix $(output_dir)/, $(addsuffix .hex, $(rvi-bmark-tests))): $(output_dir)/%.hex: $(RISCV)/riscv64-unknown-elf/share/riscv-tests/benchmarks/%.hex
 	mkdir -p $(output_dir)

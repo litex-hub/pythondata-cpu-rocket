@@ -27,7 +27,7 @@
 			mmu-type = "riscv,sv39";
 			next-level-cache = <&L10>;
 			reg = <0x0>;
-			riscv,isa = "rv64imafdc";
+			riscv,isa = "rv64imafdcXrocket";
 			riscv,pmpgranularity = <4>;
 			riscv,pmpregions = <8>;
 			status = "okay";

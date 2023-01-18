@@ -27,7 +27,7 @@
 			mmu-type = "riscv,sv39";
 			next-level-cache = <&L31>;
 			reg = <0x0>;
-			riscv,isa = "rv64imafdc";
+			riscv,isa = "rv64imafdcXrocket";
 			riscv,pmpgranularity = <4>;
 			riscv,pmpregions = <8>;
 			status = "okay";
@@ -57,7 +57,7 @@
 			mmu-type = "riscv,sv39";
 			next-level-cache = <&L31>;
 			reg = <0x1>;
-			riscv,isa = "rv64imafdc";
+			riscv,isa = "rv64imafdcXrocket";
 			riscv,pmpgranularity = <4>;
 			riscv,pmpregions = <8>;
 			status = "okay";
@@ -87,7 +87,7 @@
 			mmu-type = "riscv,sv39";
 			next-level-cache = <&L31>;
 			reg = <0x2>;
-			riscv,isa = "rv64imafdc";
+			riscv,isa = "rv64imafdcXrocket";
 			riscv,pmpgranularity = <4>;
 			riscv,pmpregions = <8>;
 			status = "okay";
@@ -117,7 +117,7 @@
 			mmu-type = "riscv,sv39";
 			next-level-cache = <&L31>;
 			reg = <0x3>;
-			riscv,isa = "rv64imafdc";
+			riscv,isa = "rv64imafdcXrocket";
 			riscv,pmpgranularity = <4>;
 			riscv,pmpregions = <8>;
 			status = "okay";
@@ -147,7 +147,7 @@
 			mmu-type = "riscv,sv39";
 			next-level-cache = <&L31>;
 			reg = <0x4>;
-			riscv,isa = "rv64imafdc";
+			riscv,isa = "rv64imafdcXrocket";
 			riscv,pmpgranularity = <4>;
 			riscv,pmpregions = <8>;
 			status = "okay";
@@ -177,7 +177,7 @@
 			mmu-type = "riscv,sv39";
 			next-level-cache = <&L31>;
 			reg = <0x5>;
-			riscv,isa = "rv64imafdc";
+			riscv,isa = "rv64imafdcXrocket";
 			riscv,pmpgranularity = <4>;
 			riscv,pmpregions = <8>;
 			status = "okay";
@@ -207,7 +207,7 @@
 			mmu-type = "riscv,sv39";
 			next-level-cache = <&L31>;
 			reg = <0x6>;
-			riscv,isa = "rv64imafdc";
+			riscv,isa = "rv64imafdcXrocket";
 			riscv,pmpgranularity = <4>;
 			riscv,pmpregions = <8>;
 			status = "okay";
@@ -237,7 +237,7 @@
 			mmu-type = "riscv,sv39";
 			next-level-cache = <&L31>;
 			reg = <0x7>;
-			riscv,isa = "rv64imafdc";
+			riscv,isa = "rv64imafdcXrocket";
 			riscv,pmpgranularity = <4>;
 			riscv,pmpregions = <8>;
 			status = "okay";
