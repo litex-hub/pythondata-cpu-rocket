@@ -131,6 +131,8 @@ cat >> rocket-chip/src/main/scala/system/Configs.scala <<- "EOT"
 
 	class FullLitexConfig extends Config(
 	  new WithHypervisor ++
+	  new WithBitManip ++ new WithBitManipCrypto ++
+	  new WithCryptoNIST ++ new WithCryptoSM ++
 	  new BaseLitexConfig
 	)
 
