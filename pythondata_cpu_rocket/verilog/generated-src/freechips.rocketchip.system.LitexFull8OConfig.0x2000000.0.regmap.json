@@ -1,6 +1,6 @@
 {
   "peripheral" : {
-    "displayName" : "deviceAt0x2000000",
+    "displayName" : "clint.At0x2000000",
     "baseAddress" : "0x2000000",
     "regfields" : [ {
       "msip_0" : {

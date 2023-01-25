@@ -1,6 +1,6 @@
 {
   "peripheral" : {
-    "displayName" : "deviceAt0x40",
+    "displayName" : "debug-controller.At0x40",
     "baseAddress" : "0x40",
     "regfields" : [ {
       "dmactive" : {

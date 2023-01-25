@@ -1,6 +1,6 @@
 {
   "peripheral" : {
-    "displayName" : "deviceAt0xc000000",
+    "displayName" : "interrupt-controller.At0xc000000",
     "baseAddress" : "0xc000000",
     "regfields" : [ {
       "priority_1" : {

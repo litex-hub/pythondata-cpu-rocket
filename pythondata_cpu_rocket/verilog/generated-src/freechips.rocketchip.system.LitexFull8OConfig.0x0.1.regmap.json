@@ -1,6 +1,6 @@
 {
   "peripheral" : {
-    "displayName" : "deviceAt0x0",
+    "displayName" : "debug-controller.At0x0",
     "baseAddress" : "0x0",
     "regfields" : [ {
       "debug_hart_halted" : {
