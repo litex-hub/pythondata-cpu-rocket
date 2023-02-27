@@ -194,6 +194,7 @@ done
 # install generated files for use by LiteX:
 VDIR=rocket-chip/src/main/resources/vsrc
 GDIR=rocket-chip/vsim/generated-src
+rm -f ${GDIR}/*.fir # too large for github, and, besides, we don't use them!
 for DIR in ${VDIR} ${GDIR}; do
   rm -rf $(basename ${DIR})
   install -m 0644 ${DIR}/* -D -t $(basename ${DIR})
