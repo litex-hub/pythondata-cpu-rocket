@@ -22,7 +22,7 @@
 			i-cache-size = <4096>;
 			next-level-cache = <&L10>;
 			reg = <0x0>;
-			riscv,isa = "rv64imacXrocket";
+			riscv,isa = "rv64imacZicsr_Zifencei_Zihpm_Xrocket";
 			riscv,pmpgranularity = <4>;
 			riscv,pmpregions = <8>;
 			status = "okay";

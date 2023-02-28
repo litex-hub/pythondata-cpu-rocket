@@ -842,7 +842,7 @@
   },
   {
     "class":"chisel3.experimental.EnumAnnotations$EnumVecAnnotation",
-    "target":"TestHarness.BundleBridgeNexus_14.inputs_0.group",
+    "target":"TestHarness.BundleBridgeNexus_14.bundleIn_0.group",
     "typeName":"freechips.rocketchip.util.TraceItype",
     "fields":[
       [

@@ -1169,7 +1169,7 @@
   },
   {
     "class":"chisel3.experimental.EnumAnnotations$EnumVecAnnotation",
-    "target":"TestHarness.BundleBridgeNexus_14.inputs_0.group",
+    "target":"TestHarness.BundleBridgeNexus_14.bundleIn_0.group",
     "typeName":"freechips.rocketchip.util.TraceItype",
     "fields":[
       [
@@ -1619,7 +1619,7 @@
   },
   {
     "class":"chisel3.experimental.EnumAnnotations$EnumVecAnnotation",
-    "target":"TestHarness.BundleBridgeNexus_23.inputs_0.group",
+    "target":"TestHarness.BundleBridgeNexus_23.bundleIn_0.group",
     "typeName":"freechips.rocketchip.util.TraceItype",
     "fields":[
       [
@@ -2069,7 +2069,7 @@
   },
   {
     "class":"chisel3.experimental.EnumAnnotations$EnumVecAnnotation",
-    "target":"TestHarness.BundleBridgeNexus_32.inputs_0.group",
+    "target":"TestHarness.BundleBridgeNexus_32.bundleIn_0.group",
     "typeName":"freechips.rocketchip.util.TraceItype",
     "fields":[
       [
@@ -2519,7 +2519,7 @@
   },
   {
     "class":"chisel3.experimental.EnumAnnotations$EnumVecAnnotation",
-    "target":"TestHarness.BundleBridgeNexus_41.inputs_0.group",
+    "target":"TestHarness.BundleBridgeNexus_41.bundleIn_0.group",
     "typeName":"freechips.rocketchip.util.TraceItype",
     "fields":[
       [
@@ -2969,7 +2969,7 @@
   },
   {
     "class":"chisel3.experimental.EnumAnnotations$EnumVecAnnotation",
-    "target":"TestHarness.BundleBridgeNexus_50.inputs_0.group",
+    "target":"TestHarness.BundleBridgeNexus_50.bundleIn_0.group",
     "typeName":"freechips.rocketchip.util.TraceItype",
     "fields":[
       [
@@ -3419,7 +3419,7 @@
   },
   {
     "class":"chisel3.experimental.EnumAnnotations$EnumVecAnnotation",
-    "target":"TestHarness.BundleBridgeNexus_59.inputs_0.group",
+    "target":"TestHarness.BundleBridgeNexus_59.bundleIn_0.group",
     "typeName":"freechips.rocketchip.util.TraceItype",
     "fields":[
       [
@@ -3869,7 +3869,7 @@
   },
   {
     "class":"chisel3.experimental.EnumAnnotations$EnumVecAnnotation",
-    "target":"TestHarness.BundleBridgeNexus_68.inputs_0.group",
+    "target":"TestHarness.BundleBridgeNexus_68.bundleIn_0.group",
     "typeName":"freechips.rocketchip.util.TraceItype",
     "fields":[
       [
@@ -4319,7 +4319,7 @@
   },
   {
     "class":"chisel3.experimental.EnumAnnotations$EnumVecAnnotation",
-    "target":"TestHarness.BundleBridgeNexus_77.inputs_0.group",
+    "target":"TestHarness.BundleBridgeNexus_77.bundleIn_0.group",
     "typeName":"freechips.rocketchip.util.TraceItype",
     "fields":[
       [
