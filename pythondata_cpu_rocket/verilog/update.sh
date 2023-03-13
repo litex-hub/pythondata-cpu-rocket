@@ -44,8 +44,7 @@ make -C rocket-chip/bootrom || exit 1
 # comment out unnecessary (and unsuitable) DTB from internal bootrom:
 sed -i '/dtb\.contents/s|++|//++|' rocket-chip/src/main/scala/devices/tilelink/BootROM.scala
 
-# generate LiteX-specific Rocket configuration variants:
-# NOTE: uncached (MMIO) access below, cached (RAM) access above 0x8000_0000
+# Add LiteX specific Rocket port configuration options:
 cat >> rocket-chip/src/main/scala/subsystem/Configs.scala <<- "EOT"
 
 	class WithMemoryDataBits(dataBits: Int) extends Config((site, here, up) => {
@@ -75,7 +74,8 @@ cat >> rocket-chip/src/main/scala/subsystem/Configs.scala <<- "EOT"
 	                      sourceBits = 4))
 	})
 	EOT
-# NOTE: disable (unused) slave AXI port, ensure sufficient external IRQs
+
+# Configure port settings, ensure sufficient external IRQs:
 cat >> rocket-chip/src/main/scala/system/Configs.scala <<- "EOT"
 
 	class BaseLitexConfig extends Config(
@@ -87,108 +87,46 @@ cat >> rocket-chip/src/main/scala/system/Configs.scala <<- "EOT"
 	  new BaseConfig
 	)
 
-	class LitexConfig extends Config(
-	  new WithNSmallCores(1) ++
-	  new WithMemoryDataBits(64) ++
-	  new BaseLitexConfig
-	)
-
-	class LitexLinuxConfig extends Config(
-	  new WithNMedCores(1) ++
-	  new WithMemoryDataBits(64) ++
-	  new BaseLitexConfig
-	)
-
-	class LitexLinux4Config extends Config(
-	  new WithNMedCores(4) ++
-	  new WithMemoryDataBits(64) ++
-	  new BaseLitexConfig
-	)
-
-	class LitexLinuxDConfig extends Config(
-	  new WithNMedCores(1) ++
-	  new WithMemoryDataBits(128) ++
-	  new BaseLitexConfig
-	)
-
-	class LitexLinux2DConfig extends Config(
-	  new WithNMedCores(2) ++
-	  new WithMemoryDataBits(128) ++
-	  new BaseLitexConfig
-	)
-
-	class LitexLinuxQConfig extends Config(
-	  new WithNMedCores(1) ++
-	  new WithMemoryDataBits(256) ++
-	  new BaseLitexConfig
-	)
-
-	class LitexLinux2QConfig extends Config(
-	  new WithNMedCores(2) ++
-	  new WithMemoryDataBits(256) ++
-	  new BaseLitexConfig
-	)
-
-	class FullLitexConfig extends Config(
+	class WithLitexHextConfig extends Config(
 	  new WithHypervisor ++
 	  new WithBitManip ++ new WithBitManipCrypto ++
-	  new WithCryptoNIST ++ new WithCryptoSM ++
-	  new BaseLitexConfig
-	)
-
-	class LitexFullConfig extends Config(
-	  new WithNBigCores(1) ++
-	  new WithMemoryDataBits(64) ++
-	  new FullLitexConfig
-	)
-
-	class LitexFullDConfig extends Config(
-	  new WithNBigCores(1) ++
-	  new WithMemoryDataBits(128) ++
-	  new FullLitexConfig
-	)
-
-	class LitexFullQConfig extends Config(
-	  new WithNBigCores(1) ++
-	  new WithMemoryDataBits(256) ++
-	  new FullLitexConfig
-	)
-
-	class LitexFullOConfig extends Config(
-	  new WithNBigCores(1) ++
-	  new WithMemoryDataBits(512) ++
-	  new FullLitexConfig
-	)
-
-	class LitexFull4DConfig extends Config(
-	  new WithNBigCores(4) ++
-	  new WithMemoryDataBits(128) ++
-	  new FullLitexConfig
-	)
-
-	class LitexFull4QConfig extends Config(
-	  new WithNBigCores(4) ++
-	  new WithMemoryDataBits(256) ++
-	  new FullLitexConfig
-	)
-
-	class LitexFull4OConfig extends Config(
-	  new WithNBigCores(4) ++
-	  new WithMemoryDataBits(512) ++
-	  new FullLitexConfig
-	)
-
-	class LitexFull8OConfig extends Config(
-	  new WithNBigCores(8) ++
-	  new WithMemoryDataBits(512) ++
-	  new FullLitexConfig
+	  new WithCryptoNIST ++ new WithCryptoSM
 	)
 	EOT
-for CFG in '' \
-    Linux Linux4 LinuxD Linux2D LinuxQ Linux2Q \
-    Full FullD FullQ FullO Full4D Full4Q Full4O Full8O; do
-  make RISCV=${HOME}/RISCV -C rocket-chip/vsim verilog \
-       CONFIG=freechips.rocketchip.system.Litex${CFG}Config
+
+# Fit Rocket core models to each LiteX model:
+declare -A CORE_TYPE=(
+  ['small']='Small'
+  ['medium']='Med'
+  ['linux']='Big'
+  ['full']='Big'
+)
+
+# Generate LiteX variant configurations:
+for MODEL in small medium linux full; do
+  for CORES in 1 2 4 8; do
+    for WIDTH in 1 2 4 8; do
+      echo
+      # FIXME: do '-' or '_' chars work as separators?
+      # or should it rather be LiteConfigFooXbarxblah?
+      echo "class LitexConfig_${MODEL}_${CORES}_${WIDTH} extends Config("
+      [ "${MODEL}" == "full" ] && echo "  new WithLitexHextConfig ++"
+      echo "  new WithN${CORE_TYPE[$MODEL]}Cores(${CORES}) ++"
+      echo "  new WithMemoryDataBits($((${WIDTH}*64))) ++"
+      echo "  new BaseLitexConfig"
+      echo ")"
+    done
+  done
+done >> rocket-chip/src/main/scala/system/Configs.scala
+
+# Elaborate verilog for each LiteX (sub-)variant:
+for MODEL in small medium linux full; do
+  for CORES in 1 2 4 8; do
+    for WIDTH in 1 2 4 8; do
+      make RISCV=${HOME}/RISCV -C rocket-chip/vsim verilog \
+       CONFIG=freechips.rocketchip.system.LitexConfig_${MODEL}_${CORES}_${WIDTH}
+    done
+  done
 done
 
 # install generated files for use by LiteX:
