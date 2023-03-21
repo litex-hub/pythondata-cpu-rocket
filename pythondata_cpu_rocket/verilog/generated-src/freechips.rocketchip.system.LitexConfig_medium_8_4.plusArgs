@@ -1,0 +1,13 @@
+#define PLUSARG_USAGE_OPTIONS "EMULATOR VERILOG PLUSARGS\n\
+       +tilelink_timeout=INT\n\
+                           Kill emulation after INT waiting TileLink cycles. Off if 0.\n\
+                             (default=0)\n\
+\n\
+       +max_core_cycles=INT\n\
+                           Kill the emulation after INT rdtime cycles. Off if 0.\n\
+                             (default=0)\n\
+"
+static const char * verilog_plusargs [] = {\
+                                            "tilelink_timeout",\
+                                            "max_core_cycles",\
+                                            0};

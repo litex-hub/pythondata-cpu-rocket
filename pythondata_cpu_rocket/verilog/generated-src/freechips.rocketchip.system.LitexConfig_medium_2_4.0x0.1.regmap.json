@@ -1,0 +1,1586 @@
+{
+  "peripheral" : {
+    "displayName" : "debug-controller.At0x0",
+    "baseAddress" : "0x0",
+    "regfields" : [ {
+      "debug_hart_halted" : {
+        "byteOffset" : "0x100",
+        "bitOffset" : 0,
+        "bitWidth" : 10,
+        "name" : "debug_hart_halted",
+        "description" : "Debug ROM Causes hart to write its hartID here when it is in Debug Mode.",
+        "accessType" : "W"
+      }
+    }, {
+      "debug_hart_going" : {
+        "byteOffset" : "0x104",
+        "bitOffset" : 0,
+        "bitWidth" : 10,
+        "name" : "debug_hart_going",
+        "description" : "Debug ROM causes hart to write 0 here when it begins executing Debug Mode instructions.",
+        "accessType" : "W"
+      }
+    }, {
+      "debug_hart_resuming" : {
+        "byteOffset" : "0x108",
+        "bitOffset" : 0,
+        "bitWidth" : 10,
+        "name" : "debug_hart_resuming",
+        "description" : "Debug ROM causes hart to write its hartID here when it leaves Debug Mode.",
+        "accessType" : "W"
+      }
+    }, {
+      "debug_hart_exception" : {
+        "byteOffset" : "0x10c",
+        "bitOffset" : 0,
+        "bitWidth" : 10,
+        "name" : "debug_hart_exception",
+        "description" : "Debug ROM causes hart to write 0 here if it gets an exception in Debug Mode.",
+        "accessType" : "W"
+      }
+    }, {
+      "debug_data_0" : {
+        "byteOffset" : "0x380",
+        "bitOffset" : 0,
+        "bitWidth" : 8,
+        "name" : "debug_data_0",
+        "group" : "debug_data",
+        "groupDesc" : "Data used to communicate with Debug Module",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_data_1" : {
+        "byteOffset" : "0x380",
+        "bitOffset" : 8,
+        "bitWidth" : 8,
+        "name" : "debug_data_1",
+        "group" : "debug_data",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_data_2" : {
+        "byteOffset" : "0x380",
+        "bitOffset" : 16,
+        "bitWidth" : 8,
+        "name" : "debug_data_2",
+        "group" : "debug_data",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_data_3" : {
+        "byteOffset" : "0x380",
+        "bitOffset" : 24,
+        "bitWidth" : 8,
+        "name" : "debug_data_3",
+        "group" : "debug_data",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_data_4" : {
+        "byteOffset" : "0x380",
+        "bitOffset" : 32,
+        "bitWidth" : 8,
+        "name" : "debug_data_4",
+        "group" : "debug_data",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_data_5" : {
+        "byteOffset" : "0x380",
+        "bitOffset" : 40,
+        "bitWidth" : 8,
+        "name" : "debug_data_5",
+        "group" : "debug_data",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_data_6" : {
+        "byteOffset" : "0x380",
+        "bitOffset" : 48,
+        "bitWidth" : 8,
+        "name" : "debug_data_6",
+        "group" : "debug_data",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_data_7" : {
+        "byteOffset" : "0x380",
+        "bitOffset" : 56,
+        "bitWidth" : 8,
+        "name" : "debug_data_7",
+        "group" : "debug_data",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_0" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 0,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_0",
+        "group" : "debug_progbuf",
+        "groupDesc" : "Program buffer used to communicate with Debug Module",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_1" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 8,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_1",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_2" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 16,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_2",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_3" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 24,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_3",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_4" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 32,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_4",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_5" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 40,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_5",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_6" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 48,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_6",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_7" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 56,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_7",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_8" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 64,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_8",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_9" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 72,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_9",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_10" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 80,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_10",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_11" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 88,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_11",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_12" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 96,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_12",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_13" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 104,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_13",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_14" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 112,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_14",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_15" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 120,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_15",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_16" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 128,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_16",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_17" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 136,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_17",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_18" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 144,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_18",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_19" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 152,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_19",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_20" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 160,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_20",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_21" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 168,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_21",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_22" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 176,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_22",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_23" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 184,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_23",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_24" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 192,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_24",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_25" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 200,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_25",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_26" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 208,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_26",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_27" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 216,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_27",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_28" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 224,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_28",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_29" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 232,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_29",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_30" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 240,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_30",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_31" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 248,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_31",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_32" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 256,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_32",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_33" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 264,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_33",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_34" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 272,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_34",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_35" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 280,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_35",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_36" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 288,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_36",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_37" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 296,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_37",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_38" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 304,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_38",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_39" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 312,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_39",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_40" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 320,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_40",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_41" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 328,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_41",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_42" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 336,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_42",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_43" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 344,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_43",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_44" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 352,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_44",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_45" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 360,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_45",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_46" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 368,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_46",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_47" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 376,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_47",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_48" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 384,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_48",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_49" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 392,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_49",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_50" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 400,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_50",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_51" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 408,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_51",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_52" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 416,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_52",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_53" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 424,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_53",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_54" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 432,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_54",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_55" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 440,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_55",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_56" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 448,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_56",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_57" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 456,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_57",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_58" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 464,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_58",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_59" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 472,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_59",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_60" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 480,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_60",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_61" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 488,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_61",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_62" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 496,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_62",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_progbuf_63" : {
+        "byteOffset" : "0x340",
+        "bitOffset" : 504,
+        "bitWidth" : 8,
+        "name" : "debug_progbuf_63",
+        "group" : "debug_progbuf",
+        "accessType" : "RW"
+      }
+    }, {
+      "debug_whereto" : {
+        "byteOffset" : "0x300",
+        "bitOffset" : 0,
+        "bitWidth" : 32,
+        "name" : "debug_whereto",
+        "description" : "Instruction filled in by Debug Module to control hart in Debug Mode",
+        "accessType" : "R",
+        "volatile" : true
+      }
+    }, {
+      "debug_abstract_0" : {
+        "byteOffset" : "0x338",
+        "bitOffset" : 0,
+        "bitWidth" : 32,
+        "name" : "debug_abstract_0",
+        "group" : "debug_abstract",
+        "groupDesc" : "Instructions generated by Debug Module",
+        "accessType" : "R",
+        "volatile" : true
+      }
+    }, {
+      "debug_abstract_1" : {
+        "byteOffset" : "0x338",
+        "bitOffset" : 32,
+        "bitWidth" : 32,
+        "name" : "debug_abstract_1",
+        "group" : "debug_abstract",
+        "accessType" : "R",
+        "volatile" : true
+      }
+    }, {
+      "debug_flags_0" : {
+        "byteOffset" : "0x400",
+        "bitOffset" : 0,
+        "bitWidth" : 8,
+        "name" : "debug_flags_0",
+        "group" : "debug_flags",
+        "groupDesc" : "Memory region used to control hart going/resuming in Debug Mode",
+        "accessType" : "R",
+        "volatile" : true
+      }
+    }, {
+      "debug_flags_1" : {
+        "byteOffset" : "0x400",
+        "bitOffset" : 8,
+        "bitWidth" : 8,
+        "name" : "debug_flags_1",
+        "group" : "debug_flags",
+        "accessType" : "R",
+        "volatile" : true
+      }
+    }, {
+      "debug_rom_0" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 0,
+        "bitWidth" : 8,
+        "name" : "debug_rom_0",
+        "resetValue" : 111,
+        "group" : "debug_rom",
+        "groupDesc" : "Debug ROM",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_1" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 8,
+        "bitWidth" : 8,
+        "name" : "debug_rom_1",
+        "resetValue" : 0,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_2" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 16,
+        "bitWidth" : 8,
+        "name" : "debug_rom_2",
+        "resetValue" : -64,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_3" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 24,
+        "bitWidth" : 8,
+        "name" : "debug_rom_3",
+        "resetValue" : 0,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_4" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 32,
+        "bitWidth" : 8,
+        "name" : "debug_rom_4",
+        "resetValue" : 111,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_5" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 40,
+        "bitWidth" : 8,
+        "name" : "debug_rom_5",
+        "resetValue" : 0,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_6" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 48,
+        "bitWidth" : 8,
+        "name" : "debug_rom_6",
+        "resetValue" : -128,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_7" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 56,
+        "bitWidth" : 8,
+        "name" : "debug_rom_7",
+        "resetValue" : 3,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_8" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 64,
+        "bitWidth" : 8,
+        "name" : "debug_rom_8",
+        "resetValue" : 111,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_9" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 72,
+        "bitWidth" : 8,
+        "name" : "debug_rom_9",
+        "resetValue" : 0,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_10" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 80,
+        "bitWidth" : 8,
+        "name" : "debug_rom_10",
+        "resetValue" : 64,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_11" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 88,
+        "bitWidth" : 8,
+        "name" : "debug_rom_11",
+        "resetValue" : 4,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_12" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 96,
+        "bitWidth" : 8,
+        "name" : "debug_rom_12",
+        "resetValue" : 15,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_13" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 104,
+        "bitWidth" : 8,
+        "name" : "debug_rom_13",
+        "resetValue" : 0,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_14" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 112,
+        "bitWidth" : 8,
+        "name" : "debug_rom_14",
+        "resetValue" : -16,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_15" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 120,
+        "bitWidth" : 8,
+        "name" : "debug_rom_15",
+        "resetValue" : 15,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_16" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 128,
+        "bitWidth" : 8,
+        "name" : "debug_rom_16",
+        "resetValue" : 115,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_17" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 136,
+        "bitWidth" : 8,
+        "name" : "debug_rom_17",
+        "resetValue" : 16,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_18" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 144,
+        "bitWidth" : 8,
+        "name" : "debug_rom_18",
+        "resetValue" : 36,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_19" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 152,
+        "bitWidth" : 8,
+        "name" : "debug_rom_19",
+        "resetValue" : 123,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_20" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 160,
+        "bitWidth" : 8,
+        "name" : "debug_rom_20",
+        "resetValue" : 115,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_21" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 168,
+        "bitWidth" : 8,
+        "name" : "debug_rom_21",
+        "resetValue" : 36,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_22" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 176,
+        "bitWidth" : 8,
+        "name" : "debug_rom_22",
+        "resetValue" : 64,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_23" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 184,
+        "bitWidth" : 8,
+        "name" : "debug_rom_23",
+        "resetValue" : -15,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_24" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 192,
+        "bitWidth" : 8,
+        "name" : "debug_rom_24",
+        "resetValue" : 35,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_25" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 200,
+        "bitWidth" : 8,
+        "name" : "debug_rom_25",
+        "resetValue" : 32,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_26" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 208,
+        "bitWidth" : 8,
+        "name" : "debug_rom_26",
+        "resetValue" : -128,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_27" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 216,
+        "bitWidth" : 8,
+        "name" : "debug_rom_27",
+        "resetValue" : 16,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_28" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 224,
+        "bitWidth" : 8,
+        "name" : "debug_rom_28",
+        "resetValue" : 3,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_29" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 232,
+        "bitWidth" : 8,
+        "name" : "debug_rom_29",
+        "resetValue" : 68,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_30" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 240,
+        "bitWidth" : 8,
+        "name" : "debug_rom_30",
+        "resetValue" : 4,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_31" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 248,
+        "bitWidth" : 8,
+        "name" : "debug_rom_31",
+        "resetValue" : 64,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_32" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 256,
+        "bitWidth" : 8,
+        "name" : "debug_rom_32",
+        "resetValue" : 19,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_33" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 264,
+        "bitWidth" : 8,
+        "name" : "debug_rom_33",
+        "resetValue" : 116,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_34" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 272,
+        "bitWidth" : 8,
+        "name" : "debug_rom_34",
+        "resetValue" : 52,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_35" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 280,
+        "bitWidth" : 8,
+        "name" : "debug_rom_35",
+        "resetValue" : 0,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_36" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 288,
+        "bitWidth" : 8,
+        "name" : "debug_rom_36",
+        "resetValue" : -29,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_37" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 296,
+        "bitWidth" : 8,
+        "name" : "debug_rom_37",
+        "resetValue" : 8,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_38" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 304,
+        "bitWidth" : 8,
+        "name" : "debug_rom_38",
+        "resetValue" : 4,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_39" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 312,
+        "bitWidth" : 8,
+        "name" : "debug_rom_39",
+        "resetValue" : -2,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_40" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 320,
+        "bitWidth" : 8,
+        "name" : "debug_rom_40",
+        "resetValue" : 19,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_41" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 328,
+        "bitWidth" : 8,
+        "name" : "debug_rom_41",
+        "resetValue" : 116,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_42" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 336,
+        "bitWidth" : 8,
+        "name" : "debug_rom_42",
+        "resetValue" : 20,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_43" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 344,
+        "bitWidth" : 8,
+        "name" : "debug_rom_43",
+        "resetValue" : 0,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_44" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 352,
+        "bitWidth" : 8,
+        "name" : "debug_rom_44",
+        "resetValue" : 99,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_45" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 360,
+        "bitWidth" : 8,
+        "name" : "debug_rom_45",
+        "resetValue" : 8,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_46" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 368,
+        "bitWidth" : 8,
+        "name" : "debug_rom_46",
+        "resetValue" : 4,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_47" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 376,
+        "bitWidth" : 8,
+        "name" : "debug_rom_47",
+        "resetValue" : 0,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_48" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 384,
+        "bitWidth" : 8,
+        "name" : "debug_rom_48",
+        "resetValue" : 115,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_49" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 392,
+        "bitWidth" : 8,
+        "name" : "debug_rom_49",
+        "resetValue" : 36,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_50" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 400,
+        "bitWidth" : 8,
+        "name" : "debug_rom_50",
+        "resetValue" : 32,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_51" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 408,
+        "bitWidth" : 8,
+        "name" : "debug_rom_51",
+        "resetValue" : 123,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_52" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 416,
+        "bitWidth" : 8,
+        "name" : "debug_rom_52",
+        "resetValue" : 35,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_53" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 424,
+        "bitWidth" : 8,
+        "name" : "debug_rom_53",
+        "resetValue" : 34,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_54" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 432,
+        "bitWidth" : 8,
+        "name" : "debug_rom_54",
+        "resetValue" : 0,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_55" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 440,
+        "bitWidth" : 8,
+        "name" : "debug_rom_55",
+        "resetValue" : 16,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_56" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 448,
+        "bitWidth" : 8,
+        "name" : "debug_rom_56",
+        "resetValue" : 103,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_57" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 456,
+        "bitWidth" : 8,
+        "name" : "debug_rom_57",
+        "resetValue" : 0,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_58" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 464,
+        "bitWidth" : 8,
+        "name" : "debug_rom_58",
+        "resetValue" : 0,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_59" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 472,
+        "bitWidth" : 8,
+        "name" : "debug_rom_59",
+        "resetValue" : 48,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_60" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 480,
+        "bitWidth" : 8,
+        "name" : "debug_rom_60",
+        "resetValue" : 115,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_61" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 488,
+        "bitWidth" : 8,
+        "name" : "debug_rom_61",
+        "resetValue" : 36,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_62" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 496,
+        "bitWidth" : 8,
+        "name" : "debug_rom_62",
+        "resetValue" : 64,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_63" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 504,
+        "bitWidth" : 8,
+        "name" : "debug_rom_63",
+        "resetValue" : -15,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_64" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 512,
+        "bitWidth" : 8,
+        "name" : "debug_rom_64",
+        "resetValue" : 35,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_65" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 520,
+        "bitWidth" : 8,
+        "name" : "debug_rom_65",
+        "resetValue" : 36,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_66" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 528,
+        "bitWidth" : 8,
+        "name" : "debug_rom_66",
+        "resetValue" : -128,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_67" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 536,
+        "bitWidth" : 8,
+        "name" : "debug_rom_67",
+        "resetValue" : 16,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_68" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 544,
+        "bitWidth" : 8,
+        "name" : "debug_rom_68",
+        "resetValue" : 115,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_69" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 552,
+        "bitWidth" : 8,
+        "name" : "debug_rom_69",
+        "resetValue" : 36,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_70" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 560,
+        "bitWidth" : 8,
+        "name" : "debug_rom_70",
+        "resetValue" : 32,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_71" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 568,
+        "bitWidth" : 8,
+        "name" : "debug_rom_71",
+        "resetValue" : 123,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_72" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 576,
+        "bitWidth" : 8,
+        "name" : "debug_rom_72",
+        "resetValue" : 115,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_73" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 584,
+        "bitWidth" : 8,
+        "name" : "debug_rom_73",
+        "resetValue" : 0,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_74" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 592,
+        "bitWidth" : 8,
+        "name" : "debug_rom_74",
+        "resetValue" : 32,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_75" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 600,
+        "bitWidth" : 8,
+        "name" : "debug_rom_75",
+        "resetValue" : 123,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_76" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 608,
+        "bitWidth" : 8,
+        "name" : "debug_rom_76",
+        "resetValue" : 35,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_77" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 616,
+        "bitWidth" : 8,
+        "name" : "debug_rom_77",
+        "resetValue" : 38,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_78" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 624,
+        "bitWidth" : 8,
+        "name" : "debug_rom_78",
+        "resetValue" : 0,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_79" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 632,
+        "bitWidth" : 8,
+        "name" : "debug_rom_79",
+        "resetValue" : 16,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_80" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 640,
+        "bitWidth" : 8,
+        "name" : "debug_rom_80",
+        "resetValue" : 115,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_81" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 648,
+        "bitWidth" : 8,
+        "name" : "debug_rom_81",
+        "resetValue" : 0,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_82" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 656,
+        "bitWidth" : 8,
+        "name" : "debug_rom_82",
+        "resetValue" : 16,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    }, {
+      "debug_rom_83" : {
+        "byteOffset" : "0x800",
+        "bitOffset" : 664,
+        "bitWidth" : 8,
+        "name" : "debug_rom_83",
+        "resetValue" : 0,
+        "group" : "debug_rom",
+        "accessType" : "R"
+      }
+    } ]
+  }
+}
