@@ -35,6 +35,10 @@ PATH=/usr/bin:${HOME}/RISCV/bin
 # grab a copy of upstream:
 rm -rf rocket-chip
 git clone --recursive https://github.com/chipsalliance/rocket-chip
+# also grab a copy of the L2 cache repo:
+pushd rocket-chip/src/main/scala
+git clone https://github.com/chipsalliance/rocket-chip-inclusive-cache
+popd
 
 # make Rocket's internal bootrom jump to 0x1000_0000, as expected by LiteX:
 sed -i '/DRAM_BASE/s/x8/x1/;/hang:/a\  j _start' rocket-chip/bootrom/bootrom.S
@@ -107,12 +111,11 @@ for MODEL in small medium linux full; do
   for CORES in 1 2 4 8; do
     for WIDTH in 1 2 4 8; do
       echo
-      # FIXME: do '-' or '_' chars work as separators?
-      # or should it rather be LiteConfigFooXbarxblah?
       echo "class LitexConfig_${MODEL}_${CORES}_${WIDTH} extends Config("
       [ "${MODEL}" == "full" ] && echo "  new WithLitexHextConfig ++"
       echo "  new WithN${CORE_TYPE[$MODEL]}Cores(${CORES}) ++"
       echo "  new WithMemoryDataBits($((${WIDTH}*64))) ++"
+      [ "${MODEL}" == "full" -a "${WIDTH}" == "1" ] && echo "  new WithInclusiveCache() ++"
       echo "  new BaseLitexConfig"
       echo ")"
     done
