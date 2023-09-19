@@ -35,9 +35,15 @@ PATH=/usr/bin:${HOME}/RISCV/bin
 # grab a copy of upstream:
 rm -rf rocket-chip
 git clone --recursive https://github.com/chipsalliance/rocket-chip
+pushd rocket-chip
+# reset to last commit before dev merge that removed SBT, standalone build:
+git reset --hard 4f197707eb07d833131395a839974c186069930b
 # also grab a copy of the L2 cache repo:
-pushd rocket-chip/src/main/scala
+cd src/main/scala
 git clone https://github.com/chipsalliance/rocket-chip-inclusive-cache
+cd rocket-chip-inclusive-cache
+# also fix the L2 cache to a known, tested version:
+git reset --hard 51d400bd32131e8914c6713bfb71bef690f2fe70
 popd
 
 # make Rocket's internal bootrom jump to 0x1000_0000, as expected by LiteX:
