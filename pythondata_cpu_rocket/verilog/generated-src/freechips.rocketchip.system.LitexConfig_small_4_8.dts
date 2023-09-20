@@ -22,7 +22,7 @@
 			i-cache-size = <4096>;
 			next-level-cache = <&L19>;
 			reg = <0x0>;
-			riscv,isa = "rv64imacZicsr_Zifencei_Zihpm_Xrocket";
+			riscv,isa = "rv64imaczicsr_zifencei_zihpm_xrocket";
 			riscv,pmpgranularity = <4>;
 			riscv,pmpregions = <8>;
 			status = "okay";
@@ -46,7 +46,7 @@
 			i-cache-size = <4096>;
 			next-level-cache = <&L19>;
 			reg = <0x1>;
-			riscv,isa = "rv64imacZicsr_Zifencei_Zihpm_Xrocket";
+			riscv,isa = "rv64imaczicsr_zifencei_zihpm_xrocket";
 			riscv,pmpgranularity = <4>;
 			riscv,pmpregions = <8>;
 			status = "okay";
@@ -70,7 +70,7 @@
 			i-cache-size = <4096>;
 			next-level-cache = <&L19>;
 			reg = <0x2>;
-			riscv,isa = "rv64imacZicsr_Zifencei_Zihpm_Xrocket";
+			riscv,isa = "rv64imaczicsr_zifencei_zihpm_xrocket";
 			riscv,pmpgranularity = <4>;
 			riscv,pmpregions = <8>;
 			status = "okay";
@@ -94,7 +94,7 @@
 			i-cache-size = <4096>;
 			next-level-cache = <&L19>;
 			reg = <0x3>;
-			riscv,isa = "rv64imacZicsr_Zifencei_Zihpm_Xrocket";
+			riscv,isa = "rv64imaczicsr_zifencei_zihpm_xrocket";
 			riscv,pmpgranularity = <4>;
 			riscv,pmpregions = <8>;
 			status = "okay";

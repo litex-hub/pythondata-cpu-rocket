@@ -1257,8 +1257,8 @@ sync:3</data>
               </graph>
             </node>
             <node id="104">
-              <data key="n"><y:ShapeNode><y:NodeLabel modelName="sides" modelPosition="w" rotationAngle="270.0">buffer_1</y:NodeLabel><y:BorderStyle type="line"/></y:ShapeNode></data>
-              <data key="d">TLBuffer_9 (TestHarness.ldut.tile_prci_domain.buffer_1)</data>
+              <data key="n"><y:ShapeNode><y:NodeLabel modelName="sides" modelPosition="w" rotationAngle="270.0">buffer</y:NodeLabel><y:BorderStyle type="line"/></y:ShapeNode></data>
+              <data key="d">TLBuffer_10 (TestHarness.ldut.tile_prci_domain.buffer)</data>
               <graph id="104::" edgedefault="directed">
                 <node id="104::0">
                   <data key="n"><y:ShapeNode><y:Shape type="ellipse"/><y:Fill color="#FFCC00" transparent="false"/></y:ShapeNode></data>
@@ -1548,17 +1548,6 @@ a:BufferParams:2, b:BufferParams:2, c:BufferParams:2, d:BufferParams:2, e:Buffer
                 </node>
               </graph>
             </node>
-            <node id="103">
-              <data key="n"><y:ShapeNode><y:NodeLabel modelName="sides" modelPosition="w" rotationAngle="270.0">buffer</y:NodeLabel><y:BorderStyle type="dotted"/></y:ShapeNode></data>
-              <data key="d">TLBuffer_8 (TestHarness.ldut.tile_prci_domain.buffer)</data>
-              <graph id="103::" edgedefault="directed">
-                <node id="103::0">
-                  <data key="n"><y:ShapeNode><y:Shape type="ellipse"/><y:Fill color="#FFCC00" transparent="true"/></y:ShapeNode></data>
-                  <data key="d">, 
-a:BufferParams:0, b:BufferParams:0, c:BufferParams:0, d:BufferParams:0, e:BufferParams:0</data>
-                </node>
-              </graph>
-            </node>
             <node id="73">
               <data key="n"><y:ShapeNode><y:NodeLabel modelName="sides" modelPosition="w" rotationAngle="270.0">clockNode</y:NodeLabel><y:BorderStyle type="dotted"/></y:ShapeNode></data>
               <data key="d">FixedClockBroadcast_6 (TestHarness.ldut.tile_prci_domain.clockNode)</data>
@@ -1667,6 +1656,17 @@ a:BufferParams:0, b:BufferParams:0, c:BufferParams:0, d:BufferParams:0, e:Buffer
                       <data key="n"><y:ShapeNode><y:Shape type="ellipse"/><y:Fill color="#FFCC00" transparent="true"/></y:ShapeNode></data>
                       <data key="d">, 
 </data>
+                    </node>
+                    <node id="103">
+                      <data key="n"><y:ShapeNode><y:NodeLabel modelName="sides" modelPosition="w" rotationAngle="270.0">buffer</y:NodeLabel><y:BorderStyle type="dotted"/></y:ShapeNode></data>
+                      <data key="d">TLBuffer_8 (TestHarness.ldut.tile_prci_domain.tile_reset_domain.tile.buffer)</data>
+                      <graph id="103::" edgedefault="directed">
+                        <node id="103::0">
+                          <data key="n"><y:ShapeNode><y:Shape type="ellipse"/><y:Fill color="#FFCC00" transparent="true"/></y:ShapeNode></data>
+                          <data key="d">, 
+a:BufferParams:0, b:BufferParams:0, c:BufferParams:0, d:BufferParams:0, e:BufferParams:0</data>
+                        </node>
+                      </graph>
                     </node>
                     <node id="86">
                       <data key="n"><y:ShapeNode><y:NodeLabel modelName="sides" modelPosition="w" rotationAngle="270.0">frontend</y:NodeLabel><y:BorderStyle type="line"/></y:ShapeNode></data>
@@ -7862,7 +7862,6 @@ sync:3</data>
     <edge target="126::0" source="74::14"><data key="e"><y:PolyLineEdge><y:Arrows source="standard" target="none"/><y:LineStyle color="#0000ff" type="line" width="1.0"/><y:EdgeLabel modelName="centered" rotationAngle="270.0">2</y:EdgeLabel></y:PolyLineEdge></data></edge>
     <edge target="109::0" source="74::14"><data key="e"><y:PolyLineEdge><y:Arrows source="standard" target="none"/><y:LineStyle color="#0000ff" type="line" width="1.0"/><y:EdgeLabel modelName="centered" rotationAngle="270.0">1</y:EdgeLabel></y:PolyLineEdge></data></edge>
     <edge source="104::0" target="71::3"><data key="e"><y:PolyLineEdge><y:Arrows source="none" target="standard"/><y:LineStyle color="#000000" type="line" width="1.0"/><y:EdgeLabel modelName="centered" rotationAngle="270.0">64</y:EdgeLabel></y:PolyLineEdge></data></edge>
-    <edge source="103::0" target="104::0"><data key="e"><y:PolyLineEdge><y:Arrows source="none" target="standard"/><y:LineStyle color="#000000" type="line" width="1.0"/><y:EdgeLabel modelName="centered" rotationAngle="270.0">64</y:EdgeLabel></y:PolyLineEdge></data></edge>
     <edge source="73::0" target="72::0"><data key="e"><y:PolyLineEdge><y:Arrows source="none" target="standard"/><y:LineStyle color="#00cc00" type="line" width="1.0"/><y:EdgeLabel modelName="centered" rotationAngle="270.0"></y:EdgeLabel></y:PolyLineEdge></data></edge>
     <edge target="74::18" source="135::0"><data key="e"><y:PolyLineEdge><y:Arrows source="standard" target="none"/><y:LineStyle color="#0000ff" type="line" width="1.0"/><y:EdgeLabel modelName="centered" rotationAngle="270.0">1</y:EdgeLabel></y:PolyLineEdge></data></edge>
     <edge target="74::17" source="137::0"><data key="e"><y:PolyLineEdge><y:Arrows source="standard" target="none"/><y:LineStyle color="#0000ff" type="line" width="1.0"/><y:EdgeLabel modelName="centered" rotationAngle="270.0">1</y:EdgeLabel></y:PolyLineEdge></data></edge>
@@ -7877,6 +7876,7 @@ sync:3</data>
     <edge source="74::4" target="79::0"><data key="e"><y:PolyLineEdge><y:Arrows source="none" target="standard"/><y:LineStyle color="#cccc00" type="line" width="1.0"/><y:EdgeLabel modelName="centered" rotationAngle="270.0"></y:EdgeLabel></y:PolyLineEdge></data></edge>
     <edge source="74::2" target="78::0"><data key="e"><y:PolyLineEdge><y:Arrows source="none" target="standard"/><y:LineStyle color="#cccc00" type="line" width="1.0"/><y:EdgeLabel modelName="centered" rotationAngle="270.0"></y:EdgeLabel></y:PolyLineEdge></data></edge>
     <edge source="74::0" target="103::0"><data key="e"><y:PolyLineEdge><y:Arrows source="none" target="standard"/><y:LineStyle color="#000000" type="line" width="1.0"/><y:EdgeLabel modelName="centered" rotationAngle="270.0">64</y:EdgeLabel></y:PolyLineEdge></data></edge>
+    <edge source="103::0" target="104::0"><data key="e"><y:PolyLineEdge><y:Arrows source="none" target="standard"/><y:LineStyle color="#000000" type="line" width="1.0"/><y:EdgeLabel modelName="centered" rotationAngle="270.0">64</y:EdgeLabel></y:PolyLineEdge></data></edge>
     <edge source="87::0" target="75::0"><data key="e"><y:PolyLineEdge><y:Arrows source="none" target="standard"/><y:LineStyle color="#000000" type="line" width="1.0"/><y:EdgeLabel modelName="centered" rotationAngle="270.0">64</y:EdgeLabel></y:PolyLineEdge></data></edge>
     <edge source="85::0" target="75::0"><data key="e"><y:PolyLineEdge><y:Arrows source="none" target="standard"/><y:LineStyle color="#000000" type="line" width="1.0"/><y:EdgeLabel modelName="centered" rotationAngle="270.0">64</y:EdgeLabel></y:PolyLineEdge></data></edge>
     <edge source="83::0" target="74::10"><data key="e"><y:PolyLineEdge><y:Arrows source="none" target="standard"/><y:LineStyle color="#cccc00" type="line" width="1.0"/><y:EdgeLabel modelName="centered" rotationAngle="270.0"></y:EdgeLabel></y:PolyLineEdge></data></edge>

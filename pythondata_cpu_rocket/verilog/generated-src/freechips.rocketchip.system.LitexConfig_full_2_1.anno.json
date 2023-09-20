@@ -304,18 +304,6 @@
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
   },
   {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLBuffer_6"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLWidthWidget_5"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLInterconnectCoupler_7"
-  },
-  {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
     "target":"TestHarness.plusarg_reader_32",
     "name":"plusarg_reader.v",
@@ -341,11 +329,15 @@
   },
   {
     "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLWidthWidget_6"
+    "target":"TestHarness.TLBuffer_7"
   },
   {
     "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLInterconnectCoupler_10"
+    "target":"TestHarness.TLWidthWidget_5"
+  },
+  {
+    "class":"firrtl.passes.InlineAnnotation",
+    "target":"TestHarness.TLInterconnectCoupler_8"
   },
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
@@ -360,14 +352,6 @@
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
   },
   {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLWidthWidget_7"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLInterconnectCoupler_12"
-  },
-  {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
     "target":"TestHarness.plusarg_reader_38",
     "name":"plusarg_reader.v",
@@ -376,6 +360,46 @@
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
     "target":"TestHarness.plusarg_reader_39",
+    "name":"plusarg_reader.v",
+    "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
+  },
+  {
+    "class":"firrtl.passes.InlineAnnotation",
+    "target":"TestHarness.TLWidthWidget_6"
+  },
+  {
+    "class":"firrtl.passes.InlineAnnotation",
+    "target":"TestHarness.TLInterconnectCoupler_11"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"TestHarness.plusarg_reader_40",
+    "name":"plusarg_reader.v",
+    "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"TestHarness.plusarg_reader_41",
+    "name":"plusarg_reader.v",
+    "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
+  },
+  {
+    "class":"firrtl.passes.InlineAnnotation",
+    "target":"TestHarness.TLWidthWidget_7"
+  },
+  {
+    "class":"firrtl.passes.InlineAnnotation",
+    "target":"TestHarness.TLInterconnectCoupler_13"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"TestHarness.plusarg_reader_42",
+    "name":"plusarg_reader.v",
+    "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"TestHarness.plusarg_reader_43",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
   },
@@ -401,38 +425,6 @@
   },
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"TestHarness.plusarg_reader_40",
-    "name":"plusarg_reader.v",
-    "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"TestHarness.plusarg_reader_41",
-    "name":"plusarg_reader.v",
-    "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"TestHarness.plusarg_reader_42",
-    "name":"plusarg_reader.v",
-    "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"TestHarness.plusarg_reader_43",
-    "name":"plusarg_reader.v",
-    "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLBuffer_7"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLXbar_7"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxInlineAnno",
     "target":"TestHarness.plusarg_reader_44",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
@@ -440,6 +432,38 @@
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
     "target":"TestHarness.plusarg_reader_45",
+    "name":"plusarg_reader.v",
+    "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"TestHarness.plusarg_reader_46",
+    "name":"plusarg_reader.v",
+    "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"TestHarness.plusarg_reader_47",
+    "name":"plusarg_reader.v",
+    "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
+  },
+  {
+    "class":"firrtl.passes.InlineAnnotation",
+    "target":"TestHarness.TLBuffer_8"
+  },
+  {
+    "class":"firrtl.passes.InlineAnnotation",
+    "target":"TestHarness.TLXbar_7"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"TestHarness.plusarg_reader_48",
+    "name":"plusarg_reader.v",
+    "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"TestHarness.plusarg_reader_49",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
   },
@@ -465,42 +489,6 @@
   },
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"TestHarness.plusarg_reader_46",
-    "name":"plusarg_reader.v",
-    "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"TestHarness.plusarg_reader_47",
-    "name":"plusarg_reader.v",
-    "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLJbar"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"TestHarness.plusarg_reader_48",
-    "name":"plusarg_reader.v",
-    "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"TestHarness.plusarg_reader_49",
-    "name":"plusarg_reader.v",
-    "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLWidthWidget_9"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLInterconnectCoupler_15"
-  },
-  {
-    "class":"firrtl.transforms.BlackBoxInlineAnno",
     "target":"TestHarness.plusarg_reader_50",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
@@ -512,6 +500,125 @@
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
   },
   {
+    "class":"freechips.rocketchip.util.RegFieldDescMappingAnnotation",
+    "target":"TestHarness.InclusiveCacheControl",
+    "regMappingSer":{
+      "displayName":"InclusiveCacheControl",
+      "deviceName":"InclusiveCacheControl",
+      "baseAddress":33619968,
+      "regFields":[
+        {
+          "byteOffset":"0x0",
+          "bitOffset":0,
+          "bitWidth":8,
+          "name":"Banks",
+          "resetValue":1,
+          "accessType":"R",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"Number of banks in the cache",
+          "group":"Config",
+          "groupDesc":"Information about the Cache Configuration",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x0",
+          "bitOffset":8,
+          "bitWidth":8,
+          "name":"Ways",
+          "resetValue":8,
+          "accessType":"R",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"Number of ways per bank",
+          "group":"Config",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x0",
+          "bitOffset":16,
+          "bitWidth":8,
+          "name":"lgSets",
+          "resetValue":10,
+          "accessType":"R",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"Base-2 logarithm of the sets per bank",
+          "group":"Config",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x0",
+          "bitOffset":24,
+          "bitWidth":8,
+          "name":"lgBlockBytes",
+          "resetValue":6,
+          "accessType":"R",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"Base-2 logarithm of the bytes per cache block",
+          "group":"Config",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":true,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x200",
+          "bitOffset":0,
+          "bitWidth":64,
+          "name":"Flush64",
+          "resetValue":0,
+          "accessType":"W",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"Flush the phsyical address equal to the 64-bit written data from the cache",
+          "group":"None",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":false,
+          "enumerations":{
+            
+          }
+        },
+        {
+          "byteOffset":"0x240",
+          "bitOffset":0,
+          "bitWidth":32,
+          "name":"Flush32",
+          "resetValue":0,
+          "accessType":"W",
+          "wrType":"None",
+          "rdAction":"None",
+          "desc":"Flush the physical address equal to the 32-bit written data << 4 from the cache",
+          "group":"None",
+          "groupDesc":"None",
+          "volatile":false,
+          "hasReset":false,
+          "enumerations":{
+            
+          }
+        }
+      ]
+    }
+  },
+  {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
     "target":"TestHarness.plusarg_reader_52",
     "name":"plusarg_reader.v",
@@ -520,6 +627,136 @@
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
     "target":"TestHarness.plusarg_reader_53",
+    "name":"plusarg_reader.v",
+    "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
+  },
+  {
+    "class":"freechips.rocketchip.util.SRAMAnnotation",
+    "target":"TestHarness.Directory.cc_dir",
+    "address_width":10,
+    "name":"cc_dir",
+    "data_width":160,
+    "depth":1024,
+    "description":"Directory RAM",
+    "write_mask_granularity":20
+  },
+  {
+    "class":"freechips.rocketchip.util.SRAMAnnotation",
+    "target":"TestHarness.BankedStore.cc_banks_0",
+    "address_width":14,
+    "name":"cc_banks_0",
+    "data_width":64,
+    "depth":16384,
+    "description":"Banked Store",
+    "write_mask_granularity":64
+  },
+  {
+    "class":"freechips.rocketchip.util.SRAMAnnotation",
+    "target":"TestHarness.BankedStore.cc_banks_1",
+    "address_width":14,
+    "name":"cc_banks_1",
+    "data_width":64,
+    "depth":16384,
+    "description":"Banked Store",
+    "write_mask_granularity":64
+  },
+  {
+    "class":"freechips.rocketchip.util.SRAMAnnotation",
+    "target":"TestHarness.BankedStore.cc_banks_2",
+    "address_width":14,
+    "name":"cc_banks_2",
+    "data_width":64,
+    "depth":16384,
+    "description":"Banked Store",
+    "write_mask_granularity":64
+  },
+  {
+    "class":"freechips.rocketchip.util.SRAMAnnotation",
+    "target":"TestHarness.BankedStore.cc_banks_3",
+    "address_width":14,
+    "name":"cc_banks_3",
+    "data_width":64,
+    "depth":16384,
+    "description":"Banked Store",
+    "write_mask_granularity":64
+  },
+  {
+    "class":"firrtl.passes.InlineAnnotation",
+    "target":"TestHarness.TLFilter"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"TestHarness.plusarg_reader_54",
+    "name":"plusarg_reader.v",
+    "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"TestHarness.plusarg_reader_55",
+    "name":"plusarg_reader.v",
+    "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
+  },
+  {
+    "class":"firrtl.passes.InlineAnnotation",
+    "target":"TestHarness.TLBuffer_10"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"TestHarness.plusarg_reader_56",
+    "name":"plusarg_reader.v",
+    "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"TestHarness.plusarg_reader_57",
+    "name":"plusarg_reader.v",
+    "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
+  },
+  {
+    "class":"firrtl.passes.InlineAnnotation",
+    "target":"TestHarness.TLJbar"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"TestHarness.plusarg_reader_58",
+    "name":"plusarg_reader.v",
+    "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"TestHarness.plusarg_reader_59",
+    "name":"plusarg_reader.v",
+    "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
+  },
+  {
+    "class":"firrtl.passes.InlineAnnotation",
+    "target":"TestHarness.TLWidthWidget_9"
+  },
+  {
+    "class":"firrtl.passes.InlineAnnotation",
+    "target":"TestHarness.TLInterconnectCoupler_16"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"TestHarness.plusarg_reader_60",
+    "name":"plusarg_reader.v",
+    "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"TestHarness.plusarg_reader_61",
+    "name":"plusarg_reader.v",
+    "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"TestHarness.plusarg_reader_62",
+    "name":"plusarg_reader.v",
+    "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
+  },
+  {
+    "class":"firrtl.transforms.BlackBoxInlineAnno",
+    "target":"TestHarness.plusarg_reader_63",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
   },
@@ -667,6 +904,14 @@
     "target":"TestHarness.TLWidthWidget_10"
   },
   {
+    "class":"firrtl.passes.InlineAnnotation",
+    "target":"TestHarness.TLBuffer_11"
+  },
+  {
+    "class":"firrtl.passes.InlineAnnotation",
+    "target":"TestHarness.TLBuffer_12"
+  },
+  {
     "class":"chisel3.experimental.EnumAnnotations$EnumVecAnnotation",
     "target":"TestHarness.RocketTile.x1_9.group",
     "typeName":"freechips.rocketchip.util.TraceItype",
@@ -769,7 +1014,6 @@
         "latency":2,
         "fetchBytes":4
       },
-      "boundaryBuffers":false,
       "core":{
         "bootFreqHz":0,
         "useVM":true,
@@ -786,6 +1030,7 @@
         "useBitManipCrypto":true,
         "useCryptoNIST":true,
         "useCryptoSM":true,
+        "useConditionalZero":false,
         "nLocalInterrupts":0,
         "useNMI":false,
         "nBreakpoints":1,
@@ -821,7 +1066,8 @@
           "divSqrt":true,
           "sfmaLatency":3,
           "dfmaLatency":4
-        }
+        },
+        "haveCease":true
       },
       "dcache":{
         "nSets":64,
@@ -901,7 +1147,7 @@
   },
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"TestHarness.plusarg_reader_54",
+    "target":"TestHarness.plusarg_reader_64",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
   },
@@ -924,24 +1170,16 @@
     "target":"TestHarness.FixedClockBroadcast_6"
   },
   {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLBuffer_8"
-  },
-  {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"TestHarness.plusarg_reader_55",
+    "target":"TestHarness.plusarg_reader_65",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
   },
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"TestHarness.plusarg_reader_56",
+    "target":"TestHarness.plusarg_reader_66",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLBuffer_10"
   },
   {
     "class":"firrtl.passes.InlineAnnotation",
@@ -973,25 +1211,25 @@
   },
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"TestHarness.plusarg_reader_57",
+    "target":"TestHarness.plusarg_reader_67",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
   },
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"TestHarness.plusarg_reader_58",
+    "target":"TestHarness.plusarg_reader_68",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
   },
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"TestHarness.plusarg_reader_59",
+    "target":"TestHarness.plusarg_reader_69",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
   },
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"TestHarness.plusarg_reader_60",
+    "target":"TestHarness.plusarg_reader_70",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
   },
@@ -1139,6 +1377,14 @@
     "target":"TestHarness.TLWidthWidget_11"
   },
   {
+    "class":"firrtl.passes.InlineAnnotation",
+    "target":"TestHarness.TLBuffer_15"
+  },
+  {
+    "class":"firrtl.passes.InlineAnnotation",
+    "target":"TestHarness.TLBuffer_16"
+  },
+  {
     "class":"chisel3.experimental.EnumAnnotations$EnumVecAnnotation",
     "target":"TestHarness.RocketTile_1.x1_9.group",
     "typeName":"freechips.rocketchip.util.TraceItype",
@@ -1219,7 +1465,6 @@
         "latency":2,
         "fetchBytes":4
       },
-      "boundaryBuffers":false,
       "core":{
         "bootFreqHz":0,
         "useVM":true,
@@ -1236,6 +1481,7 @@
         "useBitManipCrypto":true,
         "useCryptoNIST":true,
         "useCryptoSM":true,
+        "useConditionalZero":false,
         "nLocalInterrupts":0,
         "useNMI":false,
         "nBreakpoints":1,
@@ -1271,7 +1517,8 @@
           "divSqrt":true,
           "sfmaLatency":3,
           "dfmaLatency":4
-        }
+        },
+        "haveCease":true
       },
       "dcache":{
         "nSets":64,
@@ -1351,7 +1598,7 @@
   },
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"TestHarness.plusarg_reader_61",
+    "target":"TestHarness.plusarg_reader_71",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
   },
@@ -1374,24 +1621,16 @@
     "target":"TestHarness.FixedClockBroadcast_7"
   },
   {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLBuffer_12"
-  },
-  {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"TestHarness.plusarg_reader_62",
+    "target":"TestHarness.plusarg_reader_72",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
   },
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"TestHarness.plusarg_reader_63",
+    "target":"TestHarness.plusarg_reader_73",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLBuffer_14"
   },
   {
     "class":"firrtl.passes.InlineAnnotation",
@@ -1423,13 +1662,13 @@
   },
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"TestHarness.plusarg_reader_64",
+    "target":"TestHarness.plusarg_reader_74",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
   },
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"TestHarness.plusarg_reader_65",
+    "target":"TestHarness.plusarg_reader_75",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
   },
@@ -2195,13 +2434,13 @@
   },
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"TestHarness.plusarg_reader_66",
+    "target":"TestHarness.plusarg_reader_76",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
   },
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"TestHarness.plusarg_reader_67",
+    "target":"TestHarness.plusarg_reader_77",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
   },
@@ -2743,25 +2982,25 @@
   },
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"TestHarness.plusarg_reader_68",
+    "target":"TestHarness.plusarg_reader_78",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
   },
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"TestHarness.plusarg_reader_69",
+    "target":"TestHarness.plusarg_reader_79",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
   },
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"TestHarness.plusarg_reader_70",
+    "target":"TestHarness.plusarg_reader_80",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
   },
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"TestHarness.plusarg_reader_71",
+    "target":"TestHarness.plusarg_reader_81",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
   },
@@ -3120,61 +3359,61 @@
   },
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"TestHarness.plusarg_reader_72",
+    "target":"TestHarness.plusarg_reader_82",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
   },
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"TestHarness.plusarg_reader_73",
+    "target":"TestHarness.plusarg_reader_83",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
   },
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"TestHarness.plusarg_reader_74",
+    "target":"TestHarness.plusarg_reader_84",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
   },
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"TestHarness.plusarg_reader_75",
+    "target":"TestHarness.plusarg_reader_85",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
   },
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"TestHarness.plusarg_reader_76",
+    "target":"TestHarness.plusarg_reader_86",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
   },
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"TestHarness.plusarg_reader_77",
+    "target":"TestHarness.plusarg_reader_87",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
   },
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"TestHarness.plusarg_reader_78",
+    "target":"TestHarness.plusarg_reader_88",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
   },
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"TestHarness.plusarg_reader_79",
+    "target":"TestHarness.plusarg_reader_89",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
   },
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"TestHarness.plusarg_reader_80",
+    "target":"TestHarness.plusarg_reader_90",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
   },
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"TestHarness.plusarg_reader_81",
+    "target":"TestHarness.plusarg_reader_91",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
   },
@@ -8139,13 +8378,13 @@
   },
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"TestHarness.plusarg_reader_82",
+    "target":"TestHarness.plusarg_reader_92",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
   },
   {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
-    "target":"TestHarness.plusarg_reader_83",
+    "target":"TestHarness.plusarg_reader_93",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
   },
@@ -8219,6 +8458,22 @@
       },
       {
         "range":{
+          "base":33619968,
+          "size":4096
+        },
+        "permissions":{
+          "r":true,
+          "w":true,
+          "x":false,
+          "c":false,
+          "a":true
+        },
+        "names":[
+          "cache-controller@2010000"
+        ]
+      },
+      {
+        "range":{
           "base":201326592,
           "size":67108864
         },
@@ -8259,7 +8514,7 @@
           "w":true,
           "x":true,
           "c":true,
-          "a":false
+          "a":true
         },
         "names":[
           "memory@80000000"
@@ -8338,6 +8593,22 @@
       },
       {
         "range":{
+          "base":33619968,
+          "size":4096
+        },
+        "permissions":{
+          "r":true,
+          "w":true,
+          "x":false,
+          "c":false,
+          "a":true
+        },
+        "names":[
+          "cache-controller@2010000"
+        ]
+      },
+      {
+        "range":{
           "base":201326592,
           "size":67108864
         },
@@ -8378,7 +8649,7 @@
           "w":true,
           "x":true,
           "c":true,
-          "a":false
+          "a":true
         },
         "names":[
           "memory@80000000"

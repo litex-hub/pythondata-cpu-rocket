@@ -858,6 +858,14 @@
     "target":"TestHarness.TLWidthWidget_16"
   },
   {
+    "class":"firrtl.passes.InlineAnnotation",
+    "target":"TestHarness.TLBuffer_8"
+  },
+  {
+    "class":"firrtl.passes.InlineAnnotation",
+    "target":"TestHarness.TLBuffer_9"
+  },
+  {
     "class":"chisel3.experimental.EnumAnnotations$EnumVecAnnotation",
     "target":"TestHarness.RocketTile.x1_9.group",
     "typeName":"freechips.rocketchip.util.TraceItype",
@@ -921,7 +929,6 @@
         "latency":2,
         "fetchBytes":4
       },
-      "boundaryBuffers":false,
       "core":{
         "bootFreqHz":0,
         "useVM":false,
@@ -938,6 +945,7 @@
         "useBitManipCrypto":false,
         "useCryptoNIST":false,
         "useCryptoSM":false,
+        "useConditionalZero":false,
         "nLocalInterrupts":0,
         "useNMI":false,
         "nBreakpoints":1,
@@ -966,7 +974,8 @@
           "mulEarlyOut":false,
           "divEarlyOut":false,
           "divEarlyOutGranularity":1
-        }
+        },
+        "haveCease":true
       },
       "dcache":{
         "nSets":64,
@@ -1069,10 +1078,6 @@
     "target":"TestHarness.FixedClockBroadcast_6"
   },
   {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLBuffer_8"
-  },
-  {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
     "target":"TestHarness.plusarg_reader_81",
     "name":"plusarg_reader.v",
@@ -1083,10 +1088,6 @@
     "target":"TestHarness.plusarg_reader_82",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLBuffer_10"
   },
   {
     "class":"firrtl.passes.InlineAnnotation",
@@ -1255,6 +1256,14 @@
     "target":"TestHarness.TLWidthWidget_17"
   },
   {
+    "class":"firrtl.passes.InlineAnnotation",
+    "target":"TestHarness.TLBuffer_12"
+  },
+  {
+    "class":"firrtl.passes.InlineAnnotation",
+    "target":"TestHarness.TLBuffer_13"
+  },
+  {
     "class":"chisel3.experimental.EnumAnnotations$EnumVecAnnotation",
     "target":"TestHarness.RocketTile_1.x1_9.group",
     "typeName":"freechips.rocketchip.util.TraceItype",
@@ -1296,7 +1305,6 @@
         "latency":2,
         "fetchBytes":4
       },
-      "boundaryBuffers":false,
       "core":{
         "bootFreqHz":0,
         "useVM":false,
@@ -1313,6 +1321,7 @@
         "useBitManipCrypto":false,
         "useCryptoNIST":false,
         "useCryptoSM":false,
+        "useConditionalZero":false,
         "nLocalInterrupts":0,
         "useNMI":false,
         "nBreakpoints":1,
@@ -1341,7 +1350,8 @@
           "mulEarlyOut":false,
           "divEarlyOut":false,
           "divEarlyOutGranularity":1
-        }
+        },
+        "haveCease":true
       },
       "dcache":{
         "nSets":64,
@@ -1444,10 +1454,6 @@
     "target":"TestHarness.FixedClockBroadcast_7"
   },
   {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLBuffer_12"
-  },
-  {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
     "target":"TestHarness.plusarg_reader_88",
     "name":"plusarg_reader.v",
@@ -1458,10 +1464,6 @@
     "target":"TestHarness.plusarg_reader_89",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLBuffer_14"
   },
   {
     "class":"firrtl.passes.InlineAnnotation",
@@ -1630,6 +1632,14 @@
     "target":"TestHarness.TLWidthWidget_18"
   },
   {
+    "class":"firrtl.passes.InlineAnnotation",
+    "target":"TestHarness.TLBuffer_16"
+  },
+  {
+    "class":"firrtl.passes.InlineAnnotation",
+    "target":"TestHarness.TLBuffer_17"
+  },
+  {
     "class":"chisel3.experimental.EnumAnnotations$EnumVecAnnotation",
     "target":"TestHarness.RocketTile_2.x1_9.group",
     "typeName":"freechips.rocketchip.util.TraceItype",
@@ -1671,7 +1681,6 @@
         "latency":2,
         "fetchBytes":4
       },
-      "boundaryBuffers":false,
       "core":{
         "bootFreqHz":0,
         "useVM":false,
@@ -1688,6 +1697,7 @@
         "useBitManipCrypto":false,
         "useCryptoNIST":false,
         "useCryptoSM":false,
+        "useConditionalZero":false,
         "nLocalInterrupts":0,
         "useNMI":false,
         "nBreakpoints":1,
@@ -1716,7 +1726,8 @@
           "mulEarlyOut":false,
           "divEarlyOut":false,
           "divEarlyOutGranularity":1
-        }
+        },
+        "haveCease":true
       },
       "dcache":{
         "nSets":64,
@@ -1819,10 +1830,6 @@
     "target":"TestHarness.FixedClockBroadcast_8"
   },
   {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLBuffer_16"
-  },
-  {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
     "target":"TestHarness.plusarg_reader_95",
     "name":"plusarg_reader.v",
@@ -1833,10 +1840,6 @@
     "target":"TestHarness.plusarg_reader_96",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLBuffer_18"
   },
   {
     "class":"firrtl.passes.InlineAnnotation",
@@ -2005,6 +2008,14 @@
     "target":"TestHarness.TLWidthWidget_19"
   },
   {
+    "class":"firrtl.passes.InlineAnnotation",
+    "target":"TestHarness.TLBuffer_20"
+  },
+  {
+    "class":"firrtl.passes.InlineAnnotation",
+    "target":"TestHarness.TLBuffer_21"
+  },
+  {
     "class":"chisel3.experimental.EnumAnnotations$EnumVecAnnotation",
     "target":"TestHarness.RocketTile_3.x1_9.group",
     "typeName":"freechips.rocketchip.util.TraceItype",
@@ -2046,7 +2057,6 @@
         "latency":2,
         "fetchBytes":4
       },
-      "boundaryBuffers":false,
       "core":{
         "bootFreqHz":0,
         "useVM":false,
@@ -2063,6 +2073,7 @@
         "useBitManipCrypto":false,
         "useCryptoNIST":false,
         "useCryptoSM":false,
+        "useConditionalZero":false,
         "nLocalInterrupts":0,
         "useNMI":false,
         "nBreakpoints":1,
@@ -2091,7 +2102,8 @@
           "mulEarlyOut":false,
           "divEarlyOut":false,
           "divEarlyOutGranularity":1
-        }
+        },
+        "haveCease":true
       },
       "dcache":{
         "nSets":64,
@@ -2194,10 +2206,6 @@
     "target":"TestHarness.FixedClockBroadcast_9"
   },
   {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLBuffer_20"
-  },
-  {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
     "target":"TestHarness.plusarg_reader_102",
     "name":"plusarg_reader.v",
@@ -2208,10 +2216,6 @@
     "target":"TestHarness.plusarg_reader_103",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLBuffer_22"
   },
   {
     "class":"firrtl.passes.InlineAnnotation",
@@ -2380,6 +2384,14 @@
     "target":"TestHarness.TLWidthWidget_20"
   },
   {
+    "class":"firrtl.passes.InlineAnnotation",
+    "target":"TestHarness.TLBuffer_24"
+  },
+  {
+    "class":"firrtl.passes.InlineAnnotation",
+    "target":"TestHarness.TLBuffer_25"
+  },
+  {
     "class":"chisel3.experimental.EnumAnnotations$EnumVecAnnotation",
     "target":"TestHarness.RocketTile_4.x1_9.group",
     "typeName":"freechips.rocketchip.util.TraceItype",
@@ -2421,7 +2433,6 @@
         "latency":2,
         "fetchBytes":4
       },
-      "boundaryBuffers":false,
       "core":{
         "bootFreqHz":0,
         "useVM":false,
@@ -2438,6 +2449,7 @@
         "useBitManipCrypto":false,
         "useCryptoNIST":false,
         "useCryptoSM":false,
+        "useConditionalZero":false,
         "nLocalInterrupts":0,
         "useNMI":false,
         "nBreakpoints":1,
@@ -2466,7 +2478,8 @@
           "mulEarlyOut":false,
           "divEarlyOut":false,
           "divEarlyOutGranularity":1
-        }
+        },
+        "haveCease":true
       },
       "dcache":{
         "nSets":64,
@@ -2569,10 +2582,6 @@
     "target":"TestHarness.FixedClockBroadcast_10"
   },
   {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLBuffer_24"
-  },
-  {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
     "target":"TestHarness.plusarg_reader_109",
     "name":"plusarg_reader.v",
@@ -2583,10 +2592,6 @@
     "target":"TestHarness.plusarg_reader_110",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLBuffer_26"
   },
   {
     "class":"firrtl.passes.InlineAnnotation",
@@ -2755,6 +2760,14 @@
     "target":"TestHarness.TLWidthWidget_21"
   },
   {
+    "class":"firrtl.passes.InlineAnnotation",
+    "target":"TestHarness.TLBuffer_28"
+  },
+  {
+    "class":"firrtl.passes.InlineAnnotation",
+    "target":"TestHarness.TLBuffer_29"
+  },
+  {
     "class":"chisel3.experimental.EnumAnnotations$EnumVecAnnotation",
     "target":"TestHarness.RocketTile_5.x1_9.group",
     "typeName":"freechips.rocketchip.util.TraceItype",
@@ -2796,7 +2809,6 @@
         "latency":2,
         "fetchBytes":4
       },
-      "boundaryBuffers":false,
       "core":{
         "bootFreqHz":0,
         "useVM":false,
@@ -2813,6 +2825,7 @@
         "useBitManipCrypto":false,
         "useCryptoNIST":false,
         "useCryptoSM":false,
+        "useConditionalZero":false,
         "nLocalInterrupts":0,
         "useNMI":false,
         "nBreakpoints":1,
@@ -2841,7 +2854,8 @@
           "mulEarlyOut":false,
           "divEarlyOut":false,
           "divEarlyOutGranularity":1
-        }
+        },
+        "haveCease":true
       },
       "dcache":{
         "nSets":64,
@@ -2944,10 +2958,6 @@
     "target":"TestHarness.FixedClockBroadcast_11"
   },
   {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLBuffer_28"
-  },
-  {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
     "target":"TestHarness.plusarg_reader_116",
     "name":"plusarg_reader.v",
@@ -2958,10 +2968,6 @@
     "target":"TestHarness.plusarg_reader_117",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLBuffer_30"
   },
   {
     "class":"firrtl.passes.InlineAnnotation",
@@ -3130,6 +3136,14 @@
     "target":"TestHarness.TLWidthWidget_22"
   },
   {
+    "class":"firrtl.passes.InlineAnnotation",
+    "target":"TestHarness.TLBuffer_32"
+  },
+  {
+    "class":"firrtl.passes.InlineAnnotation",
+    "target":"TestHarness.TLBuffer_33"
+  },
+  {
     "class":"chisel3.experimental.EnumAnnotations$EnumVecAnnotation",
     "target":"TestHarness.RocketTile_6.x1_9.group",
     "typeName":"freechips.rocketchip.util.TraceItype",
@@ -3171,7 +3185,6 @@
         "latency":2,
         "fetchBytes":4
       },
-      "boundaryBuffers":false,
       "core":{
         "bootFreqHz":0,
         "useVM":false,
@@ -3188,6 +3201,7 @@
         "useBitManipCrypto":false,
         "useCryptoNIST":false,
         "useCryptoSM":false,
+        "useConditionalZero":false,
         "nLocalInterrupts":0,
         "useNMI":false,
         "nBreakpoints":1,
@@ -3216,7 +3230,8 @@
           "mulEarlyOut":false,
           "divEarlyOut":false,
           "divEarlyOutGranularity":1
-        }
+        },
+        "haveCease":true
       },
       "dcache":{
         "nSets":64,
@@ -3319,10 +3334,6 @@
     "target":"TestHarness.FixedClockBroadcast_12"
   },
   {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLBuffer_32"
-  },
-  {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
     "target":"TestHarness.plusarg_reader_123",
     "name":"plusarg_reader.v",
@@ -3333,10 +3344,6 @@
     "target":"TestHarness.plusarg_reader_124",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLBuffer_34"
   },
   {
     "class":"firrtl.passes.InlineAnnotation",
@@ -3505,6 +3512,14 @@
     "target":"TestHarness.TLWidthWidget_23"
   },
   {
+    "class":"firrtl.passes.InlineAnnotation",
+    "target":"TestHarness.TLBuffer_36"
+  },
+  {
+    "class":"firrtl.passes.InlineAnnotation",
+    "target":"TestHarness.TLBuffer_37"
+  },
+  {
     "class":"chisel3.experimental.EnumAnnotations$EnumVecAnnotation",
     "target":"TestHarness.RocketTile_7.x1_9.group",
     "typeName":"freechips.rocketchip.util.TraceItype",
@@ -3546,7 +3561,6 @@
         "latency":2,
         "fetchBytes":4
       },
-      "boundaryBuffers":false,
       "core":{
         "bootFreqHz":0,
         "useVM":false,
@@ -3563,6 +3577,7 @@
         "useBitManipCrypto":false,
         "useCryptoNIST":false,
         "useCryptoSM":false,
+        "useConditionalZero":false,
         "nLocalInterrupts":0,
         "useNMI":false,
         "nBreakpoints":1,
@@ -3591,7 +3606,8 @@
           "mulEarlyOut":false,
           "divEarlyOut":false,
           "divEarlyOutGranularity":1
-        }
+        },
+        "haveCease":true
       },
       "dcache":{
         "nSets":64,
@@ -3694,10 +3710,6 @@
     "target":"TestHarness.FixedClockBroadcast_13"
   },
   {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLBuffer_36"
-  },
-  {
     "class":"firrtl.transforms.BlackBoxInlineAnno",
     "target":"TestHarness.plusarg_reader_130",
     "name":"plusarg_reader.v",
@@ -3708,10 +3720,6 @@
     "target":"TestHarness.plusarg_reader_131",
     "name":"plusarg_reader.v",
     "text":"// See LICENSE.SiFive for license details.\n\n//VCS coverage exclude_file\n\n// No default parameter values are intended, nor does IEEE 1800-2012 require them (clause A.2.4 param_assignment),\n// but Incisive demands them. These default values should never be used.\nmodule plusarg_reader #(\n   parameter FORMAT=\"borked=%d\",\n   parameter WIDTH=1,\n   parameter [WIDTH-1:0] DEFAULT=0\n) (\n   output [WIDTH-1:0] out\n);\n\n`ifdef SYNTHESIS\nassign out = DEFAULT;\n`else\nreg [WIDTH-1:0] myplus;\nassign out = myplus;\n\ninitial begin\n   if (!$value$plusargs(FORMAT, myplus)) myplus = DEFAULT;\nend\n`endif\n\nendmodule\n"
-  },
-  {
-    "class":"firrtl.passes.InlineAnnotation",
-    "target":"TestHarness.TLBuffer_38"
   },
   {
     "class":"firrtl.passes.InlineAnnotation",

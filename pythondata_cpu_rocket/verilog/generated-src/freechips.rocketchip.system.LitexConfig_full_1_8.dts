@@ -27,7 +27,7 @@
 			mmu-type = "riscv,sv39,sv39x4";
 			next-level-cache = <&L10>;
 			reg = <0x0>;
-			riscv,isa = "rv64imafdchZicsr_Zifencei_Zihpm_Zba_Zbb_Zbc_Zbkb_Zbkc_Zbkx_Zbs_Zknd_Zkne_Zknh_Zksed_Zksh_Xrocket";
+			riscv,isa = "rv64imafdchzicsr_zifencei_zihpm_zba_zbb_zbc_zbkb_zbkc_zbkx_zbs_zknd_zkne_zknh_zksed_zksh_xrocket";
 			riscv,pmpgranularity = <4096>;
 			riscv,pmpregions = <8>;
 			status = "okay";
