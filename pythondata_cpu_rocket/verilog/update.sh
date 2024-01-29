@@ -130,12 +130,13 @@ declare -r -A CORE_TYPE=(
 )
 declare -r PFX=freechips.rocketchip.system.LitexConfig
 
-function prepare_core_configuration() {
+function build_core() {
 	local model=${1}
 	local cores=${2}
 	local width=${3}
 	local hext_str=""
 	local cache_str=""
+	local target="${PFX}_${model}_${cores}_${width}"
 
 	if [[ "${model}" == "full" ]]; then
 		hext_str="new WithLitexHextConfig ++"
@@ -152,22 +153,15 @@ function prepare_core_configuration() {
 	  new BaseLitexConfig
 	)
 	EOT
+
+	# Elaborate verilog for LiteX (sub-)variant:
+	make RISCV=${RISCV} -C rocket-chip/vsim verilog CONFIG=${target} || exit 1
 }
 
 for MODEL in small medium linux full; do
   for CORES in 1 2 4 8; do
     for WIDTH in 1 2 4 8; do
-	  prepare_core_configuration ${MODEL} ${CORES} ${WIDTH}
-    done
-  done
-done
-
-# Elaborate verilog for each LiteX (sub-)variant:
-for MODEL in small medium linux full; do
-  for CORES in 1 2 4 8; do
-    for WIDTH in 1 2 4 8; do
-      make RISCV=${RISCV} -C rocket-chip/vsim verilog \
-       CONFIG=freechips.rocketchip.system.LitexConfig_${MODEL}_${CORES}_${WIDTH}
+      build_core ${MODEL} ${CORES} ${WIDTH}
     done
   done
 done
