@@ -38,14 +38,26 @@ fi
 PATH="${PATH}:${RISCV}/bin"
 
 # grab a copy of upstream:
-rm -rf rocket-chip
-git clone --recursive https://github.com/chipsalliance/rocket-chip
+function update_repo() {
+	local dir="${1}"
+	local url="${2}"
+	if [[ -d "${dir}" ]]; then
+		pushd "${dir}" > /dev/null
+		git reset --hard
+		git pull origin
+		popd > /dev/null
+	else
+		git clone --recursive ${url} ${git}
+	fi
+}
+
+update_repo rocket-chip https://github.com/chipsalliance/rocket-chip.git
 pushd rocket-chip
 # reset to last commit before dev merge that removed SBT, standalone build:
 git reset --hard 4f197707eb07d833131395a839974c186069930b
 # also grab a copy of the L2 cache repo:
 cd src/main/scala
-git clone https://github.com/chipsalliance/rocket-chip-inclusive-cache
+update_repo rocket-chip-inclusive-cache https://github.com/chipsalliance/rocket-chip-inclusive-cache.git
 cd rocket-chip-inclusive-cache
 # also fix the L2 cache to a known, tested version:
 git reset --hard 51d400bd32131e8914c6713bfb71bef690f2fe70
