@@ -30,7 +30,12 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-PATH=/usr/bin:${HOME}/RISCV/bin
+if [[ ! -v RISCV ]]; then
+	echo "rocket-chip needs to define 'RISCV' when building verilog"
+	exit 1
+fi
+
+PATH="${PATH}:${RISCV}/bin"
 
 # grab a copy of upstream:
 rm -rf rocket-chip
@@ -132,7 +137,7 @@ done >> rocket-chip/src/main/scala/system/Configs.scala
 for MODEL in small medium linux full; do
   for CORES in 1 2 4 8; do
     for WIDTH in 1 2 4 8; do
-      make RISCV=${HOME}/RISCV -C rocket-chip/vsim verilog \
+      make RISCV=${RISCV} -C rocket-chip/vsim verilog \
        CONFIG=freechips.rocketchip.system.LitexConfig_${MODEL}_${CORES}_${WIDTH}
     done
   done
