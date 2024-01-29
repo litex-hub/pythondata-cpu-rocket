@@ -1,4 +1,4 @@
-#!/usr/bin/sh
+#!/bin/bash
 
 # update.sh: Update Rocket Chip Verilog files for the LiteX SoC.
 #
@@ -122,28 +122,45 @@ cat >> rocket-chip/src/main/scala/system/Configs.scala <<- "EOT"
 	EOT
 
 # Fit Rocket core models to each LiteX model:
-declare -A CORE_TYPE=(
+declare -r -A CORE_TYPE=(
   ['small']='Small'
   ['medium']='Med'
   ['linux']='Big'
   ['full']='Big'
 )
+declare -r PFX=freechips.rocketchip.system.LitexConfig
 
-# Generate LiteX variant configurations:
+function prepare_core_configuration() {
+	local model=${1}
+	local cores=${2}
+	local width=${3}
+	local hext_str=""
+	local cache_str=""
+
+	if [[ "${model}" == "full" ]]; then
+		hext_str="new WithLitexHextConfig ++"
+		cache_str="new WithInclusiveCache() ++"
+	fi
+
+	# Generate LiteX variant configuration:
+	cat >> rocket-chip/src/main/scala/system/Configs.scala <<- EOT
+	class LitexConfig_${model}_${cores}_${width} extends Config(
+	  ${hext_str}
+	  new WithN${CORE_TYPE[$model]}Cores(${cores}) ++
+	  new WithMemoryDataBits($((${width}*64))) ++
+	  ${cache_str}
+	  new BaseLitexConfig
+	)
+	EOT
+}
+
 for MODEL in small medium linux full; do
   for CORES in 1 2 4 8; do
     for WIDTH in 1 2 4 8; do
-      echo
-      echo "class LitexConfig_${MODEL}_${CORES}_${WIDTH} extends Config("
-      [ "${MODEL}" == "full" ] && echo "  new WithLitexHextConfig ++"
-      echo "  new WithN${CORE_TYPE[$MODEL]}Cores(${CORES}) ++"
-      echo "  new WithMemoryDataBits($((${WIDTH}*64))) ++"
-      [ "${MODEL}" == "full" -a "${WIDTH}" == "1" ] && echo "  new WithInclusiveCache() ++"
-      echo "  new BaseLitexConfig"
-      echo ")"
+	  prepare_core_configuration ${MODEL} ${CORES} ${WIDTH}
     done
   done
-done >> rocket-chip/src/main/scala/system/Configs.scala
+done
 
 # Elaborate verilog for each LiteX (sub-)variant:
 for MODEL in small medium linux full; do
