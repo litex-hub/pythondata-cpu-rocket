@@ -118,6 +118,14 @@ cat >> rocket-chip/src/main/scala/system/Configs.scala <<- "EOT"
 	)
 	EOT
 
+# check firtool compatible
+if [[ -z "$(firtool --help | grep -w '\-dedup')" ]]; then
+  sed -i '/"-dedup",/d' rocket-chip/build.sc
+fi
+if [[ -z "$(firtool --help | grep -w '\-disable-infer-rw')" ]]; then
+  sed -i '/"-disable-infer-rw",/d' rocket-chip/build.sc
+fi
+
 # Upstream rocket-chip use '_' as config delimiter, this break
 # LiteX build
 # TODO: This should be fixed by changing new name in upstream
