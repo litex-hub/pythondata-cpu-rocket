@@ -53,8 +53,7 @@ function update_repo() {
 
 update_repo rocket-chip https://github.com/chipsalliance/rocket-chip.git
 pushd rocket-chip
-# reset to last commit before dev merge that removed SBT, standalone build:
-git reset --hard 4f197707eb07d833131395a839974c186069930b
+
 # also grab a copy of the L2 cache repo:
 cd src/main/scala
 update_repo rocket-chip-inclusive-cache https://github.com/chipsalliance/rocket-chip-inclusive-cache.git
@@ -121,6 +120,14 @@ cat >> rocket-chip/src/main/scala/system/Configs.scala <<- "EOT"
 	)
 	EOT
 
+# Upstream rocket-chip use '_' as config delimiter, this break
+# LiteX build
+# TODO: This should be fixed by changing new name in upstream
+sed -i "s/('_')/('|')/" rocket-chip/build.sc
+
+rm -rf generated-src vsrc
+mkdir generated-src vsrc
+
 # Fit Rocket core models to each LiteX model:
 declare -r -A CORE_TYPE=(
   ['small']='Small'
@@ -137,6 +144,7 @@ function build_core() {
 	local hext_str=""
 	local cache_str=""
 	local target="${PFX}_${model}_${cores}_${width}"
+	local target_dir="${PFX}/${model}/${cores}/${width}"
 
 	if [[ "${model}" == "full" ]]; then
 		hext_str="new WithLitexHextConfig ++"
@@ -154,8 +162,19 @@ function build_core() {
 	)
 	EOT
 
+	# Add build target
+	sed -i "/Cross\[Emulator\](/a (\"freechips.rocketchip.system.TestHarness\", \"${target}\")," rocket-chip/build.sc
+
 	# Elaborate verilog for LiteX (sub-)variant:
-	make RISCV=${RISCV} -C rocket-chip/vsim verilog CONFIG=${target} || exit 1
+	make RISCV=${RISCV} -C rocket-chip verilog CONFIG=${target} || exit 1
+
+	# Install generated files for use by LiteX:
+	local out=rocket-chip/out/emulator/freechips.rocketchip.system.TestHarness/${target}/
+	# fir should also be removed
+	rm -f ${out}/generator/elaborate.dest/TestHarness.*
+
+	install -D -m 0644 ${out}/generator/elaborate.dest/* -t generated-src/
+	install -D -m 0644 ${out}/mfccompiler/compile.dest/*.sv -t generated-src/${target_dir}/
 }
 
 for MODEL in small medium linux full; do
@@ -166,14 +185,8 @@ for MODEL in small medium linux full; do
   done
 done
 
-# install generated files for use by LiteX:
-VDIR=rocket-chip/src/main/resources/vsrc
-GDIR=rocket-chip/vsim/generated-src
-rm -f ${GDIR}/*.fir # too large for github, and, besides, we don't use them!
-for DIR in ${VDIR} ${GDIR}; do
-  rm -rf $(basename ${DIR})
-  install -m 0644 ${DIR}/* -D -t $(basename ${DIR})
-done
+# install common vsrc for use by LiteX:
+install -m 0644 rocket-chip/src/main/resources/vsrc/* -D -t vsrc
 
 # record upstream git revision:
 REV=$(git -C rocket-chip rev-parse --short HEAD)
