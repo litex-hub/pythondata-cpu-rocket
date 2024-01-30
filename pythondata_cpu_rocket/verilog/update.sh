@@ -183,6 +183,40 @@ function build_core() {
 	install -D -m 0644 ${out}/mfccompiler/compile.dest/*.sv -t generated-src/${target_dir}/
 }
 
+function dedup() {
+	local base=${1}
+	shift 1
+	local ref="${base}/${1}"
+	unset common_files
+    declare -A common_files
+
+    for file in "${ref}"/*.sv; do
+        common_files[$(basename ${file})]="1"
+    done
+
+	for sub in ${1} ${2} ${3} ${4}; do
+      local target="${base}/${sub}"
+      for file in $(diff -Naq ${ref} ${target} | cut -d " " -f 2); do
+        unset common_files[$(basename ${file})]
+      done
+	done
+
+	# move common file to upper dir
+    for file in ${!common_files[@]}; do
+      cp ${ref}/${file} ${base}/
+    done
+
+	# remove common file
+	for sub in ${1} ${2} ${3} ${4}; do
+      local target="${base}/${sub}"
+      for file in ${!common_files[@]}; do
+        rm ${target}/${file}
+      done
+    done
+
+	unset common_files
+}
+
 for MODEL in small medium linux full; do
   for CORES in 1 2 4 8; do
     for WIDTH in 1 2 4 8; do
@@ -190,6 +224,15 @@ for MODEL in small medium linux full; do
     done
   done
 done
+
+# do dedup to avoid too much file
+for MODEL in small medium linux full; do
+  for CORES in 1 2 4 8; do
+	dedup "generated-src/${PFX}/${MODEL}/${CORES}/" 1 2 4 8
+  done
+  dedup "generated-src/${PFX}/${MODEL}/" 1 2 4 8
+done
+dedup "generated-src/${PFX}/" small medium linux full
 
 # install common vsrc for use by LiteX:
 install -m 0644 rocket-chip/src/main/resources/vsrc/* -D -t vsrc
