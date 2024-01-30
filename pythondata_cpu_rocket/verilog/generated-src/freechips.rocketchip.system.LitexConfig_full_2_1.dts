@@ -27,7 +27,7 @@
 			mmu-type = "riscv,sv39,sv39x4";
 			next-level-cache = <&L2>;
 			reg = <0x0>;
-			riscv,isa = "rv64imafdchzicsr_zifencei_zihpm_zba_zbb_zbc_zbkb_zbkc_zbkx_zbs_zknd_zkne_zknh_zksed_zksh_xrocket";
+			riscv,isa = "rv64imafdchzicsr_zifencei_zihpm_xrocket";
 			riscv,pmpgranularity = <4096>;
 			riscv,pmpregions = <8>;
 			status = "okay";
@@ -57,7 +57,7 @@
 			mmu-type = "riscv,sv39,sv39x4";
 			next-level-cache = <&L2>;
 			reg = <0x1>;
-			riscv,isa = "rv64imafdchzicsr_zifencei_zihpm_zba_zbb_zbc_zbkb_zbkc_zbkx_zbs_zknd_zkne_zknh_zksed_zksh_xrocket";
+			riscv,isa = "rv64imafdchzicsr_zifencei_zihpm_xrocket";
 			riscv,pmpgranularity = <4096>;
 			riscv,pmpregions = <8>;
 			status = "okay";
