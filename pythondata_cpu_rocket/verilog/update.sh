@@ -30,7 +30,11 @@
 # (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 # OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-PATH=/usr/bin:${HOME}/RISCV/bin
+export | grep -q ' RISCV=' || {
+  echo "Please \`export RISCV='/path/to/RISCV'\` (software toolchain)!"
+  exit 1
+}
+export PATH="${PATH}:${RISCV}/bin"
 
 # grab a copy of upstream:
 rm -rf rocket-chip

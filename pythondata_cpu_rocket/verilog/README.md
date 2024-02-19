@@ -4,6 +4,9 @@ This repository contains a [RocketChip][1] core generated specifically for the [
 * Rocket's internal  address map was modified to route
   - any addresses between 0x1000_0000 and 0x8000_0000 through the uncached *MMIO* AXI interface, and
   - any addresses above 0x8000_0000 through the cached *MEM* AXI interface.
+* Build Dependencies:
+  - GCC [cross-compiler toolchain][3]
+    - export path unpacked folder as the value of the `$RISCV` env. variable.
 
 See `./update.sh` for details.
 
@@ -13,3 +16,4 @@ Run `./update.sh` and commit changes to update to the current upstream revision.
 
 [1]: https://github.com/freechipsproject/rocket-chip
 [2]: https://github.com/enjoy-digital/litex
+[3]: http://www.contrib.andrew.cmu.edu/~somlo/BTCP/RISCV-toolchain.tar.xz
