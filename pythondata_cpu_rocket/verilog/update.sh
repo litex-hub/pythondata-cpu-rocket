@@ -116,28 +116,55 @@ declare -A CORE_TYPE=(
   ['full']='Big'
 )
 
+# variant prefix string:
+VPFX='freechips.rocketchip.system.'
+
+# add specified litex variant to rocket sources:
+add_variant () {
+  local MODEL=$1
+  local CORES=$2
+  local WIDTH=$3
+  local VARIANT="LitexConfig_${MODEL}_${CORES}_${WIDTH}"
+  {
+    echo
+    echo "class ${VARIANT} extends Config("
+    [ "${MODEL}" == "full" ] && {
+      echo '  new WithLitexHextConfig ++'
+    }
+    echo "  new WithN${CORE_TYPE[$MODEL]}Cores(${CORES}) ++"
+    echo "  new WithMemoryDataBits($((${WIDTH}*64))) ++"
+    [ "${MODEL}" == "full" -a "${WIDTH}" == "1" ] && {
+      # NOTE: cache only works with 64-bit wide memory port!
+      echo '  new WithInclusiveCache() ++'
+    }
+    echo '  new BaseLitexConfig'
+    echo ')'
+  } >> rocket-chip/src/main/scala/system/Configs.scala
+}
+
 # Generate LiteX variant configurations:
 for MODEL in small medium linux full; do
   for CORES in 1 2 4 8; do
     for WIDTH in 1 2 4 8; do
-      echo
-      echo "class LitexConfig_${MODEL}_${CORES}_${WIDTH} extends Config("
-      [ "${MODEL}" == "full" ] && echo "  new WithLitexHextConfig ++"
-      echo "  new WithN${CORE_TYPE[$MODEL]}Cores(${CORES}) ++"
-      echo "  new WithMemoryDataBits($((${WIDTH}*64))) ++"
-      [ "${MODEL}" == "full" -a "${WIDTH}" == "1" ] && echo "  new WithInclusiveCache() ++"
-      echo "  new BaseLitexConfig"
-      echo ")"
+      add_variant ${MODEL} ${CORES} ${WIDTH}
     done
   done
-done >> rocket-chip/src/main/scala/system/Configs.scala
+done
+
+# build specified litex variant:
+build_variant () {
+  local MODEL=$1
+  local CORES=$2
+  local WIDTH=$3
+  local VARIANT="LitexConfig_${MODEL}_${CORES}_${WIDTH}"
+  make -C rocket-chip/vsim verilog CONFIG="${VPFX}${VARIANT}"
+}
 
 # Elaborate verilog for each LiteX (sub-)variant:
 for MODEL in small medium linux full; do
   for CORES in 1 2 4 8; do
     for WIDTH in 1 2 4 8; do
-      make RISCV=${HOME}/RISCV -C rocket-chip/vsim verilog \
-       CONFIG=freechips.rocketchip.system.LitexConfig_${MODEL}_${CORES}_${WIDTH}
+      build_variant ${MODEL} ${CORES} ${WIDTH}
     done
   done
 done
