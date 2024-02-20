@@ -36,6 +36,17 @@ export | grep -q ' RISCV=' || {
 }
 export PATH="${PATH}:${RISCV}/bin"
 
+export | grep -q ' MILL=' || {
+  echo "Please \`export MILL='/path/to/mill'\` (scala builder)!"
+  exit 1
+}
+
+export | grep -q ' FIRTOOL=' || {
+  echo "Please \`export FIRTOOL='/path/to/FIRTOOL'\` (build helper tool)!"
+  exit 1
+}
+export PATH="${PATH}:${FIRTOOL}/bin"
+
 # grab a copy of upstream:
 rm -rf rocket-chip
 git clone --recursive https://github.com/chipsalliance/rocket-chip
