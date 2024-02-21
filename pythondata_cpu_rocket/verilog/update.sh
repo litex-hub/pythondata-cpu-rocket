@@ -145,6 +145,8 @@ add_variant () {
     echo '  new BaseLitexConfig'
     echo ')'
   } >> rocket-chip/src/main/scala/system/Configs.scala
+  local OBJ_EMU="(\"${VPFX}TestHarness\", \"${VPFX}${VARIANT}\")"
+  sed -i "/^object emulator /,/^)$/s/^)$/  ${OBJ_EMU},\n)/" rocket-chip/build.sc
 }
 
 # Generate LiteX variant configurations:
