@@ -121,10 +121,10 @@ cat >> rocket-chip/src/main/scala/system/Configs.scala <<- "EOT"
 
 # Fit Rocket core models to each LiteX model:
 declare -A CORE_TYPE=(
-  ['small']='Small'
-  ['medium']='Med'
-  ['linux']='Big'
-  ['full']='Big'
+  ['Small']='Small'
+  ['Medium']='Med'
+  ['Linux']='Big'
+  ['Full']='Big'
 )
 
 # variant prefix string:
@@ -135,16 +135,16 @@ add_variant () {
   local MODEL=$1
   local CORES=$2
   local WIDTH=$3
-  local VARIANT="LitexConfig_${MODEL}_${CORES}_${WIDTH}"
+  local VARIANT="LitexConfig${MODEL}${CORES}${WIDTH}"
   {
     echo
     echo "class ${VARIANT} extends Config("
-    [ "${MODEL}" == "full" ] && {
+    [ "${MODEL}" == "Full" ] && {
       echo '  new WithLitexHextConfig ++'
     }
     echo "  new WithN${CORE_TYPE[$MODEL]}Cores(${CORES}) ++"
     echo "  new WithMemoryDataBits($((${WIDTH}*64))) ++"
-    [ "${MODEL}" == "full" -a "${WIDTH}" == "1" ] && {
+    [ "${MODEL}" == "Full" -a "${WIDTH}" == "1" ] && {
       # NOTE: cache only works with 64-bit wide memory port!
       echo '  new WithInclusiveCache() ++'
     }
@@ -154,7 +154,7 @@ add_variant () {
 }
 
 # Generate LiteX variant configurations:
-for MODEL in small medium linux full; do
+for MODEL in Small Medium Linux Full; do
   for CORES in 1 2 4 8; do
     for WIDTH in 1 2 4 8; do
       add_variant ${MODEL} ${CORES} ${WIDTH}
@@ -167,12 +167,12 @@ build_variant () {
   local MODEL=$1
   local CORES=$2
   local WIDTH=$3
-  local VARIANT="LitexConfig_${MODEL}_${CORES}_${WIDTH}"
+  local VARIANT="LitexConfig${MODEL}${CORES}${WIDTH}"
   make -C rocket-chip/vsim verilog CONFIG="${VPFX}${VARIANT}"
 }
 
 # Elaborate verilog for each LiteX (sub-)variant:
-for MODEL in small medium linux full; do
+for MODEL in Small Medium Linux Full; do
   for CORES in 1 2 4 8; do
     for WIDTH in 1 2 4 8; do
       build_variant ${MODEL} ${CORES} ${WIDTH}
