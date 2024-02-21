@@ -111,12 +111,6 @@ cat >> rocket-chip/src/main/scala/system/Configs.scala <<- "EOT"
 	  new WithCoherentBusTopology ++
 	  new BaseConfig
 	)
-
-	class WithLitexHextConfig extends Config(
-	  new WithHypervisor ++
-	  new WithBitManip ++ new WithBitManipCrypto ++
-	  new WithCryptoNIST ++ new WithCryptoSM
-	)
 	EOT
 
 # Fit Rocket core models to each LiteX model:
@@ -140,7 +134,7 @@ add_variant () {
     echo
     echo "class ${VARIANT} extends Config("
     [ "${MODEL}" == "Full" ] && {
-      echo '  new WithLitexHextConfig ++'
+      echo '  new WithHypervisor ++'
     }
     echo "  new WithN${CORE_TYPE[$MODEL]}Cores(${CORES}) ++"
     echo "  new WithMemoryDataBits($((${WIDTH}*64))) ++"
