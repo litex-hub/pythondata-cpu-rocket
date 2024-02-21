@@ -69,6 +69,9 @@ make -C rocket-chip/bootrom || exit 1
 # comment out unnecessary (and unsuitable) DTB from internal bootrom:
 sed -i '/dtb\.contents/s|++|//++|' rocket-chip/src/main/scala/devices/tilelink/BootROM.scala
 
+# workaround for rocket:firtool "impedance mismatch":
+sed -i '/"-dedup",/d' rocket-chip/build.sc
+
 # Add LiteX specific Rocket port configuration options:
 cat >> rocket-chip/src/main/scala/subsystem/Configs.scala <<- "EOT"
 
