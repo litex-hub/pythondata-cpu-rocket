@@ -51,13 +51,12 @@ export PATH="${PATH}:${FIRTOOL}/bin"
 rm -rf rocket-chip
 git clone --recursive https://github.com/chipsalliance/rocket-chip
 pushd rocket-chip
-# reset to last commit before dev merge that removed SBT, standalone build:
-git reset --hard 4f197707eb07d833131395a839974c186069930b
+
 # also grab a copy of the L2 cache repo:
 cd src/main/scala
 git clone https://github.com/chipsalliance/rocket-chip-inclusive-cache
 cd rocket-chip-inclusive-cache
-# also fix the L2 cache to a known, tested version:
+# FIXME: current cache versions won't build with current rocket-chip -- Why?
 git reset --hard 51d400bd32131e8914c6713bfb71bef690f2fe70
 popd
 
@@ -166,8 +165,8 @@ build_variant () {
   local MODEL=$1
   local CORES=$2
   local WIDTH=$3
-  local VARIANT="LitexConfig${MODEL}${CORES}${WIDTH}"
-  make -C rocket-chip/vsim verilog CONFIG="${VPFX}${VARIANT}"
+  local CONFIG="${VPFX}LitexConfig${MODEL}${CORES}${WIDTH}"
+  make -C rocket-chip verilog CONFIG=${CONFIG}
 }
 
 # Elaborate verilog for each LiteX (sub-)variant:
