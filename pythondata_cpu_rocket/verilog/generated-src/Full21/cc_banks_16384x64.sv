@@ -1,0 +1,1 @@
+../Full11/cc_banks_16384x64.sv
