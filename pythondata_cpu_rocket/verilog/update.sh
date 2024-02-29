@@ -169,22 +169,44 @@ build_variant () {
   make -C rocket-chip verilog CONFIG=${CONFIG}
 }
 
-# Elaborate verilog for each LiteX (sub-)variant:
+# install root:
+INSTALLROOT='./generated-src'
+
+# install specified litex variant:
+install_variant () {
+  local MODEL=$1
+  local CORES=$2
+  local WIDTH=$3
+  local VARIANT="${MODEL}${CORES}${WIDTH}"
+  local BUILDROOT="rocket-chip/out/emulator/${VPFX}TestHarness"
+  local BUILDDIR="${BUILDROOT}/${VPFX}LitexConfig${VARIANT}"
+  local ELAB='generator/elaborate.dest'
+  local COMP='mfccompiler/compile.dest'
+  local INSTALLDIR="${INSTALLROOT}/${VARIANT}"
+  # remove unwanted build files:
+  rm -f ${BUILDDIR}/${ELAB}/TestHarness.*
+  rm -f ${BUILDDIR}/${ELAB}/*.plusArgs
+  rm -f ${BUILDDIR}/${COMP}/*.f
+  rm -f ${BUILDDIR}/${COMP}/SimDTM.*
+  rm -f ${BUILDDIR}/${COMP}/TestHarness.sv
+  rm -f ${BUILDDIR}/${COMP}/extern_modules.sv
+  # install build files:
+  install -D -m 0644 ${BUILDDIR}/${ELAB}/* -t ${INSTALLDIR}
+  install -D -m 0644 ${BUILDDIR}/${COMP}/*.v -t ${INSTALLDIR}
+  install -D -m 0644 ${BUILDDIR}/${COMP}/*.sv -t ${INSTALLDIR}
+}
+
+# start with a clean install root:
+rm -rf ${INSTALLROOT}
+
+# Elaborate and install verilog for each LiteX (sub-)variant:
 for MODEL in Small Medium Linux Full; do
   for CORES in 1 2 4 8; do
     for WIDTH in 1 2 4 8; do
       build_variant ${MODEL} ${CORES} ${WIDTH}
+      install_variant ${MODEL} ${CORES} ${WIDTH}
     done
   done
-done
-
-# install generated files for use by LiteX:
-VDIR=rocket-chip/src/main/resources/vsrc
-GDIR=rocket-chip/vsim/generated-src
-rm -f ${GDIR}/*.fir # too large for github, and, besides, we don't use them!
-for DIR in ${VDIR} ${GDIR}; do
-  rm -rf $(basename ${DIR})
-  install -m 0644 ${DIR}/* -D -t $(basename ${DIR})
 done
 
 # record upstream git revision:
