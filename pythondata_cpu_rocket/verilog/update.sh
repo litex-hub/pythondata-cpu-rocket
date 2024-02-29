@@ -209,6 +209,26 @@ for MODEL in Small Medium Linux Full; do
   done
 done
 
+# deduplicate redundant files across variants:
+dedup () {
+  declare -A FILEHASH
+  for F in $(find . -type f); do
+    H=$(md5sum $F | cut -d' ' -f1)
+    if [ -n "${FILEHASH[$H]}" ]; then
+      rm -f $F
+      (cd $(dirname $F); ln -s .${FILEHASH[$H]} $(basename $F))
+    else
+      FILEHASH[$H]=$F
+    fi
+  done
+}
+
+# run dedup, and report storage savings:
+OLDSIZE=$(du -sh ${INSTALLROOT} | cut -d$'\t' -f1)
+(cd ${INSTALLROOT}; dedup)
+NEWSIZE=$(du -sh ${INSTALLROOT} | cut -d$'\t' -f1)
+echo "Dedup: reduced storage from ${OLDSIZE} to ${NEWSIZE}"
+
 # record upstream git revision:
 REV=$(git -C rocket-chip rev-parse --short HEAD)
 echo ${REV} > _upstream.rev
