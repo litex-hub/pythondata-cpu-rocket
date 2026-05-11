@@ -1,2 +1,3 @@
 graft pythondata_cpu_rocket/verilog/
 global-exclude *.py[cod]
+global-exclude __pycache__/*
