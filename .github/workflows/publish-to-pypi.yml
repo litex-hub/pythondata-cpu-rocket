@@ -1,10 +1,7 @@
 name: PyPI
 
 on:
-  push:
-    branches:
-      - master
-      - main
+  workflow_dispatch:
 
 jobs:
   sdist:
@@ -39,7 +36,7 @@ jobs:
     - name: Build distribution 📦
       run: |
         python setup.py sdist
-        rm dist/*.egg
+        rm -f dist/*.egg
 
     - name: Check distribution 📦
       run: |
@@ -97,7 +94,7 @@ jobs:
     - name: Build distribution 📦
       run: |
         python setup.py bdist_wheel
-        rm dist/*.egg
+        rm -f dist/*.egg
 
     - name: Check distribution 📦
       run: |
